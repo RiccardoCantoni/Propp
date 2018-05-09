@@ -15,6 +15,11 @@ public class AtomMatcher implements PredicateMatcher, Serializable{
     
     public Predicate predicate;
     
+    private static final int UNIFIED = 1;
+    public static final int STRINGS_EQUAL = 0;
+    public static final int STRINGS_UNEQUAL = -1;
+    
+    
     public AtomMatcher(Predicate p){
         this.predicate = p;
     }
@@ -29,16 +34,24 @@ public class AtomMatcher implements PredicateMatcher, Serializable{
     }
     
     public boolean matchSingle(Predicate p){
-        if (stringMatch(this.predicate.pred, p.pred)) return true;
-        if (stringMatch(this.predicate.subj, p.subj)) return true;
-        return (stringMatch(this.predicate.obj, p.obj));
+        int val = stringMatch(this.predicate.pred, p.pred);
+        if (val==UNIFIED) return true;
+        if (val==STRINGS_UNEQUAL) return false;
+        val = stringMatch(this.predicate.subj, p.subj);
+        if (val==UNIFIED) return true;
+        if (val==STRINGS_UNEQUAL) return false;
+        val = stringMatch(this.predicate.obj, p.obj);
+        if (val==UNIFIED || val==STRINGS_EQUAL) return true;
+        return false;
+ 
     }
     
     private static final String UNIFY_ALL = "_";
     
-    private boolean stringMatch(String s1, String s2){
-        if (s1.equals(UNIFY_ALL) || s2.equals(UNIFY_ALL)) return true;
-        return s1.equals(s2);
+    private int stringMatch(String s1, String s2){
+        if (s1.equals(UNIFY_ALL) || s2.equals(UNIFY_ALL)) return 1;
+        if (s1.equals(s2)) return 0;
+        return -1;
     }
     
 }

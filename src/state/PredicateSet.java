@@ -37,11 +37,13 @@ public class PredicateSet implements Serializable{
     
     public void removeAllMatching(Predicate p){
         AtomMatcher m = new AtomMatcher(p);
+        List<Predicate> toRemove = new LinkedList<>();
         for (Predicate pr : this.set){
             if (m.matchSingle(pr)){
-                this.set.remove(pr);
+                toRemove.add(pr);
             }
         }
+        this.set.removeAll(toRemove);
     }
     
     public void union(PredicateSet ps){

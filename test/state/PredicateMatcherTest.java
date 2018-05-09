@@ -31,7 +31,6 @@ public class PredicateMatcherTest {
 
     @Test
     public void testMatchAtom() { 
-                
         PredicateMatcher m = new AtomMatcher(p2);
         assertTrue(m.matchAny(ps1));
         m = new AtomMatcher(new Predicate("a","_","_"));
@@ -40,7 +39,8 @@ public class PredicateMatcherTest {
         assertFalse(m.matchAny(ps1)); 
         
         AtomMatcher a = new AtomMatcher(p1);
-        assertFalse();
+        assertFalse(a.matchSingle(p2));
+        assertTrue(a.matchSingle(new Predicate("a","_","_")));
     }
     
     @Test
@@ -77,5 +77,5 @@ public class PredicateMatcherTest {
         ps.addPredicate(p3);
         assertFalse(m.matchAny(ps));
     }
-    
+
 }
