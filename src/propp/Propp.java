@@ -18,12 +18,12 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ChainGenerator a = new ChainF();
+        ChainGenerator a = new ChainG();
         a.createSave();
         SharedRandom srand = SharedRandom.getInstance();
         srand.setRandom();
         
-        FunctionChain C = FunctionChain.deserializeFrom("F");
+        FunctionChain C = FunctionChain.deserializeFrom("G");
         
         MarkovWalker mw = new MarkovWalker(C, new AleatoryTransition());
         Node x;
