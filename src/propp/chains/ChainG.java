@@ -32,6 +32,7 @@ public class ChainG implements ChainGenerator{
         C.addEdge("way_discovered","way_followed");
         C.addEdge("way_followed",a);
         n = new Node("way_showed", NodeType.ACTION);
+        n.preconditions = new OrMatcher(new AtomMatcher(new Predicate("acquisition_type","guidance")),new AtomMatcher(new Predicate("acquisition_type","helper")));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("way_showed","way_discovered");
@@ -40,14 +41,15 @@ public class ChainG implements ChainGenerator{
         C.setInitial(n);
         C.addEdge("travel",a);
         n = new Node("magical_travel", NodeType.ACTION);
+        n.preconditions = new OrMatcher(new AtomMatcher(new Predicate("acquisition_type","item")),new AtomMatcher(new Predicate("acquisition_type","helper")));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("magical_travel",a);
         n = new Node("guided_travel", NodeType.ACTION);
+        n.preconditions = new AtomMatcher(new Predicate("acquisition_type","guidance"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("guided_travel",a);
-        
         
         C.serializeAs("G");
     }

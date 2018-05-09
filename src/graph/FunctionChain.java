@@ -101,7 +101,7 @@ public class FunctionChain implements Serializable{
             System.out.println("deserialization failed");
             exc.printStackTrace();
         }
-        System.out.println("laoded "+filename+".ser");
+        System.out.println("loaded "+filename+".ser");
         return c;
     }
     

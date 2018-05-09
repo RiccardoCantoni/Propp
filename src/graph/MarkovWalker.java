@@ -38,6 +38,7 @@ public class MarkovWalker implements Iterator<Node>{
     public Node next() {
         Node n = trans.nextNode(current);
         current = n;
+        state.difference(current.toRemove);
         state.union(current.toAdd);
         return n;
     }

@@ -22,7 +22,7 @@ public class ChainBC implements ChainGenerator{
         n = new Node(bc, NodeType.ACTION);
         C.addNode(n);
         n = new Node(dp, NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("departure","hero"));
+        n.toAdd.addPredicate(new Predicate("departure","$hero"));
         C.addNode(n);
         C.addEdge(bc,dp);
         n = new Node("help_request", NodeType.ACTION);
@@ -39,7 +39,7 @@ public class ChainBC implements ChainGenerator{
         C.addNode(n);
         C.addEdge("help_response", "help_response_ack");
         n = new Node("dispatch", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("dispatch","dispatcher"));
+        n.toAdd.addPredicate(new Predicate("dispatch","$dispatcher"));
         PredicateMatcher lackWealth = new AtomMatcher(new Predicate("lack","wealth","_"));
         PredicateMatcher lackBride = new AtomMatcher(new Predicate("lack","wealth","_"));
         n.preconditions = new NotMatcher(new OrMatcher(lackWealth, lackBride));
@@ -64,7 +64,6 @@ public class ChainBC implements ChainGenerator{
         C.addNode(n);
         C.addEdge("misfortune_announcement","misfortune_announcement_ack");
         C.addEdge("misfortune_announcement_ack",bc);
-        
         
         C.serializeAs("BC");
         

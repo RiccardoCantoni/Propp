@@ -41,23 +41,23 @@ public class ChainAa implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         n = new Node(vk, NodeType.EVENT);
-        n.toAdd.addPredicate(new Predicate("lack","kill","villain"));
+        n.toAdd.addPredicate(new Predicate("lack","kill","$villain"));
         C.addNode(n);
         n = new Node(vi, NodeType.EVENT);
-        n.toAdd.addPredicate(new Predicate("lack","imprison","villain"));
+        n.toAdd.addPredicate(new Predicate("lack","imprison","$villain"));
         C.addNode(n);
         n = new Node("abduction", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("villainy","abduction","character"));
+        n.toAdd.addPredicate(new Predicate("villainy","abduction","$character"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("abduction", lhu);
         n = new Node("seizure", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("villainy","seizure","object"));
+        n.toAdd.addPredicate(new Predicate("villainy","seizure","$item"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("seizure", lo);
         n = new Node("pillaging", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("villainy","pillaging","object"));
+        n.toAdd.addPredicate(new Predicate("villainy","pillaging","$item"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("pillaging", vk);
@@ -66,7 +66,7 @@ public class ChainAa implements ChainGenerator{
         C.addEdge("pillaging", lo);
         System.out.println();
         n = new Node("imprisonment", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("villainy","imprisonment","character"));
+        n.toAdd.addPredicate(new Predicate("villainy","imprisonment","$character"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("imprisonment", vk);
@@ -80,7 +80,7 @@ public class ChainAa implements ChainGenerator{
         n = C.addEdge("ack_demand_imprisonment", "imprisonment");
         n.type = NodeType.ACTION;
         n = new Node("murder", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("villainy","murder","character"));
+        n.toAdd.addPredicate(new Predicate("villainy","murder","$character"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("murder",vk);
@@ -97,12 +97,11 @@ public class ChainAa implements ChainGenerator{
         C.setInitial(n);
         n = C.addEdge("war_declaration", "war");
         n.type = NodeType.ACTION;
-        n.toAdd.addPredicate(new Predicate("villainy","war","TODO"));
+        n.toAdd.addPredicate(new Predicate("villainy","war"));
         C.addEdge("war",lhe);
         C.addEdge("war",lo);
         C.addEdge("war",vk);
         C.addEdge("war",vi);
-        
         
         C.serializeAs("Aa");
     }
