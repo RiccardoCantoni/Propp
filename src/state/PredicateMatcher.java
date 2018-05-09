@@ -11,6 +11,6 @@ package state;
  */
 public interface PredicateMatcher{
     
-    public boolean match(PredicateSet pset);
+    public boolean matchAny(PredicateSet pset);
     
 }

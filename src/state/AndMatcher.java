@@ -21,8 +21,8 @@ public class AndMatcher implements PredicateMatcher, Serializable{
     }
 
     @Override
-    public boolean match(PredicateSet pset) {
-        return (pm1.match(pset) && pm2.match(pset));
+    public boolean matchAny(PredicateSet pset) {
+        return (pm1.matchAny(pset) && pm2.matchAny(pset));
     }
     
 }

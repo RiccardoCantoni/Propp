@@ -19,80 +19,81 @@ import static org.junit.Assert.*;
  */
 public class PredicateSetTest {
     
-    public PredicateSetTest() {
+    PredicateSet pset;
+    Predicate abc, abd, xyz, ab;
+    
+    @Before 
+    public void setup(){
+        pset = new PredicateSet();
+        abc = new Predicate("a","b","c");
+        abd = new Predicate("a","b","d");
+        ab = new Predicate("a","b");
+        xyz = new Predicate("x","y","z");
+    }
+    
+    @After
+    public void clear(){
+        pset = new PredicateSet();
+    }
+    
+    @Test
+    public void testContains() {
+        pset.addPredicate(abc);
+        assertFalse(pset.contains(xyz));
+        assertFalse(pset.contains(abd));
+        assertTrue(pset.contains(abc));
+        assertTrue(pset.contains(ab));
     }
     
     @Test
     public void testAddPredicate() {
-        PredicateSet pset = new PredicateSet();
-        Predicate abc = new Predicate("a","b","c");
-        Predicate abc2 = new Predicate("a","b","c");
-        Predicate xyz = new Predicate("x","y","z");
         pset.addPredicate(abc);
-        pset.addPredicate(abc);
-        pset.addPredicate(abc2);
-        pset.addPredicate(xyz);      
-        assertEquals(pset.size(),2);
+        pset.addPredicate(abd);
+        pset.addPredicate(ab);
+        pset.addPredicate(xyz);  
+        pset.prettyPrint();
+        assertEquals(3,pset.size());
+        assertTrue(pset.contains(abc));
+        assertTrue(pset.contains(xyz));
+        pset.addPredicate(abd);
+        assertEquals(pset.size(),3);
+        assertTrue(pset.contains(abd));
+        
     }
 
     @Test
     public void testRemovePredicate() {
-        PredicateSet pset = new PredicateSet();
-        Predicate abc = new Predicate("a","b","c");
-        Predicate abc2 = new Predicate("a","b","c");
-        Predicate xyz = new Predicate("x","y","z");
         pset.addPredicate(abc);
-        pset.removePredicate(xyz);
-        assertEquals(pset.size(),1);
-        pset.addPredicate(xyz);
+        pset.addPredicate(abd);
+        pset.removeAllMatching(xyz);
         assertEquals(pset.size(),2);
-        pset.removePredicate(xyz);
+        pset.addPredicate(xyz);
+        assertEquals(pset.size(),3);
+        pset.removeAllMatching(ab);
         assertEquals(pset.size(),1);
     }
 
-    @Test
-    public void testContains() {
-        PredicateSet pset = new PredicateSet();
-        Predicate abc = new Predicate("a","b","c");
-        Predicate xyz = new Predicate("x","y","z");
-        pset.addPredicate(abc);
-        assertTrue(!pset.contains(xyz));
-        assertTrue(pset.contains(abc));
-    }
 
-    @Test
+
+    /*@Test
     public void testFindAll() {
         PredicateSet pset = new PredicateSet();
         Predicate abc = new Predicate("a","b","c");
-        Predicate ab = new Predicate("a","b");
+        Predicate ab = new Predicate("a","b","d");
         Predicate aee = new Predicate("a","e","e");
         Predicate xyz = new Predicate("x","y","z");
         pset.addPredicate(abc);
         pset.addPredicate(ab);
         pset.addPredicate(aee);
         pset.addPredicate(xyz);
-        assertEquals(3, pset.findAll("a").size());
-        assertEquals(1, pset.findAll("x").size());
-        assertEquals(0, pset.findAll("b").size());
+        for (Predicate p : pset.findAll(new Predicate("a","_","_"))){
+            System.out.print(p.toString());
+        }
+        assertEquals(3, pset.findAll(new Predicate("a","_","_")).size());
+        assertEquals(1, pset.findAll(new Predicate("x","_","_")).size());
+        assertEquals(0, pset.findAll(new Predicate("b","_","_")).size());
     }
-    
-    @Test
-    public void testEquals(){
-        PredicateSet pset = new PredicateSet();
-        PredicateSet pset2 = new PredicateSet();
-        Predicate abc = new Predicate("a","b","c");
-        Predicate ab = new Predicate("a","b");
-        pset.addPredicate(ab);
-        pset.addPredicate(abc);
-        pset2.addPredicate(abc);
-        pset2.addPredicate(ab);
-        assertTrue(pset.equals(pset2));
-        pset.removePredicate(ab);
-        assertFalse(pset.equals(pset2));
-        assertFalse(pset2.equals(pset));
-        assertTrue(pset.equals(pset));
-    }
-    
+       
     @Test
     public void testUnion(){
         PredicateSet ps1 = new PredicateSet();
@@ -103,6 +104,6 @@ public class PredicateSetTest {
         ps2.addPredicate(bbb);
         ps1.union(ps2);
         assertEquals(ps1.size(),2); 
-    }
+    }*/
     
 }

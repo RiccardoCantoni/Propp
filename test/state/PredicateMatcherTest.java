@@ -33,11 +33,14 @@ public class PredicateMatcherTest {
     public void testMatchAtom() { 
                 
         PredicateMatcher m = new AtomMatcher(p2);
-        assertTrue(m.match(ps1));
+        assertTrue(m.matchAny(ps1));
         m = new AtomMatcher(new Predicate("a","_","_"));
-        assertTrue(m.match(ps1));
+        assertTrue(m.matchAny(ps1));
         m = new AtomMatcher(p3);
-        assertFalse(m.match(ps1)); 
+        assertFalse(m.matchAny(ps1)); 
+        
+        AtomMatcher a = new AtomMatcher(p1);
+        assertFalse();
     }
     
     @Test
@@ -46,9 +49,9 @@ public class PredicateMatcherTest {
         AtomMatcher p2m = new AtomMatcher(p2);
         AtomMatcher p3m = new AtomMatcher(p3);
         PredicateMatcher m = new AndMatcher(p1m,p2m);
-        assertTrue(m.match(ps1));
+        assertTrue(m.matchAny(ps1));
         m = new AndMatcher(p1m,p3m);
-        assertFalse(m.match(ps1));
+        assertFalse(m.matchAny(ps1));
     }
     
     @Test
@@ -57,8 +60,8 @@ public class PredicateMatcherTest {
         AtomMatcher p2m = new AtomMatcher(p2);
         AtomMatcher p3m = new AtomMatcher(p3);
         PredicateMatcher m = new OrMatcher(p3m,p1m);
-        assertTrue(m.match(ps1));
-        assertTrue(m.match(ps2));
+        assertTrue(m.matchAny(ps1));
+        assertTrue(m.matchAny(ps2));
     }
     
     @Test
@@ -70,9 +73,9 @@ public class PredicateMatcherTest {
         ps.addPredicate(p1);
         PredicateMatcher m = new AndMatcher(new OrMatcher(p1m,p2m),new NotMatcher(p3m));
         //(A | B) & !C
-        assertTrue(m.match(ps));
+        assertTrue(m.matchAny(ps));
         ps.addPredicate(p3);
-        assertFalse(m.match(ps));
+        assertFalse(m.matchAny(ps));
     }
     
 }

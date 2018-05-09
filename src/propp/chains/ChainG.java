@@ -17,6 +17,13 @@ public class ChainG implements ChainGenerator{
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
+        Node n;
+        
+        String a = "arrival"; 
+        n = new Node(a, NodeType.EVENT);
+        n.toRemove.addPredicate(new Predicate("location","$hero","_"));
+        n.toAdd.addPredicate(new Predicate("location","$hero","$location"));
+        C.addNode(n);
         
         
         C.serializeAs("G");

@@ -25,8 +25,9 @@ public class Predicate implements Serializable{
         this.pred = p;
         this.subj = s;
         this.obj = "_";
+        
     }
-    
+       
     @Override
     public boolean equals(Object o){
         if (o==null){

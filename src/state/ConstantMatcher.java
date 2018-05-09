@@ -20,7 +20,7 @@ public class ConstantMatcher implements PredicateMatcher, Serializable{
     }
 
     @Override
-    public boolean match(PredicateSet pset) {
+    public boolean matchAny(PredicateSet pset) {
         return constant;
     }
     

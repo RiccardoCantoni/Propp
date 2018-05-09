@@ -20,8 +20,8 @@ public class NotMatcher implements PredicateMatcher, Serializable{
     }
 
     @Override
-    public boolean match(PredicateSet pset) {
-        return !pm.match(pset);
+    public boolean matchAny(PredicateSet pset) {
+        return !pm.matchAny(pset);
     }
     
 }

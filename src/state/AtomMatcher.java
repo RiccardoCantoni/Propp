@@ -20,13 +20,18 @@ public class AtomMatcher implements PredicateMatcher, Serializable{
     }
 
     @Override
-    public boolean match(PredicateSet pset) {
-        for (Predicate p2 : pset.set){
-        if (stringMatch(this.predicate.pred, p2.pred)) return true;
-        if (stringMatch(this.predicate.subj, p2.subj)) return true;
-        if (stringMatch(this.predicate.obj, p2.obj)) return true;
+    public boolean matchAny(PredicateSet pset) {
+        for (Predicate p : pset.set){
+            if (matchSingle(p)) 
+                return true;
         }
         return false;
+    }
+    
+    public boolean matchSingle(Predicate p){
+        if (stringMatch(this.predicate.pred, p.pred)) return true;
+        if (stringMatch(this.predicate.subj, p.subj)) return true;
+        return (stringMatch(this.predicate.obj, p.obj));
     }
     
     private static final String UNIFY_ALL = "_";

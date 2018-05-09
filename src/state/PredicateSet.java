@@ -23,6 +23,11 @@ public class PredicateSet implements Serializable{
     public PredicateSet(Predicate[] predicates){
         set = Arrays.asList(predicates);
     }
+    
+    public boolean contains(Predicate p){
+        PredicateMatcher m = new AtomMatcher(p);
+        return (m.matchAny(this));
+    }
         
     public void addPredicate(Predicate p){
         if (!this.contains(p)){
@@ -30,34 +35,40 @@ public class PredicateSet implements Serializable{
         }
     }
     
-    public void removePredicate(Predicate p){
-        if (this.contains(p)){
-            set.remove(p);
+    public void removeAllMatching(Predicate p){
+        AtomMatcher m = new AtomMatcher(p);
+        for (Predicate pr : this.set){
+            if (m.matchSingle(pr)){
+                this.set.remove(pr);
+            }
         }
-    }
-    
-    public boolean contains(Predicate p){
-        return set.contains(p);
     }
     
     public void union(PredicateSet ps){
         for (Predicate p: ps.set){
-            this.set.add(p);
+            this.addPredicate(p);
         }
     }
     
-    public List<Predicate> findAll(String pred){
+    public void difference(PredicateSet ps){
+        for (Predicate p: ps.set){
+            this.removeAllMatching(p);
+        }
+    }
+    
+    public List<Predicate> findAll(Predicate p){
+        AtomMatcher m = new AtomMatcher(p);
         List<Predicate> out = new LinkedList<>();
-        for (int i=0; i<set.size(); i++){
-            if (set.get(i).pred.equals(pred)){
-                out.add(set.get(i));
+        for (Predicate pr : this.set){
+            if (m.matchSingle(pr)){
+                out.add(pr);
             }
         }
         return out;
     }
     
-    public Predicate find(String pred){
-        List<Predicate> ls = this.findAll(pred);
+    public Predicate find(Predicate p){
+        List<Predicate> ls = this.findAll(p);
         if (ls.isEmpty())
             return null;
         return ls.get(0);
@@ -86,16 +97,7 @@ public class PredicateSet implements Serializable{
         }
         return true;
     }
-    
-    public boolean isSuperset(PredicateSet ps){
-        for (Predicate p : ps.set){
-            if (!this.contains(p)){
-                return false;
-            }
-        }
-        return true;
-    }
-    
+       
     public void prettyPrint(){
         String s = "";
         for (Predicate p : set){

@@ -62,7 +62,7 @@ public class Node implements Serializable{
     }
 
     public boolean isValid(PredicateSet ps) {
-        return preconditions.match(ps);
+        return preconditions.matchAny(ps);
     }
 
     public void addSuccessor(Node n) {
