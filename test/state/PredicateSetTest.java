@@ -51,7 +51,6 @@ public class PredicateSetTest {
         pset.addPredicate(abd);
         pset.addPredicate(ab);
         pset.addPredicate(xyz);  
-        pset.prettyPrint();
         assertEquals(3,pset.size());
         assertTrue(pset.contains(abc));
         assertTrue(pset.contains(xyz));
@@ -73,25 +72,15 @@ public class PredicateSetTest {
         assertEquals(pset.size(),1);
     }
 
-
-
-    /*@Test
+    @Test
     public void testFindAll() {
-        PredicateSet pset = new PredicateSet();
-        Predicate abc = new Predicate("a","b","c");
-        Predicate ab = new Predicate("a","b","d");
-        Predicate aee = new Predicate("a","e","e");
-        Predicate xyz = new Predicate("x","y","z");
         pset.addPredicate(abc);
-        pset.addPredicate(ab);
-        pset.addPredicate(aee);
+        pset.addPredicate(abd);
         pset.addPredicate(xyz);
-        for (Predicate p : pset.findAll(new Predicate("a","_","_"))){
-            System.out.print(p.toString());
-        }
-        assertEquals(3, pset.findAll(new Predicate("a","_","_")).size());
+        assertEquals(2, pset.findAll(new Predicate("a","_","_")).size());
+        assertEquals(2, pset.findAll(new Predicate("a","b","_")).size());
         assertEquals(1, pset.findAll(new Predicate("x","_","_")).size());
-        assertEquals(0, pset.findAll(new Predicate("b","_","_")).size());
+        assertEquals(0, pset.findAll(new Predicate("a","b","a")).size());
     }
        
     @Test
@@ -104,6 +93,20 @@ public class PredicateSetTest {
         ps2.addPredicate(bbb);
         ps1.union(ps2);
         assertEquals(ps1.size(),2); 
-    }*/
+        assertEquals(1,ps1.findAll(new Predicate("a","a","a")).size());
+        assertEquals(1,ps1.findAll(new Predicate("b","b","b")).size());
+    }
+    
+    @Test
+    public void testDifference(){
+        PredicateSet p1 = new PredicateSet();
+        p1.addPredicate(abc);
+        p1.addPredicate(abd);
+        p1.addPredicate(xyz);
+        PredicateSet p2 = new PredicateSet();
+        p2.addPredicate(ab);
+        p1.difference(p2);
+        assertEquals(p1.size(), 1);       
+    }
     
 }
