@@ -38,7 +38,6 @@ public class ChainH implements ChainGenerator{
         C.addNode(n);
         C.addEdge("struggle_outcome_positive","villain_prisoner");
         
-        
         C.serializeAs("H");
     }
     
