@@ -61,8 +61,8 @@ public class Node implements Serializable{
         return successors.toArray(new Node[]{});
     }
 
-    public boolean isValid(PredicateSet ps) {
-        return preconditions.matchAny(ps);
+    public boolean isValid(PredicateSet s) {
+        return preconditions.matchAny(s);
     }
 
     public void addSuccessor(Node n) {
@@ -71,6 +71,10 @@ public class Node implements Serializable{
     
     public int outdegree(){
         return successors.size();
+    }
+    
+    public boolean isFinal(){
+        return successors.isEmpty();
     }
     
     @Override
@@ -83,7 +87,6 @@ public class Node implements Serializable{
         }
         Node n = (Node)o;
         return (this.label.equals(n.label));
-        //return (this.toAdd.equals(n.toAdd) && this.toRemove.equals(n.toRemove) && this.preconditions.equals(n.preconditions));
     }
     
     public void prettyPrint(){

@@ -82,4 +82,14 @@ public class FunctionChainTest {
         assertFalse(c.contains(nn));
     }
     
+    @Test
+    public void testGetNodeById(){
+        FunctionChain c = new FunctionChain();
+        Node a = new Node("a", NodeType.EVENT);
+        Node b = new Node("b", NodeType.INTERNAL);
+        c.addNode(a);
+        c.addNode(b);
+        assertEquals(c.getNodeByLabel("b").type, NodeType.INTERNAL);
+    }
+    
 }

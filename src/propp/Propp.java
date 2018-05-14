@@ -6,6 +6,9 @@
 package propp;
 
 import graph.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import propp.chains.*;
 
 /**
@@ -18,20 +21,16 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ChainGenerator a = new ChainH();
-        a.createSave();
+        ChainUpdater.updateAllChains();
         SharedRandom srand = SharedRandom.getInstance();
         srand.setRandom();
         
-        FunctionChain C = FunctionChain.deserializeFrom("H");
-        
-        MarkovWalker mw = new MarkovWalker(C, new AleatoryTransition());
-        Node x;
-        while(mw.hasNext()){
-            x = mw.next();
-            x.prettyPrint();
+        String[] a = new String[]{"a","b","c"};
+        List<String> b = new LinkedList<>();
+        b = Arrays.asList(a);
+        for (String s : b){
+            System.out.println(s);
         }
-        mw.state.prettyPrint();
                  
     }
     

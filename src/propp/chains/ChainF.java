@@ -36,6 +36,7 @@ public class ChainF implements ChainGenerator{
         C.addNode(n);
         
         n = new Node("item_preparation", NodeType.ACTION);
+        n.preconditions = new AtomMatcher(new Predicate("donor_test_outcome","success"));
         C.addNode(n);
         C.setInitial(n);
         String t = "item_indication";
@@ -69,7 +70,7 @@ public class ChainF implements ChainGenerator{
         C.addEdge("item_seizure",ai);
         n = new Node("donor_servitude", NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("servitude","$donor","$hero"));
-        n.preconditions = new AtomMatcher(new Predicate("donor_test","success"));
+        n.preconditions = new AtomMatcher(new Predicate("donor_test_outcome","success"));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("donor_servitude",ah);

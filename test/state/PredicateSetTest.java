@@ -108,5 +108,5 @@ public class PredicateSetTest {
         p1.difference(p2);
         assertEquals(p1.size(), 1);       
     }
-    
+        
 }

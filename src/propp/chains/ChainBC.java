@@ -39,7 +39,7 @@ public class ChainBC implements ChainGenerator{
         C.addNode(n);
         C.addEdge("help_response", "help_response_ack");
         n = new Node("dispatch", NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("dispatch","$dispatcher"));
+        n.toAdd.addPredicate(new Predicate("dispatch","$dispatcher","$hero"));
         PredicateMatcher lackWealth = new AtomMatcher(new Predicate("lack","wealth","_"));
         PredicateMatcher lackBride = new AtomMatcher(new Predicate("lack","wealth","_"));
         n.preconditions = new NotMatcher(new OrMatcher(lackWealth, lackBride));

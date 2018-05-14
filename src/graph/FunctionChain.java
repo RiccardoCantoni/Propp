@@ -82,7 +82,6 @@ public class FunctionChain implements Serializable{
             out.writeObject(this);
             out.close();
             fileOut.close();
-            System.out.println("saved as "+filename+".ser");
         } catch (Exception exc) {
             System.out.println("serialization failed");
             exc.printStackTrace();
@@ -101,7 +100,6 @@ public class FunctionChain implements Serializable{
             System.out.println("deserialization failed");
             exc.printStackTrace();
         }
-        System.out.println("loaded "+filename+".ser");
         return c;
     }
     

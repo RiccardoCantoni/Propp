@@ -30,11 +30,15 @@ public class ChainH implements ChainGenerator{
         C.addEdge("fight","struggle_outcome_positive");
         C.addEdge("contest","struggle_outcome_positive");
         n=new Node("villain_slain", NodeType.OUTCOME);
-        n.preconditions = new AtomMatcher(new Predicate("lack","vengeance","kill"));
+        n.toAdd.addPredicate(new Predicate("dead","$villain"));
+        n.toRemove.addPredicate(new Predicate("lack","kill","$villain"));
+        n.preconditions = new AtomMatcher(new Predicate("lack","kill","$villain"));
         C.addNode(n);
         C.addEdge("struggle_outcome_positive","villain_slain");
         n=new Node("villain_prisoner", NodeType.OUTCOME);
-        n.preconditions = new AtomMatcher(new Predicate("lack","vengeance","imprison"));
+        n.toAdd.addPredicate(new Predicate("prisoner","$villain", "$hero"));
+        n.toRemove.addPredicate(new Predicate("lack","imprison","$villain"));
+        n.preconditions = new AtomMatcher(new Predicate("lack","imprison","$villain"));
         C.addNode(n);
         C.addEdge("struggle_outcome_positive","villain_prisoner");
         
