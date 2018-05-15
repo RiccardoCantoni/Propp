@@ -31,7 +31,6 @@ public class Propp {
         for (String s : b){
             System.out.println(s);
         }
-                 
     }
     
 }
