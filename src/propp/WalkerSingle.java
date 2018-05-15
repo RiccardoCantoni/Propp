@@ -7,7 +7,7 @@ package propp;
 
 import graph.*;
 import state.*;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  *
@@ -19,23 +19,29 @@ public class WalkerSingle implements Iterator<Node>{
     public Node currentNode;
     MarkovTransition transition;
     State state;
+    List<Node> path;
+    int pathIndex;
     
     public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState){
         this.chain = chain;
         this.transition = transition;
         this.state = initialState;
-        this.currentNode = chain.entryPoint;
+        AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
+        path = explorer.explorationPath(chain, initialState, transition);
+        pathIndex = 0;
     }
 
     @Override
     public boolean hasNext() {
-        return (currentNode.outdegree()>0);
+        return (pathIndex<path.size());
     }
 
     @Override
     public Node next() {
-        Node n = transition.nextNode(currentNode);
-        currentNode = n;
+        if (!this.hasNext())
+            throw new NoSuchElementException("next() invoked when hasNext() is false");
+        Node n = path.get(pathIndex);
+        pathIndex++;
         state.update(n);
         return n;
     }

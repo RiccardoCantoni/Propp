@@ -25,6 +25,8 @@ public class ChainUpdater {
         cg.createSave();
         cg = new ChainH();
         cg.createSave();
+        cg = new TestChainSmall();
+        cg.createSave();
         System.out.println("all chains updated successfully");
     }
     

@@ -4,7 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Riccardo/Documents/Propp/src/propp/AcyclicMarkovExplorer.java</file>
-            <file>file:/C:/Users/Riccardo/Documents/Propp/src/myUtils/ListComparer.java</file>
+            <file>file:/C:/Users/Riccardo/Documents/Propp/test/propp/AcyclicMarkovExplorerTest.java</file>
+            <file>file:/C:/Users/Riccardo/Documents/Propp/src/propp/WalkerSingle.java</file>
             <file>file:/C:/Users/Riccardo/Documents/Propp/src/propp/Propp.java</file>
         </group>
     </open-files>
