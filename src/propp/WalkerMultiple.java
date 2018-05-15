@@ -25,6 +25,7 @@ public class WalkerMultiple implements Iterator<Node>{
     
     WalkerSingle walkerSingle;
     
+    /*
     public WalkerMultiple(){
         chainSequence = new FunctionChain[6];
         chainIndex = 0;
@@ -38,6 +39,13 @@ public class WalkerMultiple implements Iterator<Node>{
         state = new State();
         transition = new AleatoryTransition();
         walkerSingle = new WalkerSingle(currentChain, transition, state);
+    }
+*/
+    
+    public WalkerMultiple(FunctionChain[] chainSequence, MarkovTransition transitionFunction){
+        this.chainSequence = chainSequence;
+        this.transition = transitionFunction;
+        
     }
 
     @Override

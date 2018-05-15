@@ -32,7 +32,7 @@ public class TestChainSmall implements ChainGenerator{
         G.addNode(n);
         G.addEdge("c","d");
         n = new Node("e", NodeType.NONE);
-        n.preconditions = new AtomMatcher(new Predicate("a","b","c"));
+        n.preconditions = new AtomMatcher(new Predicate("a","b","d"));
         G.addNode(n);
         G.addEdge("d","e");
         n = new Node("f", NodeType.NONE);
