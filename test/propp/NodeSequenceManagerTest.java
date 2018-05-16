@@ -29,12 +29,15 @@ public class NodeSequenceManagerTest {
         seq.add(new Node("b", NodeType.NONE));
         seq.add(new Node("$x", NodeType.NONE));
         seq.add(new Node("c", NodeType.NONE));
-        seq = NodeSequenceManager.clearLabelSequence(seq);
-        List<Node> clearSeq = new LinkedList<>();
-        clearSeq.add(new Node("a", NodeType.NONE));
-        clearSeq.add(new Node("b", NodeType.NONE));
-        clearSeq.add(new Node("c", NodeType.NONE));
-        assertTrue(ListUtil.listEquals(seq, clearSeq));
+        List<String> s1 = NodeSequenceManager.getLabelSequence(seq);
+        s1 = NodeSequenceManager.clearLabelSequence(s1);
+        seq = new LinkedList<>();
+        seq.add(new Node("a", NodeType.NONE));
+        seq.add(new Node("b", NodeType.NONE));
+        seq.add(new Node("c", NodeType.NONE));
+        List<String> s2 = NodeSequenceManager.getLabelSequence(seq);
+        s2 = NodeSequenceManager.clearLabelSequence(s2);
+        assertTrue(ListUtil.listEquals(s1,s2));
     }
     
 }
