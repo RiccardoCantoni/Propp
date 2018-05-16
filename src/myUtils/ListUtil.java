@@ -30,11 +30,19 @@ public class ListUtil {
            return ListUtil.listEquals(ls1,ls2);
     }
     
+    public static <T> String listToString (List<T> ls){
+        String s = "list: [";
+        for (T item : ls){
+            s+=item.toString()+"; ";
+        }
+        s = s.substring(0, s.length() - 2);
+        s += "]";
+        return s;
+    }
+    
     public static <T> void printList(List<T> ls){
         System.out.println("list size: "+ls.size());
-        for (T item : ls){
-            System.out.println(item.toString());
-        }
+        System.out.println(ListUtil.listToString(ls));
     }
     
 }

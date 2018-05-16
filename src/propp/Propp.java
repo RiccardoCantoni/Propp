@@ -8,6 +8,7 @@ package propp;
 import graph.*;
 import java.util.LinkedList;
 import java.util.List;
+import myUtils.ListUtil;
 import myUtils.LogManager;
 import propp.chains.*;
 import state.State;
@@ -27,14 +28,13 @@ public class Propp {
         SharedRandom srand = SharedRandom.getInstance();
         srand.setRandom();
         WalkerMultiple walker = new WalkerMultiple(WalkerMultiple.defaultSequence(), new AleatoryTransition());
-        List<Node> story = new LinkedList<>();
+        List<Node> nodeSequence = new LinkedList<>();
         while(walker.hasNext()){
-            story.add(walker.next());
+            nodeSequence.add(walker.next());
         }
+        List<String> story = NodeSequenceManager.getLabelSequence(nodeSequence);
         story = NodeSequenceManager.clearLabelSequence(story);
-        for (Node n:story){
-            System.out.println(n.label);
-        }
+        ListUtil.printList(story);
         
     }
     

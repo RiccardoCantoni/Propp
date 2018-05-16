@@ -15,12 +15,20 @@ import myUtils.StringMatcher;
  */
 public class NodeSequenceManager {
     
-    public static List<Node> clearLabelSequence(List<Node> seq){
-        List<Node> newSeq = new LinkedList<>();
-        for (Node n : seq){
-            if (!(StringMatcher.matchPrefix(n.label, "\\$"))){
+    public static List<String> clearLabelSequence(List<String> seq){
+        List<String> newSeq = new LinkedList<>();
+        for (String n : seq){
+            if (!(StringMatcher.matchPrefix(n, "\\$"))){
                 newSeq.add(n);
             }
+        }
+        return newSeq;
+    }
+    
+    public static List<String> getLabelSequence(List<Node> seq){
+        List<String> newSeq = new LinkedList<>();
+        for (Node n : seq){
+            newSeq.add(n.label);
         }
         return newSeq;
     }
