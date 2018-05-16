@@ -15,8 +15,8 @@ public class ChainBC implements ChainGenerator{
 
     public void createSave() {
         FunctionChain C = new FunctionChain();
+        C.FunctionName = "BC";
         Node n; 
-        
         String bc = "begin_counteraction";
         String dp = "departure";
         n = new Node(bc, NodeType.ACTION);

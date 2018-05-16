@@ -16,6 +16,7 @@ public class ChainAa implements ChainGenerator{
     
     public void createSave(){ 
     FunctionChain C = new FunctionChain();
+        C.FunctionName = "Aa";
         String lhe = "lack_helper";
         String lhu = "lack_human";
         String lo = "lack_object";

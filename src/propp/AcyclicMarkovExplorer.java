@@ -7,6 +7,7 @@ package propp;
 
 import graph.*;
 import java.util.*;
+import myUtils.LogManager;
 import state.*;
 
 /**
@@ -56,7 +57,10 @@ public class AcyclicMarkovExplorer {
                 tree.addLeaf(currentNode, currentParent);
             }else{//dead end, backtrack
                 if (fringe.isEmpty()){
-                    throw new GraphExplorationException("backtracking failed after node: " + currentNode.label);
+                    LogManager.addEntry("backtracking failed:");
+                    LogManager.addEntry("node: "+currentNode.label);
+                    LogManager.addEntry(state.toString());
+                    throw new GraphExplorationException("backtracking failed after node '" + currentNode.label +"' of chain "+graph.FunctionName);
                 }
                 currentNode = fringe.get(0);
                 fringe.remove(0);

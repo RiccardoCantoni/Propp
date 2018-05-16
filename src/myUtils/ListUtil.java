@@ -12,9 +12,9 @@ import java.util.List;
  *
  * @author Riccardo
  */
-public class ListComparer {
+public class ListUtil {
     
-    public static <T> boolean compareToList (List<T> ls1, List<T> ls2){
+    public static <T> boolean listEquals (List<T> ls1, List<T> ls2){
         if (ls1.size()!= ls2.size()){
             return false;
         }
@@ -25,9 +25,16 @@ public class ListComparer {
         return true;
     }
     
-    public static <T> boolean compareToArray (List<T> ls1, T[] array){
+    public static <T> boolean ListArrayEquals (List<T> ls1, T[] array){
         List<T> ls2 = Arrays.asList(array);
-           return ListComparer.compareToList(ls1,ls2);
+           return ListUtil.listEquals(ls1,ls2);
+    }
+    
+    public static <T> void printList(List<T> ls){
+        System.out.println("list size: "+ls.size());
+        for (T item : ls){
+            System.out.println(item.toString());
+        }
     }
     
 }

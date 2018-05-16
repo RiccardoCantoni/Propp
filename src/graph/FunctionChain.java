@@ -16,6 +16,7 @@ public class FunctionChain implements Serializable{
     
     public List<Node> nodes;
     public Node entryPoint;
+    public String FunctionName;
     
     public FunctionChain(){
         nodes = new LinkedList<>();

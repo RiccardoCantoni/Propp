@@ -27,11 +27,11 @@ public class AcyclicMarkovExplorerTest {
      * Test of explorationPath method, of class AcyclicMarkovExplorer.
      */
     @Test
-    public void testExplorationPath() {
+    public void testSinglePath() {
         FunctionChain G = FunctionChain.deserializeFrom("test_small");
         AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
         List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
-        assertTrue(ListComparer.compareToArray(path, 
+        assertTrue(ListUtil.ListArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("c", NodeType.NONE),
@@ -41,4 +41,24 @@ public class AcyclicMarkovExplorerTest {
         ));
     }
     
+    @Test
+    public void testMultiplePath() {
+        FunctionChain G = new FunctionChain();
+        Node n = new Node("a", NodeType.NONE);
+        G.addNode(n);
+        G.setInitial(n);
+        n = new Node("b", NodeType.NONE);
+        G.addNode(n);
+        G.setInitial(n);
+        G.addEdge("a", "b");
+        AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
+        List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
+        assertTrue(ListUtil.ListArrayEquals(path, 
+            new Node[]{
+            new Node("$entry_point", NodeType.NONE),
+            new Node("a", NodeType.NONE),
+            new Node("b", NodeType.NONE)
+            }
+        ));
+    }
 }

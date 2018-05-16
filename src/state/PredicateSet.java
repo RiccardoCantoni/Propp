@@ -99,6 +99,15 @@ public class PredicateSet implements Serializable{
         }
         return true;
     }
+    
+    @Override
+    public String toString(){
+        String s = "";
+        for (Predicate p : set){
+            s += (p.toString()+",");
+        }
+        return s;
+    }
        
     public void prettyPrint(){
         String s = "";

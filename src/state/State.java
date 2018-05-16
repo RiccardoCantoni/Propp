@@ -33,7 +33,14 @@ public class State {
         set.prettyPrint();
     }
     
+    @Override
+    public String toString(){
+        return "state: "+set.toString();
+    }
+    
     public boolean isValidNode(Node n){
         return n.isValid(set);
     }
+    
+    
 }

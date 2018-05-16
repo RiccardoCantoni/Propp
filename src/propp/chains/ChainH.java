@@ -17,8 +17,8 @@ public class ChainH implements ChainGenerator{
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
+        C.FunctionName = "H";
         Node n;
-        
         n=new Node("fight", NodeType.ACTION);
         C.addNode(n);
         C.setInitial(n);

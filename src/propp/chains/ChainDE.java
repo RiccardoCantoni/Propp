@@ -17,8 +17,8 @@ public class ChainDE implements ChainGenerator{
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
+        C.FunctionName = "DE";
         Node n; 
-        
         String ta = "test_ack";
         n = new Node(ta, NodeType.PI);
         C.addNode(n);

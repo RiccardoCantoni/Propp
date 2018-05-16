@@ -6,10 +6,12 @@
 package propp;
 
 import graph.*;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import myUtils.LogManager;
 import propp.chains.*;
+import state.State;
+
 
 /**
  *
@@ -24,13 +26,16 @@ public class Propp {
         ChainUpdater.updateAllChains();
         SharedRandom srand = SharedRandom.getInstance();
         srand.setRandom();
-        
-        String[] a = new String[]{"a","b","c"};
-        List<String> b = new LinkedList<>();
-        b = Arrays.asList(a);
-        for (String s : b){
-            System.out.println(s);
+        WalkerMultiple walker = new WalkerMultiple(WalkerMultiple.defaultSequence(), new AleatoryTransition());
+        List<Node> story = new LinkedList<>();
+        while(walker.hasNext()){
+            story.add(walker.next());
         }
+        story = NodeSequenceManager.clearLabelSequence(story);
+        for (Node n:story){
+            System.out.println(n.label);
+        }
+        
     }
     
 }

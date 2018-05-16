@@ -36,9 +36,6 @@ public class LabelTree {
     public void addLeaf(String leaf, String parent){
         if (!this.contains(parent)){
             throw new IllegalArgumentException("invalid leaf: parent not found: "+leaf+ ", " +parent);
-        }else{
-        if (this.contains(leaf))
-            throw new IllegalArgumentException("invalid leaf: leaf already present");
         }
         map.put(leaf, parent);
     }

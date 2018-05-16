@@ -18,8 +18,8 @@ public class ChainF implements ChainGenerator{
     public void createSave() {
         
         FunctionChain C = new FunctionChain();
+        C.FunctionName = "F";
         Node n;
-        
         String ai = "item_acquisition";
         String ah = "helper_acquisition";
         String ag = "guidance_acquisition";

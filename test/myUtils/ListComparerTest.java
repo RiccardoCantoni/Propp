@@ -43,8 +43,8 @@ public class ListComparerTest {
      */
     @Test
     public void testCompareToList() {
-        assertTrue(ListComparer.compareToList(ls1, ls2));
-        assertFalse(ListComparer.compareToList(ls1,ls3));
+        assertTrue(ListUtil.listEquals(ls1, ls2));
+        assertFalse(ListUtil.listEquals(ls1,ls3));
     }
 
     /**
@@ -52,9 +52,9 @@ public class ListComparerTest {
      */
     @Test
     public void testCompareToArray() {
-        assertTrue(ListComparer.compareToArray(ls1, a1));
-        assertFalse(ListComparer.compareToArray(ls1, a2));
-        assertFalse(ListComparer.compareToArray(ls1, a3));
+        assertTrue(ListUtil.ListArrayEquals(ls1, a1));
+        assertFalse(ListUtil.ListArrayEquals(ls1, a2));
+        assertFalse(ListUtil.ListArrayEquals(ls1, a3));
     }
     
 }

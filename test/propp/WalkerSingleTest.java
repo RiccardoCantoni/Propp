@@ -9,7 +9,7 @@ import graph.FunctionChain;
 import graph.*;
 import java.util.LinkedList;
 import java.util.List;
-import myUtils.ListComparer;
+import myUtils.ListUtil;
 import org.junit.*;
 import static org.junit.Assert.*;
 import state.*;
@@ -39,7 +39,7 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
-        assertTrue(ListComparer.compareToArray(path, 
+        assertTrue(ListUtil.ListArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("c", NodeType.NONE),
@@ -61,7 +61,7 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
-        assertTrue(ListComparer.compareToArray(path, 
+        assertTrue(ListUtil.ListArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("a", NodeType.NONE),

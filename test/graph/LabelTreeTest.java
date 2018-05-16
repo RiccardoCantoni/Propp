@@ -42,14 +42,6 @@ public class LabelTreeTest {
         assertTrue(tree.contains("b"));
         assertFalse(tree.contains("c"));
     }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testLeafAlreadyPresent() {  
-        tree.addLeaf("a", "root");
-        tree.addLeaf("b", "root");
-        tree.addLeaf("x", "a");
-        tree.addLeaf("x", "b");
-    }
     
     @Test(expected = IllegalArgumentException.class)
     public void testParentNotFound() { 

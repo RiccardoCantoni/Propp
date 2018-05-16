@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-SS36HBT" name="graph.LabelTreeTest" skipped="0" tests="5" time="0.062" timestamp="2018-05-15T09:28:22">
+<testsuite errors="0" failures="0" hostname="DESKTOP-SS36HBT" name="graph.LabelTreeTest" skipped="0" tests="4" time="0.062" timestamp="2018-05-16T09:02:57">
   <properties>
     <property name="netbeans.autoupdate.country" value="IT" />
     <property name="ant.file.type.Propp" value="file" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="Riccardo" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner graph.LabelTreeTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Riccardo\Documents\Propp\build\test\results\TEST-graph.LabelTreeTest.xml crashfile=C:\Users\Riccardo\Documents\Propp\build\junitvmwatcher8712550358454595902.properties propsfile=C:\Users\Riccardo\Documents\Propp\build\junit3636750549940484599.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner graph.LabelTreeTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Riccardo\Documents\Propp\build\test\results\TEST-graph.LabelTreeTest.xml crashfile=C:\Users\Riccardo\Documents\Propp\build\junitvmwatcher1480794410411560431.properties propsfile=C:\Users\Riccardo\Documents\Propp\build\junit6415771431358563614.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -314,10 +314,9 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="graph.LabelTreeTest" name="testParentNotFound" time="0.001" />
-  <testcase classname="graph.LabelTreeTest" name="testLeafAlreadyPresent" time="0.0" />
+  <testcase classname="graph.LabelTreeTest" name="testParentNotFound" time="0.0" />
   <testcase classname="graph.LabelTreeTest" name="testPathToRoot" time="0.0" />
-  <testcase classname="graph.LabelTreeTest" name="testContains" time="0.001" />
+  <testcase classname="graph.LabelTreeTest" name="testContains" time="0.0" />
   <testcase classname="graph.LabelTreeTest" name="testAddGetParent" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

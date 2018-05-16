@@ -16,54 +16,48 @@ import java.util.Iterator;
 public class WalkerMultiple implements Iterator<Node>{
     
     FunctionChain currentChain;
-    Node currentNode;
-    State state;
     MarkovTransition transition;
     
+    State state;
     FunctionChain[] chainSequence;
     int chainIndex;
     
     WalkerSingle walkerSingle;
     
-    /*
-    public WalkerMultiple(){
-        chainSequence = new FunctionChain[6];
-        chainIndex = 0;
-        chainSequence[0] = FunctionChain.deserializeFrom("Aa");
-        chainSequence[1] = FunctionChain.deserializeFrom("BC");
-        chainSequence[2] = FunctionChain.deserializeFrom("DE");
-        chainSequence[3] = FunctionChain.deserializeFrom("F");
-        chainSequence[4] = FunctionChain.deserializeFrom("G");
-        chainSequence[5] = FunctionChain.deserializeFrom("H");
-        currentChain = chainSequence[0];
-        state = new State();
-        transition = new AleatoryTransition();
-        walkerSingle = new WalkerSingle(currentChain, transition, state);
-    }
-*/
-    
     public WalkerMultiple(FunctionChain[] chainSequence, MarkovTransition transitionFunction){
         this.chainSequence = chainSequence;
         this.transition = transitionFunction;
-        
+        chainIndex = 0;
+        state = new State();
+        currentChain = chainSequence[chainIndex];
+        walkerSingle = new WalkerSingle(currentChain, transition, state);
     }
 
     @Override
     public boolean hasNext() {
-        return (walkerSingle.hasNext() || chainIndex<5);
+        return (walkerSingle.hasNext() || chainIndex<chainSequence.length-1);
     }
 
     @Override
     public Node next() {
         if (!walkerSingle.hasNext()){
             state = walkerSingle.getFinalState();
-            Node n = walkerSingle.currentNode;
-            
             chainIndex++;
             currentChain = chainSequence[chainIndex];
             walkerSingle = new WalkerSingle(currentChain, transition, state);
         }
         return walkerSingle.next();
+    }
+    
+    public static FunctionChain[] defaultSequence(){
+        FunctionChain[] seq = new FunctionChain[6];
+        seq[0] = FunctionChain.deserializeFrom("Aa");
+        seq[1] = FunctionChain.deserializeFrom("BC");
+        seq[2] = FunctionChain.deserializeFrom("DE");
+        seq[3] = FunctionChain.deserializeFrom("F");
+        seq[4] = FunctionChain.deserializeFrom("G");
+        seq[5] = FunctionChain.deserializeFrom("H");
+        return seq;
     }
     
 }
