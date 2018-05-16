@@ -18,7 +18,7 @@ public class NodeSequenceManager {
     public static List<Node> clearLabelSequence(List<Node> seq){
         List<Node> newSeq = new LinkedList<>();
         for (Node n : seq){
-            if (!(StringMatcher.beginsWith(n.label, "\\$"))){
+            if (!(StringMatcher.matchPrefix(n.label, "\\$"))){
                 newSeq.add(n);
             }
         }

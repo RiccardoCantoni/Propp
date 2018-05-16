@@ -19,10 +19,10 @@ public class StringMatcherTest {
      */
     @Test
     public void testBeginsWith() {
-        assertTrue(StringMatcher.beginsWith("$ciao", "\\$"));
-        assertTrue(StringMatcher.beginsWith("$", "\\$"));
-        assertFalse(StringMatcher.beginsWith("ciao", "\\$"));
-        assertFalse(StringMatcher.beginsWith("", "\\$"));
+        assertTrue(StringMatcher.matchPrefix("$ciao", "\\$"));
+        assertTrue(StringMatcher.matchPrefix("$", "\\$"));
+        assertFalse(StringMatcher.matchPrefix("ciao", "\\$"));
+        assertFalse(StringMatcher.matchPrefix("", "\\$"));
     }
     
 }

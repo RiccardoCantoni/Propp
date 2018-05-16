@@ -11,7 +11,7 @@ package myUtils;
  */
 public class StringMatcher {
     
-    public static boolean beginsWith(String s, String c){
+    public static boolean matchPrefix(String s, String c){
         String pattern = c+"(.*)";
         return s.matches(pattern);
     }
