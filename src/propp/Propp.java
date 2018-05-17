@@ -34,8 +34,7 @@ public class Propp {
         }
         List<String> story = NodeSequenceManager.getLabelSequence(nodeSequence);
         story = NodeSequenceManager.clearLabelSequence(story);
-        ListUtil.printList(story);
-        
+        ListUtil.printList(story, true); 
     }
     
 }

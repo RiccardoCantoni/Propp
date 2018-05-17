@@ -7,6 +7,7 @@ package propp;
 
 import graph.*;
 import java.util.*;
+import java.util.stream.Collectors;
 import myUtils.StringMatcher;
 
 /**
@@ -16,21 +17,13 @@ import myUtils.StringMatcher;
 public class NodeSequenceManager {
     
     public static List<String> clearLabelSequence(List<String> seq){
-        List<String> newSeq = new LinkedList<>();
-        for (String n : seq){
-            if (!(StringMatcher.matchPrefix(n, "\\$"))){
-                newSeq.add(n);
-            }
-        }
-        return newSeq;
+        seq.removeIf(s->StringMatcher.matchPrefix(s, "\\$"));
+        return seq;
     }
     
     public static List<String> getLabelSequence(List<Node> seq){
-        List<String> newSeq = new LinkedList<>();
-        for (Node n : seq){
-            newSeq.add(n.label);
-        }
-        return newSeq;
+        List<String> labels = seq.stream().map(n->n.label).collect(Collectors.toList());
+        return labels;
     }
-    
+  
 }

@@ -32,9 +32,15 @@ public class ListUtil {
     
     public static <T> String listToString (List<T> ls){
         String s = "list: [";
-        for (T item : ls){
-            s+=item.toString()+"; ";
-        }
+        s = ls.stream().map((item) -> item.toString()+"; ").reduce(s, String::concat);
+        s = s.substring(0, s.length() - 2);
+        s += "]";
+        return s;
+    }
+    
+    public static <T> String listToString (List<T> ls, boolean newline){
+        String s = "list: [";
+        s = ls.stream().map((item) -> item.toString()+";\r\n").reduce(s, String::concat);
         s = s.substring(0, s.length() - 2);
         s += "]";
         return s;
@@ -43,6 +49,11 @@ public class ListUtil {
     public static <T> void printList(List<T> ls){
         System.out.println("list size: "+ls.size());
         System.out.println(ListUtil.listToString(ls));
+    }
+    
+    public static <T> void printList(List<T> ls, boolean newline){
+        System.out.println("list size: "+ls.size());
+        System.out.println(ListUtil.listToString(ls, true));
     }
     
 }
