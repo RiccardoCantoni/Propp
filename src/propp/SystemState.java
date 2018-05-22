@@ -5,17 +5,20 @@
  */
 package propp;
 
+import myUtils.ConfigurationManager;
+
 /**
  *
  * @author Riccardo
  */
 public class SystemState {
     
-    //private static SystemState instance;
-    public static boolean loggingMode = false;
+    private static SystemState instance;
     
-    /*private SystemState() {
-        loggingMode = false;
+    public boolean loggingMode = false;
+    
+    private SystemState() {
+        loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
     }
     
     public static SystemState getInstance() {
@@ -23,6 +26,6 @@ public class SystemState {
           instance = new SystemState();
         }
         return instance;
-    }*/
+    }
     
 }

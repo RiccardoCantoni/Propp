@@ -8,11 +8,9 @@ package propp;
 import graph.*;
 import java.util.LinkedList;
 import java.util.List;
-import myUtils.ListUtil;
-import myUtils.LogManager;
 import propp.chains.*;
 import state.State;
-
+import myUtils.*;
 
 /**
  *
