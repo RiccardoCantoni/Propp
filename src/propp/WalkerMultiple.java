@@ -21,6 +21,7 @@ public class WalkerMultiple implements Iterator<Node>{
     State state;
     FunctionChain[] chainSequence;
     int chainIndex;
+    Node n;
     
     WalkerSingle walkerSingle;
     
@@ -46,7 +47,10 @@ public class WalkerMultiple implements Iterator<Node>{
             currentChain = chainSequence[chainIndex];
             walkerSingle = new WalkerSingle(currentChain, transition, state);
         }
-        return walkerSingle.next();
+        n = walkerSingle.next();
+        if (n.label.equals("$entry_point"))
+        	n.label = "$"+currentChain.FunctionName;
+        return n;
     }
     
     public static FunctionChain[] defaultSequence(){
