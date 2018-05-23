@@ -25,7 +25,7 @@ public class ListUtil {
         return true;
     }
     
-    public static <T> boolean ListArrayEquals (List<T> ls1, T[] array){
+    public static <T> boolean listArrayEquals (List<T> ls1, T[] array){
         List<T> ls2 = Arrays.asList(array);
            return ListUtil.listEquals(ls1,ls2);
     }

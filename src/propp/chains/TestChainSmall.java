@@ -17,6 +17,7 @@ public class TestChainSmall implements ChainGenerator{
     @Override
     public void createSave() {
         FunctionChain G = new FunctionChain();
+        G.FunctionName = "test";
         Node n;
         n = new Node("a", NodeType.NONE);
         G.addNode(n);

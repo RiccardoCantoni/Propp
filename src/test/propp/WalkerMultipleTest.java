@@ -25,6 +25,7 @@ public class WalkerMultipleTest {
     @Test
     public void testOne() {
         FunctionChain C0 = new FunctionChain();
+        C0.FunctionName = "test";
         Node n = new Node("z", NodeType.NONE);
         n.toAdd.addPredicate(new Predicate("a","b","c"));
         C0.addNode(n);
@@ -35,20 +36,21 @@ public class WalkerMultipleTest {
         while(walker.hasNext()){
             walk.add(walker.next());
         }
-        assertTrue(ListUtil.ListArrayEquals(walk, 
-            new Node[]{
-            new Node("$entry_point", NodeType.NONE),
-            new Node("z", NodeType.NONE),
-            new Node("$entry_point", NodeType.NONE),
-            new Node("a", NodeType.NONE),
-            new Node("b", NodeType.NONE)
-            }
-        ));  
+        List<Node> expectedWalk = Arrays.asList( 
+                new Node[]{
+                        new Node("$test", NodeType.NONE),
+                        new Node("z", NodeType.NONE),
+                        new Node("$test", NodeType.NONE),
+                        new Node("a", NodeType.NONE),
+                        new Node("b", NodeType.NONE)
+                        });
+        assertTrue(ListUtil.listEquals(walk, expectedWalk));
     }
     
     @Test
     public void testTwo() {
         FunctionChain C0 = new FunctionChain();
+        C0.FunctionName = "test";
         Node n = new Node("z", NodeType.NONE);
         n.toAdd.addPredicate(new Predicate("a","b","d"));
         C0.addNode(n);
@@ -59,11 +61,11 @@ public class WalkerMultipleTest {
         while(walker.hasNext()){
             walk.add(walker.next());
         }
-        assertTrue(ListUtil.ListArrayEquals(walk, 
+        assertTrue(ListUtil.listArrayEquals(walk, 
             new Node[]{
-            new Node("$entry_point", NodeType.NONE),
+            new Node("$test", NodeType.NONE),
             new Node("z", NodeType.NONE),
-            new Node("$entry_point", NodeType.NONE),
+            new Node("$test", NodeType.NONE),
             new Node("c", NodeType.NONE),
             new Node("d", NodeType.NONE),
             new Node("e", NodeType.NONE)

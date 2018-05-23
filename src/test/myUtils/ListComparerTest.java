@@ -53,9 +53,9 @@ public class ListComparerTest {
      */
     @Test
     public void testCompareToArray() {
-        assertTrue(ListUtil.ListArrayEquals(ls1, a1));
-        assertFalse(ListUtil.ListArrayEquals(ls1, a2));
-        assertFalse(ListUtil.ListArrayEquals(ls1, a3));
+        assertTrue(ListUtil.listArrayEquals(ls1, a1));
+        assertFalse(ListUtil.listArrayEquals(ls1, a2));
+        assertFalse(ListUtil.listArrayEquals(ls1, a3));
     }
     
 }

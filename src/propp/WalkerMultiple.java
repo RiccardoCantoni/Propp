@@ -60,7 +60,7 @@ public class WalkerMultiple implements Iterator<Node>{
         seq[2] = FunctionChain.deserializeFrom("DE");
         seq[3] = FunctionChain.deserializeFrom("F");
         seq[4] = FunctionChain.deserializeFrom("G");
-        seq[5] = FunctionChain.deserializeFrom("H");
+        seq[5] = FunctionChain.deserializeFrom("HJ");
         return seq;
     }
     

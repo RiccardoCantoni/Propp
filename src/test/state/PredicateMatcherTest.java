@@ -6,6 +6,9 @@
 package test.state;
 
 import org.junit.*;
+
+import myUtils.ListUtil;
+
 import static org.junit.Assert.*;
 import state.*;
 
@@ -77,6 +80,18 @@ public class PredicateMatcherTest {
         assertTrue(m.matchAny(ps));
         ps.addPredicate(p3);
         assertFalse(m.matchAny(ps));
+    }
+    
+    @Test
+    public void testMatchRequired() {
+        AtomMatcher p1m = new AtomMatcher(p1);
+        AtomMatcher p2m = new AtomMatcher(p2);
+        AtomMatcher p3m = new AtomMatcher(p3);
+        PredicateSet ps = new PredicateSet();
+        ps.addPredicate(p1);
+        PredicateMatcher m = new AndMatcher(new OrMatcher(p1m,p2m),new NotMatcher(p3m));
+        //(A | B) & !C
+        assertTrue(ListUtil.listArrayEquals(m.requiredPredicates(), new Predicate[] {p1,p2,p3}));
     }
 
 }

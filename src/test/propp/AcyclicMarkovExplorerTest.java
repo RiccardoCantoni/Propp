@@ -27,14 +27,13 @@ public class AcyclicMarkovExplorerTest {
         FunctionChain G = FunctionChain.deserializeFrom("test_small");
         AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
         List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
-        assertTrue(ListUtil.ListArrayEquals(path, 
-            new Node[]{
-            new Node("$entry_point", NodeType.NONE),
-            new Node("c", NodeType.NONE),
-            new Node("d", NodeType.NONE),
-            new Node("f", NodeType.NONE)
-            }
-        ));
+        List<Node> path2 = Arrays.asList(new Node[]{
+                new Node("$entry_point", NodeType.NONE),
+                new Node("c", NodeType.NONE),
+                new Node("d", NodeType.NONE),
+                new Node("f", NodeType.NONE)
+                });
+        assertTrue(ListUtil.listEquals(path, path2)); 
     }
     
     @Test
@@ -49,7 +48,7 @@ public class AcyclicMarkovExplorerTest {
         G.addEdge("a", "b");
         AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
         List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
-        assertTrue(ListUtil.ListArrayEquals(path, 
+        assertTrue(ListUtil.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("a", NodeType.NONE),

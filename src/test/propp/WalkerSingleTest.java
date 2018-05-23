@@ -39,7 +39,7 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
-        assertTrue(ListUtil.ListArrayEquals(path, 
+        assertTrue(ListUtil.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("c", NodeType.NONE),
@@ -61,7 +61,7 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
-        assertTrue(ListUtil.ListArrayEquals(path, 
+        assertTrue(ListUtil.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("a", NodeType.NONE),
