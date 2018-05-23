@@ -23,7 +23,7 @@ public class ChainUpdater {
         cg.createSave();
         cg = new ChainG();
         cg.createSave();
-        cg = new ChainH();
+        cg = new ChainHJ();
         cg.createSave();
         cg = new TestChainSmall();
         cg.createSave();
