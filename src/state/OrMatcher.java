@@ -26,4 +26,12 @@ public class OrMatcher implements PredicateMatcher, Serializable{
         return (pm1.matchAny(pset) || pm2.matchAny(pset));
     }
     
+	@Override
+	public List<Predicate> requiredPredicates() {
+		List<Predicate> ls1 = pm1.requiredPredicates();
+		List<Predicate> ls2 = pm2.requiredPredicates();
+		ls1.addAll(ls2);
+		return ls1;
+	}
+    
 }

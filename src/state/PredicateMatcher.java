@@ -5,12 +5,11 @@
  */
 package state;
 
-/**
- *
- * @author Riccardo
- */
+import java.util.List;
+
 public interface PredicateMatcher{
     
     public boolean matchAny(PredicateSet pset);
+    public List<Predicate> requiredPredicates();
     
 }

@@ -6,6 +6,7 @@
 package state;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -23,5 +24,10 @@ public class NotMatcher implements PredicateMatcher, Serializable{
     public boolean matchAny(PredicateSet pset) {
         return !pm.matchAny(pset);
     }
+    
+	@Override
+	public List<Predicate> requiredPredicates() {
+		return pm.requiredPredicates();
+	}
     
 }

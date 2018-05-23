@@ -6,6 +6,7 @@
 package state;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -24,5 +25,13 @@ public class AndMatcher implements PredicateMatcher, Serializable{
     public boolean matchAny(PredicateSet pset) {
         return (pm1.matchAny(pset) && pm2.matchAny(pset));
     }
+
+	@Override
+	public List<Predicate> requiredPredicates() {
+		List<Predicate> ls1 = pm1.requiredPredicates();
+		List<Predicate> ls2 = pm2.requiredPredicates();
+		ls1.addAll(ls2);
+		return ls1;
+	}
     
 }

@@ -6,6 +6,8 @@
 package state;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -53,5 +55,12 @@ public class AtomMatcher implements PredicateMatcher, Serializable{
         if (s1.equals(s2)) return 0;
         return -1;
     }
+
+	@Override
+	public List<Predicate> requiredPredicates() {
+		List<Predicate> p = new LinkedList<>();
+		p.add(this.predicate);
+		return p;
+	}
     
 }

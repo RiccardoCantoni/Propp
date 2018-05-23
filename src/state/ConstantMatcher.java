@@ -6,6 +6,8 @@
 package state;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -23,5 +25,10 @@ public class ConstantMatcher implements PredicateMatcher, Serializable{
     public boolean matchAny(PredicateSet pset) {
         return constant;
     }
+    
+	@Override
+	public List<Predicate> requiredPredicates() {
+		return new LinkedList<Predicate>();
+	}
     
 }
