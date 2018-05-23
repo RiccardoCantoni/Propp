@@ -23,7 +23,6 @@ public class ChainAa implements ChainGenerator{
         String lVengeance = "lack_vengeance";
         String lWealth = "lack_wealth";
         String lFreedom = "lack_freedom";
-        String lBride = "lack_bride";
         
         Node n;
         n = new Node(lHelper, NodeType.EVENT);
@@ -40,10 +39,6 @@ public class ChainAa implements ChainGenerator{
         C.addNode(n);
         n = new Node(lFreedom, NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("lack","freedom"));
-        C.addNode(n);
-        n = new Node(lBride, NodeType.EVENT);
-        n.toAdd.addPredicate(new Predicate("lack","bride"));
-        n.preconditions = new AtomMatcher(new Predicate("temporary","predicate"));
         C.addNode(n);
         n = new Node("abduction", NodeType.ACTION);
         n.toAdd.addPredicate(new Predicate("villainy","abduction","$character"));
