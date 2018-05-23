@@ -25,14 +25,28 @@ public class ChainHJ implements ChainGenerator{
         n=new Node("contest", NodeType.ACTION);
         C.addNode(n);
         C.setInitial(n);
+        n=new Node("aid_used", NodeType.ACTION);
+        C.addNode(n);
+        n=new Node("aid_unavailable", NodeType.EVENT);
+        C.addNode(n);
         n=new Node("struggle_outcome_positive", NodeType.OUTCOME);
         C.addNode(n);
         n=new Node("struggle_outcome_negative", NodeType.OUTCOME);
         C.addNode(n);
+        
         C.addEdge("fight","struggle_outcome_positive");
         C.addEdge("contest","struggle_outcome_positive");
         C.addEdge("fight","struggle_outcome_negative");
         C.addEdge("contest","struggle_outcome_negative");
+        
+        C.addEdge("fight","aid_available");
+        C.addEdge("contest","aid_available");
+        C.addEdge("fight","aid_unavailable");
+        C.addEdge("contest","aid_unavailable");
+        
+        C.addEdge("aid_unavailable","struggle_outcome_negative");
+        C.addEdge("aid_available","struggle_outcome_positive");
+        
         n=new Node("branding_mark", NodeType.EVENT);
         C.addNode(n);
         n=new Node("branding_item", NodeType.EVENT);
