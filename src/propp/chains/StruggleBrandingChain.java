@@ -6,18 +6,17 @@
 package propp.chains;
 
 import graph.*;
-import state.*;
 
 /**
  *
  * @author Riccardo
  */
-public class ChainHJ implements ChainGenerator{
+public class StruggleBrandingChain implements ChainGenerator{
 
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "HJ";
+        C.FunctionName = "StruggleBranding";
         Node n;
         n=new Node("fight", NodeType.ACTION);
         C.addNode(n);
@@ -55,7 +54,7 @@ public class ChainHJ implements ChainGenerator{
         C.addEdge("struggle_outcome_positive", "branding_item");
         C.addEdge("struggle_outcome_negative", "branding_mark");     
         
-        C.serializeAs("HJ");
+        C.serialize();
     }
     
 }

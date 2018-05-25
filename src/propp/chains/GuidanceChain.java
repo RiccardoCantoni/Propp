@@ -12,12 +12,12 @@ import state.*;
  *
  * @author Riccardo
  */
-public class ChainG implements ChainGenerator{
+public class GuidanceChain implements ChainGenerator{
 
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "G";
+        C.FunctionName = "Guidance";
         Node n;
         Predicate atg = new Predicate("acquisition_type","guidance");
         Predicate ath = new Predicate("acquisition_type","helper");
@@ -56,7 +56,7 @@ public class ChainG implements ChainGenerator{
         C.setInitial(n);
         C.addEdge("guided_travel",a);
         
-        C.serializeAs("G");
+        C.serialize();
     }
     
 }

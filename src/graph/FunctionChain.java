@@ -76,6 +76,10 @@ public class FunctionChain implements Serializable{
         return this.getNodeByLabel(s2);
     }
     
+    public void serialize() {
+    	serializeAs(this.FunctionName);
+    }
+    
     public void serializeAs(String filename){
         try {
             FileOutputStream fileOut = new FileOutputStream("markovChains/"+filename+".mc");

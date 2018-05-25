@@ -12,12 +12,12 @@ import state.*;
  *
  * @author Riccardo
  */
-public class ChainDE implements ChainGenerator{
+public class FirstFunctionReactionChain implements ChainGenerator{
 
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "DE";
+        C.FunctionName = "FirstFunctionReaction";
         Node n; 
         String ta = "test_ack";
         n = new Node(ta, NodeType.PI);
@@ -93,7 +93,7 @@ public class ChainDE implements ChainGenerator{
         C.setInitial(n);
         C.addEdge("donor_need",ta);
 
-        C.serializeAs("DE");
+        C.serialize();
     }
     
 }

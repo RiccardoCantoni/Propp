@@ -55,13 +55,13 @@ public class WalkerMultiple implements Iterator<Node>{
     
     public static FunctionChain[] defaultSequence(){
         FunctionChain[] seq = new FunctionChain[] {
-	        FunctionChain.deserializeFrom("Aa"),
-	        FunctionChain.deserializeFrom("BC"),
-	        FunctionChain.deserializeFrom("DE"),
-	        FunctionChain.deserializeFrom("F"),
-	        FunctionChain.deserializeFrom("G"),
-	        FunctionChain.deserializeFrom("HJ"),
-	        FunctionChain.deserializeFrom("K")
+	        FunctionChain.deserializeFrom("VillainyLack"),
+	        FunctionChain.deserializeFrom("MediationCounteraction"),
+	        FunctionChain.deserializeFrom("FirstFunctionReaction"),
+	        FunctionChain.deserializeFrom("Acquisition"),
+	        FunctionChain.deserializeFrom("Guidance"),
+	        FunctionChain.deserializeFrom("StruggleBranding"),
+	        FunctionChain.deserializeFrom("Liquidation")
         };
         return seq;
     }

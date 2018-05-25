@@ -12,11 +12,11 @@ import state.*;
  *
  * @author Riccardo
  */
-public class ChainAa implements ChainGenerator{
+public class VillainyLackChain implements ChainGenerator{
     
     public void createSave(){ 
     FunctionChain C = new FunctionChain();
-        C.FunctionName = "Aa";
+        C.FunctionName = "VillainyLack";
         
         String lHelper = "lack_helper";
         String lItem = "lack_item";
@@ -94,7 +94,7 @@ public class ChainAa implements ChainGenerator{
         C.addEdge("war",lItem);
         C.addEdge("war",lVengeance);
         
-        C.serializeAs("Aa");
+        C.serialize();
     }
     
 }

@@ -8,14 +8,13 @@ import state.*;
 import graph.*;
 
 /**
- *
  * @author Riccardo
  */
-public class ChainBC implements ChainGenerator{
+public class MediationCounteractionChain implements ChainGenerator{
 
     public void createSave() {
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "BC";
+        C.FunctionName = "MediationCounteraction";
         Node n; 
         String bc = "begin_counteraction";
         String dp = "departure";
@@ -40,7 +39,7 @@ public class ChainBC implements ChainGenerator{
         C.addEdge("help_response", "help_response_ack");
         n = new Node("dispatch", NodeType.ACTION);
         n.toAdd.addPredicate(new Predicate("dispatch","$dispatcher","$hero"));
-        n.preconditions = new AtomMatcher(new Predicate("lack","wealth","_"));
+        n.preconditions = new NotMatcher(new AtomMatcher(new Predicate("lack","wealth","_")));
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("help_response_ack", "dispatch");
@@ -63,8 +62,7 @@ public class ChainBC implements ChainGenerator{
         C.addEdge("misfortune_announcement","misfortune_announcement_ack");
         C.addEdge("misfortune_announcement_ack",bc);
         
-        C.serializeAs("BC");
-        
+        C.serialize();
     }
     
 }

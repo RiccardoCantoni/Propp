@@ -23,19 +23,19 @@ public class ChainUpdater {
     
     public static void updateAllChains(){
         ChainGenerator cg;
-        cg = new ChainAa();
+        cg = new VillainyLackChain();
         cg.createSave();
-        cg = new ChainBC();
+        cg = new MediationCounteractionChain();
         cg.createSave();
-        cg = new ChainDE();
+        cg = new FirstFunctionReactionChain();
         cg.createSave();
-        cg = new ChainF();
+        cg = new AcquisitionChain();
         cg.createSave();
-        cg = new ChainG();
+        cg = new GuidanceChain();
         cg.createSave();
-        cg = new ChainHJ();
+        cg = new StruggleBrandingChain();
         cg.createSave();
-        cg = new ChainK();
+        cg = new LiquidationChain();
         cg.createSave();
         cg = new TestChainSmall();
         cg.createSave();

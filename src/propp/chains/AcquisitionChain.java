@@ -12,13 +12,13 @@ import state.*;
  *
  * @author Riccardo
  */
-public class ChainF implements ChainGenerator{
+public class AcquisitionChain implements ChainGenerator{
 
     @Override
     public void createSave() {
         
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "F";
+        C.FunctionName = "Acquisition";
         Node n;
         String ai = "item_acquisition";
         String ah = "helper_acquisition";
@@ -76,7 +76,7 @@ public class ChainF implements ChainGenerator{
         C.addEdge("donor_servitude",ah);
         C.addEdge("donor_servitude",ag);
         
-        C.serializeAs("F");
+        C.serialize();
         
     }
     

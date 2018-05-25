@@ -3,12 +3,12 @@ package propp.chains;
 import graph.*;
 import state.*;
 
-public class ChainK implements ChainGenerator{
+public class LiquidationChain implements ChainGenerator{
 
 	@Override
 	public void createSave() {
 		FunctionChain C = new FunctionChain();
-		C.FunctionName = "K";
+		C.FunctionName = "Liquidation";
 		Node n;
 		
 		n = new Node("item_seizure", NodeType.ACTION);
@@ -43,7 +43,7 @@ public class ChainK implements ChainGenerator{
 		C.addNode(n);
 		C.setInitial(n);
 		
-		C.serializeAs("K");
+		C.serialize();
 	}
 
 }
