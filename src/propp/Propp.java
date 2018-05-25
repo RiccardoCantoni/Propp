@@ -28,7 +28,7 @@ public class Propp {
         ChainUpdater.updateAllChains();
         SharedRandom srand = SharedRandom.getInstance();
         srand.setRandom();
-        List<String> story = NodeSequenceManager.getLabelSequence(walkSingleChain("ReconDelivery"));
+        List<String> story = NodeSequenceManager.getLabelSequence(walkAll());
         ListUtil.printList(story, true);
         //story = NodeSequenceManager.clearLabelSequence(story);    
     }

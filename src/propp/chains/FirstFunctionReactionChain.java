@@ -29,11 +29,11 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         C.addNode(n);
         C.addEdge("test_ack","test_outcome_failure");
         n = new Node("test_outcome_success_ack", NodeType.PI);
-        n.toAdd.addPredicate(new Predicate("donor_test_outcome","success"));
+        n.toAdd.addPredicate(new Predicate("donor_test_outcome","positive"));
         C.addNode(n);
         C.addEdge("test_outcome_success","test_outcome_success_ack");
         n = new Node("test_outcome_failure_ack", NodeType.PI);
-        n.toAdd.addPredicate(new Predicate("donor_test_outcome","failure"));
+        n.toAdd.addPredicate(new Predicate("donor_test_outcome","negative"));
         C.addNode(n);
         C.addEdge("test_outcome_failure","test_outcome_failure_ack");
         n = new Node("donor_test", NodeType.ACTION);

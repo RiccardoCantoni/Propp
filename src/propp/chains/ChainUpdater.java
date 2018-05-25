@@ -39,6 +39,8 @@ public class ChainUpdater {
         cg.createSave();
         cg = new ReconDeliveryChain();
         cg.createSave();
+        cg = new ReturnChain();
+        cg.createSave();
         cg = new TestChainSmall();
         cg.createSave();
         System.out.println("all chains updated successfully");

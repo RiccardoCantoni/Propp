@@ -5,7 +5,10 @@
  */
 package propp.chains;
 
-import graph.*;
+import graph.FunctionChain;
+import graph.Node;
+import graph.NodeType;
+import state.Predicate;
 
 /**
  *
@@ -29,8 +32,10 @@ public class StruggleBrandingChain implements ChainGenerator{
         n=new Node("aid_unavailable", NodeType.EVENT);
         C.addNode(n);
         n=new Node("struggle_outcome_positive", NodeType.OUTCOME);
+        n.toAdd.addPredicate(new Predicate("struggle_outcome","positive","_"));
         C.addNode(n);
         n=new Node("struggle_outcome_negative", NodeType.OUTCOME);
+        n.toAdd.addPredicate(new Predicate("struggle_outcome","negative","_"));
         C.addNode(n);
         
         C.addEdge("fight","struggle_outcome_positive");
@@ -52,7 +57,7 @@ public class StruggleBrandingChain implements ChainGenerator{
         C.addNode(n);
         C.addEdge("struggle_outcome_positive", "branding_mark");
         C.addEdge("struggle_outcome_positive", "branding_item");
-        C.addEdge("struggle_outcome_negative", "branding_mark");     
+        C.addEdge("struggle_outcome_negative", "branding_mark");
         
         C.serialize();
     }
