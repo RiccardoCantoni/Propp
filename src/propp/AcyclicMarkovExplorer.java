@@ -48,7 +48,7 @@ public class AcyclicMarkovExplorer {
             successors = getValidSuccessors(currentNode);
             if (!successors.isEmpty()){
                 currentParent = currentNode;
-                currentNode = transition.nextNode(currentNode);
+                currentNode = transition.nextNode(successors);
                 successors.remove(currentNode);
                 for (Node succ : successors){
                     tree.addLeaf(succ, currentParent);

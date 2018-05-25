@@ -5,6 +5,8 @@
  */
 package graph;
 
+import java.util.List;
+
 /**
  *
  * @author Riccardo
@@ -12,10 +14,10 @@ package graph;
 public class PickFirstTransition implements MarkovTransition{
 
     @Override
-    public Node nextNode(Node n) {
-        if (n.outdegree()==0) 
+    public Node nextNode(List<Node> successors) {
+        if (successors.isEmpty()) 
             throw new GraphExplorationException("markov transition failed");
-        return n.successors.get(0);
+        return successors.get(0);
     }
     
 }

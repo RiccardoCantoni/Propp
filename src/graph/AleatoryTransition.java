@@ -5,6 +5,7 @@
  */
 package graph;
 
+import java.util.List;
 
 /**
  *
@@ -12,15 +13,15 @@ package graph;
  */
 public class AleatoryTransition implements MarkovTransition{
     
-    SharedRandom rnd;
-    
+	SharedRandom rnd;
+	
     public AleatoryTransition(){
         rnd = SharedRandom.getInstance();
     }
 
     @Override
-    public Node nextNode(Node n) {
-        return n.successors()[rnd.nextInt(n.successors().length)];
+    public Node nextNode(List<Node> validSuccessors) {
+    	return validSuccessors.get(rnd.nextInt(validSuccessors.size()));
     }
     
 }

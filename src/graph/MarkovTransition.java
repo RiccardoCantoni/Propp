@@ -5,12 +5,14 @@
  */
 package graph;
 
+import java.util.List;
+
 /**
  *
  * @author Riccardo
  */
 public interface MarkovTransition {
     
-    public Node nextNode(Node n);
+    public Node nextNode(List<Node> validSuccessors);
     
 }
