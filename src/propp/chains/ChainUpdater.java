@@ -37,6 +37,8 @@ public class ChainUpdater {
         cg.createSave();
         cg = new LiquidationChain();
         cg.createSave();
+        cg = new ReconDeliveryChain();
+        cg.createSave();
         cg = new TestChainSmall();
         cg.createSave();
         System.out.println("all chains updated successfully");
@@ -65,14 +67,15 @@ public class ChainUpdater {
     }
     
     private static FunctionChain[] defaultSequence(){
-        FunctionChain[] seq = new FunctionChain[6];
+    	throw new UnsupportedOperationException("legacy method needs to be reimplemented");
+        /*FunctionChain[] seq = new FunctionChain[6];
         seq[0] = FunctionChain.deserializeFrom("Aa");
         seq[1] = FunctionChain.deserializeFrom("BC");
         seq[2] = FunctionChain.deserializeFrom("DE");
         seq[3] = FunctionChain.deserializeFrom("F");
         seq[4] = FunctionChain.deserializeFrom("G");
         seq[5] = FunctionChain.deserializeFrom("HJ");
-        return seq;
+        return seq;*/
     }
     
 }
