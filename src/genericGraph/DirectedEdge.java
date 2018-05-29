@@ -1,6 +1,8 @@
 package genericGraph;
 
-public class DirectedEdge<T> implements Cloneable{
+import java.io.Serializable;
+
+public class DirectedEdge<T> implements Cloneable, Serializable{
 
 	public T from, to;
 	

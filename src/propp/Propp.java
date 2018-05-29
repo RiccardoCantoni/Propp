@@ -26,13 +26,15 @@ public class Propp {
      */
     public static void main(String[] args) {
         ChainUpdater.updateAllChains();
-        SharedRandom srand = SharedRandom.getInstance();
-        srand.setRandom();
-        List<String> story = NodeSequenceManager.getLabelSequence(walkAll());
-        ListUtil.printList(story, true);
-        //story = NodeSequenceManager.clearLabelSequence(story);    
+        SharedRandom.getInstance().setRandom();
+        WalkerMultiple wk = new WalkerMultiple(WalkerMultiple.defaultSequence(), new AleatoryTransition());
+        List<Node> ls = new LinkedList<>();
+        while(wk.hasNext()) {
+        	ls.add(wk.next());
+        }
+        ListUtil.printList(NodeSequenceManager.getLabelSequence(ls), true);
+        
     }
-    
     private static List<Node> walkSingleChain(String chain) {
     	FunctionChain [] ch = new FunctionChain [] {
     		FunctionChain.deserializeFrom(chain)

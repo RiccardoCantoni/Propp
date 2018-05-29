@@ -1,9 +1,15 @@
 package genericGraph;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import proppFunction.FunctionChain;
 
 public class DirectedAcyclicGraph<T> implements Serializable{
 	
@@ -64,6 +70,34 @@ public class DirectedAcyclicGraph<T> implements Serializable{
 	public List<T> nodeSet(){
 		return this.nodes;
 	}
+	
+    public void serializeAs(String filename){
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filename+".dag");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+        } catch (Exception exc) {
+            System.out.println("serialization failed");
+            exc.printStackTrace();
+        } 
+    }
+    
+    public static <T1> DirectedAcyclicGraph<T1> deserializeFrom(String filename){
+    	DirectedAcyclicGraph<T1> dag = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(filename+".dag");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            dag = (DirectedAcyclicGraph<T1>) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (Exception exc) {
+            System.out.println("deserialization failed");
+            exc.printStackTrace();
+        }
+        return dag;
+    }
 	
 
 	

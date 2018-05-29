@@ -25,6 +25,10 @@ public class AtomMatcher implements PredicateMatcher, Serializable{
     public AtomMatcher(Predicate p){
         this.predicate = p;
     }
+    
+    public AtomMatcher(String s1, String s2, String s3) {
+    	this.predicate = new Predicate(s1,s2,s3);
+    }
 
     @Override
     public boolean matchAny(PredicateSet pset) {

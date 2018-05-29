@@ -23,7 +23,9 @@ public class ChainUpdater {
     
     public static void updateAllChains(){
         ChainGenerator cg;
-        cg = new VillainyLackChain();
+        cg = new VillainyChain();
+        cg.createSave();
+        cg = new LackChain();
         cg.createSave();
         cg = new MediationCounteractionChain();
         cg.createSave();
