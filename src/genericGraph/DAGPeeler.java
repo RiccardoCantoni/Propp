@@ -16,7 +16,7 @@ public class DAGPeeler<T> implements Iterator<T>{
 	public DAGPeeler (DirectedAcyclicGraph<T> dag){
 		this.edges = dag.edges();
 		this.nodes = dag.nodeSet();
-		peelable = nodes.stream().filter(n->outdegree(n)==0).collect(Collectors.toList());
+		peelable = nodes.stream().filter(n->indegree(n)==0).collect(Collectors.toList());
 	}
 
 	@Override
@@ -37,17 +37,17 @@ public class DAGPeeler<T> implements Iterator<T>{
 	
 	private void updateState(T removed){
 		nodes.remove(removed);
-		peelable = nodes.stream().filter(n->outdegree(n)==0).collect(Collectors.toList());
+		peelable = nodes.stream().filter(n->indegree(n)==0).collect(Collectors.toList());
 	}
 	
-	private List<DirectedEdge<T>> removeOutgoing(T node){
-		return edges.stream().filter(e->!e.from.equals(node)).collect(Collectors.toList());
+	private void removeOutgoing(T node){
+		edges = edges.stream().filter(e->!e.from.equals(node)).collect(Collectors.toList());
 	}
 	
-	private int outdegree(T node) {
+	private int indegree(T node) {
 		int o = 0;
 		for (DirectedEdge<T> e : edges) {
-			if (e.from.equals(node)) o++;
+			if (e.to.equals(node)) o++;
 		}
 		return o;
 	}
