@@ -5,10 +5,11 @@
  */
 package propp;
 
-import graph.*;
 import java.util.*;
 import java.util.stream.Collectors;
+
 import myUtils.StringMatcher;
+import proppFunction.*;
 
 /**
  *

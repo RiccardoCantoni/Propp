@@ -5,9 +5,10 @@
  */
 package propp;
 
-import graph.*;
 import java.util.*;
+
 import myUtils.LogManager;
+import proppFunction.*;
 import state.*;
 
 /**

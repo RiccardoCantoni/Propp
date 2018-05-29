@@ -5,7 +5,7 @@
  */
 package state;
 
-import graph.*;
+import proppFunction.*;
 
 /**
  *

@@ -5,13 +5,14 @@
  */
 package test.propp;
 
-import graph.*;
 import java.util.*;
 import static org.junit.Assert.assertTrue;
 import state.*;
 import org.junit.Test;
+
 import myUtils.*;
 import propp.*;
+import proppFunction.*;
 
 /**
  *

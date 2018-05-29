@@ -1,7 +1,7 @@
 package myUtils;
 
 
-import graph.SharedRandom;
+import proppFunction.SharedRandom;
 
 /**
  *

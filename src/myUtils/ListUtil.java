@@ -8,6 +8,8 @@ package myUtils;
 import java.util.Arrays;
 import java.util.List;
 
+import proppFunction.SharedRandom;
+
 /**
  *
  * @author Riccardo
@@ -54,6 +56,11 @@ public class ListUtil {
     public static <T> void printList(List<T> ls, boolean newline){
         System.out.println("list size: "+ls.size());
         System.out.println(ListUtil.listToString(ls, true));
+    }
+    
+    public static <T> T pickRandom(List<T> ls) {
+    	SharedRandom srnd = SharedRandom.getInstance();
+    	return ls.get(srnd.nextInt(ls.size()));
     }
     
 }

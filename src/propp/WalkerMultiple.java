@@ -6,8 +6,10 @@
 package propp;
 
 import state.*;
-import graph.*;
+
 import java.util.Iterator;
+
+import proppFunction.*;
 
 /**
  *

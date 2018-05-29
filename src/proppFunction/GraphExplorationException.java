@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graph;
-
-import java.io.Serializable;
+package proppFunction;
 
 /**
  *
  * @author Riccardo
  */
-public enum NodeType implements Serializable{
-    GOAL,
-    ACTION,
-    PERCEPTION,
-    PI,
-    INTERNAL,
-    OUTCOME,
-    EVENT,
-    NONE
+public class GraphExplorationException extends RuntimeException{
+    
+    public GraphExplorationException(String message) {
+        super(message);
+    }
+
+    
 }

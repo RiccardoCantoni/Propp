@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package propp.chains;
+import proppFunction.*;
 import state.*;
-import graph.*;
 
 /**
  * @author Riccardo

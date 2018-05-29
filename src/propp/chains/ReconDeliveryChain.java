@@ -1,8 +1,8 @@
 package propp.chains;
 
-import graph.FunctionChain;
-import graph.Node;
-import graph.NodeType;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.NodeType;
 
 public class ReconDeliveryChain implements ChainGenerator {
 

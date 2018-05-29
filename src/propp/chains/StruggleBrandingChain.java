@@ -5,9 +5,9 @@
  */
 package propp.chains;
 
-import graph.FunctionChain;
-import graph.Node;
-import graph.NodeType;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.NodeType;
 import state.Predicate;
 
 /**

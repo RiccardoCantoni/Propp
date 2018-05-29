@@ -6,9 +6,11 @@
 package test.propp;
 
 import java.util.*;
-import graph.*;
+
 import myUtils.*;
 import propp.*;
+import proppFunction.*;
+
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 

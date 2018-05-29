@@ -8,10 +8,11 @@ package test.propp;
 import java.util.*;
 import static org.junit.Assert.assertTrue;
 import org.junit.*;
-import graph.*;
+
 import state.*;
 import myUtils.*;
 import propp.*;
+import proppFunction.*;
 
 /**
  *

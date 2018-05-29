@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.graph;
+package test.proppFunction;
 
 import org.junit.Test;
+
+import proppFunction.*;
+
 import static org.junit.Assert.*;
 import java.util.*;
-/**
- *
- * @author Riccardo
- */
-import graph.*;
 
 public class FunctionChainTest {
     

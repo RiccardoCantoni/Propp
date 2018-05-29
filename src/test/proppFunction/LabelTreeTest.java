@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.graph;
+package test.proppFunction;
 
 import java.util.List;
 import org.junit.*;
+
+import proppFunction.*;
+
 import static org.junit.Assert.*;
-import graph.*;
 
 /**
  *

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import graph.FunctionChain;
+import proppFunction.FunctionChain;
 import state.AtomMatcher;
 import state.Predicate;
 import state.PredicateMatcher;

@@ -1,7 +1,6 @@
 package propp.chains;
 
-import graph.FunctionChain;
-import graph.*;
+import proppFunction.*;
 import state.*;
 
 public class ReturnChain implements ChainGenerator {

@@ -5,14 +5,15 @@
  */
 package test.propp;
 
-import graph.FunctionChain;
 import java.util.*;
 import org.junit.*;
+
 import static org.junit.Assert.*;
-import graph.*;
+
 import state.*;
 import myUtils.*;
 import propp.*;
+import proppFunction.*;
 
 /**
  *

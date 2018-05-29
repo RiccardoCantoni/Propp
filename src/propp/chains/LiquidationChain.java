@@ -1,6 +1,6 @@
 package propp.chains;
 
-import graph.*;
+import proppFunction.*;
 import state.*;
 
 public class LiquidationChain implements ChainGenerator{

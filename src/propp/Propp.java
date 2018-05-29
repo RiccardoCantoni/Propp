@@ -8,12 +8,12 @@ package propp;
 import java.util.LinkedList;
 import java.util.List;
 
-import graph.AleatoryTransition;
-import graph.FunctionChain;
-import graph.Node;
-import graph.SharedRandom;
 import myUtils.ListUtil;
 import propp.chains.ChainUpdater;
+import proppFunction.AleatoryTransition;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.SharedRandom;
 
 /**
  *

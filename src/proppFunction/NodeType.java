@@ -3,16 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graph;
+package proppFunction;
 
-import java.util.List;
+import java.io.Serializable;
 
 /**
  *
  * @author Riccardo
  */
-public interface MarkovTransition {
-    
-    public Node nextNode(List<Node> validSuccessors);
-    
+public enum NodeType implements Serializable{
+    GOAL,
+    ACTION,
+    PERCEPTION,
+    PI,
+    INTERNAL,
+    OUTCOME,
+    EVENT,
+    STATE,
+    NONE
 }
