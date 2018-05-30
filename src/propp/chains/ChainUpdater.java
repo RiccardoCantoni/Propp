@@ -31,7 +31,8 @@ public class ChainUpdater {
         new FirstFunctionReactionChain().createSave();
         new AcquisitionChain().createSave();
         new GuidanceChain().createSave();
-        new StruggleBrandingChain().createSave();
+        new StruggleChain().createSave();
+        new BrandingChain().createSave();
         new LiquidationChain().createSave();
         new ReturnChain().createSave();
         new RewardChain().createSave();

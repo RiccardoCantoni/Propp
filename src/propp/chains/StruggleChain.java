@@ -14,12 +14,12 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class StruggleBrandingChain implements ChainGenerator{
+public class StruggleChain implements ChainGenerator{
 
     @Override
     public void createSave() {
         FunctionChain C = new FunctionChain();
-        C.FunctionName = "StruggleBranding";
+        C.FunctionName = "Struggle";
         Node n;
         n=new Node("fight", NodeType.ACTION);
         C.addNode(n);
@@ -50,14 +50,6 @@ public class StruggleBrandingChain implements ChainGenerator{
         
         C.addEdge("aid_unavailable","struggle_outcome_negative");
         C.addEdge("aid_available","struggle_outcome_positive");
-        
-        n=new Node("branding_mark", NodeType.EVENT);
-        C.addNode(n);
-        n=new Node("branding_item", NodeType.EVENT);
-        C.addNode(n);
-        C.addEdge("struggle_outcome_positive", "branding_mark");
-        C.addEdge("struggle_outcome_positive", "branding_item");
-        C.addEdge("struggle_outcome_negative", "branding_mark");
         
         C.serialize();
     }
