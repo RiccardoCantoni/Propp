@@ -5,11 +5,18 @@
  */
 package propp;
 
-import state.*;
-
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
-import proppFunction.*;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+
+import myUtils.JsonDataManager;
+import proppFunction.FunctionChain;
+import proppFunction.MarkovTransition;
+import proppFunction.Node;
+import state.State;
 
 /**
  *
@@ -56,20 +63,13 @@ public class WalkerMultiple implements Iterator<Node>{
     }
     
     public static FunctionChain[] defaultSequence(){
-        FunctionChain[] seq = new FunctionChain[] {
-        	FunctionChain.deserializeFrom("ReconDelivery"),
-	        FunctionChain.deserializeFrom("Villainy"),
-	        FunctionChain.deserializeFrom("Lack"),
-	        FunctionChain.deserializeFrom("MediationCounteraction"),
-	        FunctionChain.deserializeFrom("FirstFunctionReaction"),
-	        FunctionChain.deserializeFrom("Acquisition"),
-	        FunctionChain.deserializeFrom("Guidance"),
-	        FunctionChain.deserializeFrom("StruggleBranding"),
-	        FunctionChain.deserializeFrom("Return"),
-	        FunctionChain.deserializeFrom("Liquidation"),
-	        FunctionChain.deserializeFrom("Reward")	        
-        };
-        return seq;
+    	List<FunctionChain> seq = new LinkedList<>();
+    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonArray chains = jdm.loadArray("chains");
+    	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
+    		seq.add(FunctionChain.deserializeFrom(o.getString("name")));
+    	}
+    	return seq.toArray(new FunctionChain[seq.size()]);
     }
     
 }

@@ -5,14 +5,17 @@
  */
 package test.propp;
 
-import java.util.*;
-
-import myUtils.*;
-import propp.*;
-import proppFunction.*;
-
 import static org.junit.Assert.assertTrue;
+
+import java.util.LinkedList;
+import java.util.List;
+
 import org.junit.Test;
+
+import myUtils.ListUtil;
+import propp.NodeSequenceManager;
+import proppFunction.Node;
+import proppFunction.NodeType;
 
 /**
  *

@@ -5,12 +5,20 @@
  */
 package test.state;
 
-import org.junit.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import myUtils.ListUtil;
-
-import static org.junit.Assert.*;
-import state.*;
+import state.AndMatcher;
+import state.AtomMatcher;
+import state.NotMatcher;
+import state.OrMatcher;
+import state.Predicate;
+import state.PredicateMatcher;
+import state.PredicateSet;
 
 /**
  *

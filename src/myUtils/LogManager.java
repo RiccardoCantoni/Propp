@@ -5,13 +5,10 @@
  */
 package myUtils;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
-
-import org.apache.commons.configuration2.Configuration;
 
 import propp.SystemState;
 

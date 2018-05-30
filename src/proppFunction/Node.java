@@ -6,8 +6,14 @@
 package proppFunction;
 
 import java.io.Serializable;
-import java.util.*;
-import state.*;
+import java.util.LinkedList;
+import java.util.List;
+
+import state.AtomMatcher;
+import state.ConstantMatcher;
+import state.Predicate;
+import state.PredicateMatcher;
+import state.PredicateSet;
 
 /**
  *

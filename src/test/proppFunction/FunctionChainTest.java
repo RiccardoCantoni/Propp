@@ -5,12 +5,17 @@
  */
 package test.proppFunction;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.NoSuchElementException;
+
 import org.junit.Test;
 
-import proppFunction.*;
-
-import static org.junit.Assert.*;
-import java.util.*;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.NodeType;
 
 public class FunctionChainTest {
     

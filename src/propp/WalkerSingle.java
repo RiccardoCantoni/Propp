@@ -5,10 +5,14 @@
  */
 package propp;
 
-import state.*;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
-import proppFunction.*;
+import proppFunction.FunctionChain;
+import proppFunction.MarkovTransition;
+import proppFunction.Node;
+import state.State;
 
 /**
  *

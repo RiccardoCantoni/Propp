@@ -5,11 +5,17 @@
  */
 package propp;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import myUtils.LogManager;
-import proppFunction.*;
-import state.*;
+import proppFunction.FunctionChain;
+import proppFunction.GraphExplorationException;
+import proppFunction.MarkovTransition;
+import proppFunction.Node;
+import proppFunction.NodeTree;
+import state.State;
 
 /**
  *

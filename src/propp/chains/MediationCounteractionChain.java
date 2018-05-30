@@ -4,8 +4,12 @@
  * and open the template in the editor.
  */
 package propp.chains;
-import proppFunction.*;
-import state.*;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.NodeType;
+import state.AtomMatcher;
+import state.NotMatcher;
+import state.Predicate;
 
 /**
  * @author Riccardo

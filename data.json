@@ -1,0 +1,48 @@
+{
+  "chains": [
+    {
+      "name": "ReconDelivery",
+      "code": "rd"
+    },
+    {
+      "name": "Villainy",
+      "code": "A"
+    },
+    {
+      "name": "lack",
+      "code": "a"
+    },
+    {
+      "name": "MediationCounteraction",
+      "code": "BC"
+    },
+    {
+      "name": "FirstFunctionReaction",
+      "code": "DE"
+    },
+    {
+      "name": "Acquisition",
+      "code": "F"
+    },
+    {
+      "name": "Guidance",
+      "code": "G"
+    },
+    {
+      "name": "StruggleBranding",
+      "code": "HJ"
+    },
+    {
+      "name": "Liquidation",
+      "code": "K"
+    },
+    {
+      "name": "Return",
+      "code": "Rt"
+    },
+    {
+      "name": "Reward",
+      "code": "Rw"
+    }
+  ]
+}

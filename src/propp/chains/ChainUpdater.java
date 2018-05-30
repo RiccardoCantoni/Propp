@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import myUtils.JsonDataManager;
 import proppFunction.FunctionChain;
 import state.AtomMatcher;
 import state.Predicate;
@@ -22,6 +23,8 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){
+
+        new ReconDeliveryChain().createSave();
         new VillainyChain().createSave();
         new LackChain().createSave();
         new MediationCounteractionChain().createSave();
@@ -30,10 +33,7 @@ public class ChainUpdater {
         new GuidanceChain().createSave();
         new StruggleBrandingChain().createSave();
         new LiquidationChain().createSave();
-        new ReconDeliveryChain().createSave();
         new ReturnChain().createSave();
-        ChainGenerator cg = new RewardChain();
-        cg.createSave();
         new RewardChain().createSave();
         
         new TestChainSmall().createSave();

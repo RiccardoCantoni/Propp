@@ -5,11 +5,11 @@
  */
 package propp;
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import myUtils.StringMatcher;
-import proppFunction.*;
+import proppFunction.Node;
 
 /**
  *

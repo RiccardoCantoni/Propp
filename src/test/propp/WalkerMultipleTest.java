@@ -5,14 +5,21 @@
  */
 package test.propp;
 
-import java.util.*;
 import static org.junit.Assert.assertTrue;
-import state.*;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.junit.Test;
 
-import myUtils.*;
-import propp.*;
-import proppFunction.*;
+import myUtils.ListUtil;
+import propp.WalkerMultiple;
+import proppFunction.FunctionChain;
+import proppFunction.Node;
+import proppFunction.NodeType;
+import proppFunction.PickFirstTransition;
+import state.Predicate;
 
 /**
  *

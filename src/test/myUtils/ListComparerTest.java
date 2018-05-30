@@ -5,11 +5,15 @@
  */
 package test.myUtils;
 
-import java.util.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.LinkedList;
+import java.util.List;
+
 import org.junit.Test;
-import myUtils.*;
+
+import myUtils.ListUtil;
 
 /**
  *

@@ -3,7 +3,7 @@ package myUtils;
 import java.io.File;
 import java.util.NoSuchElementException;
 
-import org.apache.commons.configuration2.*;
+import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 
 public class ConfigurationManager {

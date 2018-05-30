@@ -5,7 +5,7 @@
  */
 package state;
 
-import proppFunction.*;
+import proppFunction.Node;
 
 /**
  *
