@@ -46,7 +46,7 @@ public class State {
     	set.addPredicate(new Predicate("injection",n.label,"_"));
     }
     
-    public void clean() {
+    public void cleanInjections() {
     	Predicate injection = new Predicate("injection","_","_");
     	set.removeAllMatching(injection);
     }

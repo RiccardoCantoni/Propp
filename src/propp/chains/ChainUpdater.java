@@ -22,29 +22,22 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){
-        ChainGenerator cg;
-        cg = new VillainyChain();
+        new VillainyChain().createSave();
+        new LackChain().createSave();
+        new MediationCounteractionChain().createSave();
+        new FirstFunctionReactionChain().createSave();
+        new AcquisitionChain().createSave();
+        new GuidanceChain().createSave();
+        new StruggleBrandingChain().createSave();
+        new LiquidationChain().createSave();
+        new ReconDeliveryChain().createSave();
+        new ReturnChain().createSave();
+        ChainGenerator cg = new RewardChain();
         cg.createSave();
-        cg = new LackChain();
-        cg.createSave();
-        cg = new MediationCounteractionChain();
-        cg.createSave();
-        cg = new FirstFunctionReactionChain();
-        cg.createSave();
-        cg = new AcquisitionChain();
-        cg.createSave();
-        cg = new GuidanceChain();
-        cg.createSave();
-        cg = new StruggleBrandingChain();
-        cg.createSave();
-        cg = new LiquidationChain();
-        cg.createSave();
-        cg = new ReconDeliveryChain();
-        cg.createSave();
-        cg = new ReturnChain();
-        cg.createSave();
-        cg = new TestChainSmall();
-        cg.createSave();
+        new RewardChain().createSave();
+        
+        new TestChainSmall().createSave();
+        
         System.out.println("all chains updated successfully");
         //checkPredicateConsistency();
     }

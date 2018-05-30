@@ -51,7 +51,7 @@ public class WalkerSingle implements Iterator<Node>{
         if (hasNext()){
             throw new IllegalStateException("the state is not final");
         }
-        state.clean();
+        state.cleanInjections();
         return state;
     }
     

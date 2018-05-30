@@ -66,7 +66,8 @@ public class WalkerMultiple implements Iterator<Node>{
 	        FunctionChain.deserializeFrom("Guidance"),
 	        FunctionChain.deserializeFrom("StruggleBranding"),
 	        FunctionChain.deserializeFrom("Return"),
-	        FunctionChain.deserializeFrom("Liquidation")	        
+	        FunctionChain.deserializeFrom("Liquidation"),
+	        FunctionChain.deserializeFrom("Reward")	        
         };
         return seq;
     }
