@@ -29,10 +29,12 @@ public class GuidanceChain implements ChainGenerator{
         Predicate tsucc = new Predicate("donor_test_outcome","success");
         
         String a = "arrival"; 
-        n = new Node(a, NodeType.EVENT);
+        n = new Node(a, NodeType.OUTCOME);
         n.toRemove.addPredicate(new Predicate("location","$hero","_"));
         n.toAdd.addPredicate(new Predicate("location","$hero","$location"));
+        n.toAdd.addPredicate(new Predicate("guidance_outcome","positive"));
         C.addNode(n);
+        
         n = new Node("way_discovered", NodeType.PI);
         C.addNode(n);
         C.setInitial(n);
@@ -59,6 +61,13 @@ public class GuidanceChain implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("guided_travel",a);
+        n = new Node("way_searched", NodeType.ACTION);
+        C.addNode(n);
+        C.setInitial(n);
+        n = new Node("way_not_found", NodeType.OUTCOME);
+        n.toAdd.addPredicate(new Predicate("guidace_outcome","failure"));
+        C.addNode(n);
+        C.addEdge("way_searched","way_not_found");
         
         C.serialize();
     }
