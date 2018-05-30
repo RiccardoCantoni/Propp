@@ -48,10 +48,11 @@ public class WalkerSingle implements Iterator<Node>{
     }
     
     public State getFinalState(){
-        if (this.hasNext()){
+        if (hasNext()){
             throw new IllegalStateException("the state is not final");
         }
-        return this.state;
+        state.clean();
+        return state;
     }
     
 }

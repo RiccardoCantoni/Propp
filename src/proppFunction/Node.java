@@ -62,7 +62,10 @@ public class Node implements Serializable{
     }
 
     public boolean isValid(PredicateSet s) {
-        return preconditions.matchAny(s);
+        return (
+        		preconditions.matchAny(s) ||
+        		new AtomMatcher("injection",this.label, "_").matchAny(s)
+        		);
     }
 
     public void addSuccessor(Node n) {
