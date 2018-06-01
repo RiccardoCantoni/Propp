@@ -52,7 +52,6 @@ public class ReconDeliveryChain implements ChainGenerator {
 		C.addEdge("conversation", "recon_outcome_failure");
 		
 		C.serialize();
-
 	}
 
 }

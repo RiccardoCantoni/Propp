@@ -5,9 +5,13 @@
  */
 package propp.chains;
 
+import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 
 import myUtils.JsonDataManager;
 import proppFunction.FunctionChain;
@@ -23,28 +27,22 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){
-
-        new ReconDeliveryChain().createSave();
-        new VillainyChain().createSave();
-        new LackChain().createSave();
-        new MediationCounteractionChain().createSave();
-        new FirstFunctionReactionChain().createSave();
-        new AcquisitionChain().createSave();
-        new GuidanceChain().createSave();
-        new StruggleChain().createSave();
-        new BrandingChain().createSave();
-        new LiquidationChain().createSave();
-        new ReturnChain().createSave();
-        new RewardChain().createSave();
-        
+    	
+    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonArray a = jdm.loadArray("chains");
+    	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
+    		updateChain( o.getString("name"));
+    	}
+    	
         new TestChainSmall().createSave();
         
-        System.out.println("all chains updated successfully");
+        System.out.println((a.size()+1)+" chains updated successfully");
         //checkPredicateConsistency();
     }
     
     private static void checkPredicateConsistency() {
-    	ChainAnalyzer ca;
+    	throw new UnsupportedOperationException("legacy method, needs to be reimplemented");
+    	/*ChainAnalyzer ca;
     	PredicateMatcher m;
     	PredicateSet added = new PredicateSet();
     	List<Predicate> required = new LinkedList<>();
@@ -61,19 +59,20 @@ public class ChainUpdater {
     		if (!m.matchAny(added)) { 
     			throw new IllegalArgumentException("precondition contains unknown predicate: "+req.toString());
     		}
-    	}
+    	}*/
     }
     
-    private static FunctionChain[] defaultSequence(){
-    	throw new UnsupportedOperationException("legacy method needs to be reimplemented");
-        /*FunctionChain[] seq = new FunctionChain[6];
-        seq[0] = FunctionChain.deserializeFrom("Aa");
-        seq[1] = FunctionChain.deserializeFrom("BC");
-        seq[2] = FunctionChain.deserializeFrom("DE");
-        seq[3] = FunctionChain.deserializeFrom("F");
-        seq[4] = FunctionChain.deserializeFrom("G");
-        seq[5] = FunctionChain.deserializeFrom("HJ");
-        return seq;*/
-    }
     
+    private static void updateChain(String chainName) {
+    	chainName = "propp.chains."+chainName+"Chain";
+    	try {
+    		Class c = Class.forName(chainName);
+    		Constructor constructor = c.getConstructor();
+    		ChainGenerator fc = (ChainGenerator)constructor.newInstance();
+    		fc.createSave();
+    		}catch(Exception e) {
+    			System.out.println("chain update failed: "+chainName);
+    		}
+    }
+   
 }
