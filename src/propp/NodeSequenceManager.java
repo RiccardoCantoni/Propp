@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import myUtils.StringMatcher;
 import proppFunction.Node;
+import proppFunction.NodeType;
 
 /**
  *
@@ -25,6 +26,16 @@ public class NodeSequenceManager {
     public static List<String> getLabelSequence(List<Node> seq){
         List<String> labels = seq.stream().map(n->n.label).collect(Collectors.toList());
         return labels;
+    }
+    
+    public static boolean containsInjections(List<Node> seq, List<String>injections) {
+    	Node i = new Node("", NodeType.NONE);
+    	for (String s : injections) {
+    		i.label = s;
+    		if (!seq.contains(i)) 
+    			return false;
+    	}
+    	return true;
     }
   
 }

@@ -13,6 +13,7 @@ import propp.chains.ChainUpdater;
 import proppFunction.AleatoryTransition;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
+import proppFunction.NodeType;
 import proppFunction.SharedRandom;
 
 /**
@@ -33,6 +34,9 @@ public class Propp {
         while(wk.hasNext()) {
         	ls.add(wk.next());
         }
+        List<String> injections = new LinkedList<String>();
+        injections.add("falsehero_killed");
+        //System.out.println(containsInjections(ls, injections));
         ListUtil.printList(NodeSequenceManager.getLabelSequence(ls), true);
         
     }

@@ -15,6 +15,7 @@ import proppFunction.GraphExplorationException;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
 import proppFunction.NodeTree;
+import proppFunction.NodeType;
 import state.State;
 
 /**
@@ -28,12 +29,20 @@ public class AcyclicMarkovExplorer {
     NodeTree tree;
     MarkovTransition transition;
     
+    List<String> injections;
     
-    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition){
+    
+    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, List<String>injections){
         this.graph = graph;
         this.state = initialState;
         this.transition = transition;
-        List<Node> reversePath = exploreChain();
+        this.injections = injections;
+        List<Node> reversePath = new LinkedList<Node>(); 
+        int maxAttempts = 20, i=0;
+        while (i<maxAttempts && NodeSequenceManager.containsInjections(reversePath, injections)) {
+        	reversePath = exploreChain();
+        	i++;
+        }
         Collections.reverse(reversePath);
         return reversePath;
     }
@@ -89,6 +98,5 @@ public class AcyclicMarkovExplorer {
         }
         return successors;
     }
-    
     
 }

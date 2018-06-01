@@ -32,6 +32,7 @@ public class WalkerMultiple implements Iterator<Node>{
     int chainIndex;
     Node n;
     
+    List<String> injections;
     WalkerSingle walkerSingle;
     
     public WalkerMultiple(FunctionChain[] chainSequence, MarkovTransition transitionFunction){
@@ -40,7 +41,8 @@ public class WalkerMultiple implements Iterator<Node>{
         chainIndex = 0;
         state = new State();
         currentChain = chainSequence[chainIndex];
-        walkerSingle = new WalkerSingle(currentChain, transition, state);
+        walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        injections = new LinkedList<>();
     }
 
     @Override
@@ -54,7 +56,7 @@ public class WalkerMultiple implements Iterator<Node>{
             state = walkerSingle.getFinalState();
             chainIndex++;
             currentChain = chainSequence[chainIndex];
-            walkerSingle = new WalkerSingle(currentChain, transition, state);
+            walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
         }
         n = walkerSingle.next();
         if (n.label.equals("$entry_point"))

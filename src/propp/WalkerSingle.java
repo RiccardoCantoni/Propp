@@ -21,18 +21,21 @@ import state.State;
 public class WalkerSingle implements Iterator<Node>{
     
     FunctionChain chain;
-    public Node currentNode;
     MarkovTransition transition;
+    
+    public Node currentNode;
     State state;
+    
     List<Node> path;
     int pathIndex;
+    List<String> injections;
     
-    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState){
+    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState, List<String> injections){
         this.chain = chain;
         this.transition = transition;
         this.state = initialState;
         AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
-        path = explorer.explorationPath(chain, initialState, transition);
+        path = explorer.explorationPath(chain, initialState, transition, injections);
         pathIndex = 0;
     }
 
