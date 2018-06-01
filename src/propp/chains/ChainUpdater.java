@@ -26,17 +26,17 @@ import state.PredicateSet;
  */
 public class ChainUpdater {
     
-    public static void updateAllChains(){
-    	
+    public static void updateAllChains(){ 	
     	JsonDataManager jdm = new JsonDataManager("data.json");
     	JsonArray a = jdm.loadArray("chains");
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
-    		updateChain( o.getString("name"));
+    		updateChain(o.getString("name"));
     	}
     	
         new TestChainSmall().createSave();
         
         System.out.println((a.size()+1)+" chains updated successfully");
+        
         //checkPredicateConsistency();
     }
     
