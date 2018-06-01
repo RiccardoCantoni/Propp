@@ -5,6 +5,7 @@
  */
 package state;
 
+import propp.SystemState;
 import proppFunction.Node;
 
 /**
@@ -12,10 +13,13 @@ import proppFunction.Node;
  * @author Riccardo
  */
 public class State {
+	
+	SystemState system;
     
     private PredicateSet set;
     
     public State(){
+    	system = SystemState.getInstance();
         set = new PredicateSet();
     }
     
@@ -39,6 +43,7 @@ public class State {
     }
     
     public boolean isValidNode(Node n){
+    	if (system.unconstrained_mode) return true;
         return n.isValid(set);
     }
     

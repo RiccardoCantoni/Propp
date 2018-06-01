@@ -16,9 +16,11 @@ public class SystemState {
     private static SystemState instance;
     
     public boolean loggingMode = false;
+    public boolean unconstrained_mode = false;
     
     private SystemState() {
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
+        unconstrained_mode = (boolean)ConfigurationManager.getConfig(boolean.class, "unconstrained_mode");
     }
     
     public static SystemState getInstance() {

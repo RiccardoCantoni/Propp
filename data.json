@@ -55,6 +55,10 @@
     {
       "name": "Recognition",
       "code": "Q"
+    },
+    {
+      "name": "ExposurePunishment",
+      "code": "ExU"
     }
   ]
 }
