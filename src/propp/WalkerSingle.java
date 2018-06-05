@@ -6,6 +6,7 @@
 package propp;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -36,6 +37,15 @@ public class WalkerSingle implements Iterator<Node>{
         this.state = initialState;
         AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
         path = explorer.explorationPath(chain, initialState, transition, injections);
+        pathIndex = 0;
+    }
+    
+    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState){
+        this.chain = chain;
+        this.transition = transition;
+        this.state = initialState;
+        AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
+        path = explorer.explorationPath(chain, initialState, transition, new LinkedList<String>());
         pathIndex = 0;
     }
 

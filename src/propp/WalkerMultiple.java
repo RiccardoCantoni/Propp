@@ -32,8 +32,8 @@ public class WalkerMultiple implements Iterator<Node>{
     int chainIndex;
     Node n;
     
-    List<String> injections;
     WalkerSingle walkerSingle;
+    List<String> injections;
     
     public WalkerMultiple(FunctionChain[] chainSequence, MarkovTransition transitionFunction){
         this.chainSequence = chainSequence;
@@ -41,9 +41,10 @@ public class WalkerMultiple implements Iterator<Node>{
         chainIndex = 0;
         state = new State();
         currentChain = chainSequence[chainIndex];
-        walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
         injections = new LinkedList<>();
+        walkerSingle = new WalkerSingle(currentChain, transition, state);
     }
+    
 
     @Override
     public boolean hasNext() {

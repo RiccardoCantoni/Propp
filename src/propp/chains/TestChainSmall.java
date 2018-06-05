@@ -26,12 +26,12 @@ public class TestChainSmall implements ChainGenerator{
         G.addNode(n);
         G.setInitial(n);
         n = new Node("b", NodeType.NONE);
+        G.addEdge("a","b");
         n.preconditions = new AtomMatcher(new Predicate("a","b","c"));
-        G.addNode(n);
         n = new Node("c", NodeType.NONE);
         G.addNode(n);
         G.setInitial(n);
-        G.addEdge("a","b");
+        G.addEdge("a","c");
         n = new Node("d", NodeType.NONE);
         G.addNode(n);
         G.addEdge("c","d");

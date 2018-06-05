@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import myUtils.ListUtil;
+import propp.NodeSequenceManager;
 import propp.WalkerSingle;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
@@ -47,6 +48,7 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
+        ListUtil.printList(NodeSequenceManager.getLabelSequence(path), true);
         assertTrue(ListUtil.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),

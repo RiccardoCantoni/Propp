@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import myUtils.ListUtil;
 import propp.AcyclicMarkovExplorer;
+import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;

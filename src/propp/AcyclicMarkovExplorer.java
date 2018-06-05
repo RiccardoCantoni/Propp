@@ -27,22 +27,27 @@ public class AcyclicMarkovExplorer {
     FunctionChain graph;
     State state;
     NodeTree tree;
-    MarkovTransition transition;
-    
-    List<String> injections;
-    
+    MarkovTransition transition;    
     
     public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, List<String>injections){
         this.graph = graph;
         this.state = initialState;
         this.transition = transition;
-        this.injections = injections;
         List<Node> reversePath = new LinkedList<Node>(); 
         int maxAttempts = 20, i=0;
         while (i<maxAttempts && NodeSequenceManager.containsInjections(reversePath, injections)) {
         	reversePath = exploreChain();
         	i++;
         }
+        Collections.reverse(reversePath);
+        return reversePath;
+    }
+    
+    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition){
+        this.graph = graph;
+        this.state = initialState;
+        this.transition = transition;
+        List<Node> reversePath = exploreChain();
         Collections.reverse(reversePath);
         return reversePath;
     }
