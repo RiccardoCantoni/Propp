@@ -21,7 +21,6 @@ import state.PredicateMatcher;
 import state.PredicateSet;
 
 /**
- *
  * @author Riccardo
  */
 public class ChainUpdater {

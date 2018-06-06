@@ -14,6 +14,7 @@ import java.util.List;
 import org.junit.Test;
 
 import myUtils.ListUtil;
+import propp.NodeSequenceManager;
 import propp.WalkerMultiple;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
@@ -35,7 +36,7 @@ public class WalkerMultipleTest {
         FunctionChain C0 = new FunctionChain();
         C0.FunctionName = "test";
         Node n = new Node("z", NodeType.NONE);
-        n.toAdd.addPredicate(new Predicate("a","b","c"));
+        n.toAdd.addPredicate(new Predicate("b","b","b"));
         C0.addNode(n);
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
@@ -44,6 +45,7 @@ public class WalkerMultipleTest {
         while(walker.hasNext()){
             walk.add(walker.next());
         }
+        ListUtil.printList(NodeSequenceManager.getLabelSequence(walk), true);
         List<Node> expectedWalk = Arrays.asList( 
                 new Node[]{
                         new Node("$test", NodeType.NONE),

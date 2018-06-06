@@ -48,7 +48,6 @@ public class WalkerSingleTest {
         while(walker.hasNext()){
             path.add(walker.next());
         }
-        ListUtil.printList(NodeSequenceManager.getLabelSequence(path), true);
         assertTrue(ListUtil.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
@@ -63,7 +62,7 @@ public class WalkerSingleTest {
     public void testWithState() {
         State initialState = new State();
         Node n = new Node("x",NodeType.ACTION);
-        n.toAdd.addPredicate(new Predicate("a","b","c"));
+        n.toAdd.addPredicate(new Predicate("b","b","b"));
         initialState.update(n);
         walker = new WalkerSingle(C, new PickFirstTransition(), initialState);
         assertTrue(walker.hasNext());
