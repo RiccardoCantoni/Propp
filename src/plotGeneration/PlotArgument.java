@@ -16,22 +16,19 @@ public class PlotArgument {
 	public final String[] chainNames;
 	public final FunctionChain[] chainSequence;
 	public final State initialState;
-	public final MarkovTransition transition;
 	public final String[] injections;
 	
-	public PlotArgument(String[] chainNames, State initialState, MarkovTransition transition, String[] injections) {
+	public PlotArgument(String[] chainNames, State initialState, String[] injections) {
 		this.chainNames = chainNames;
 		this.chainSequence = loadChains(); 
 		this.initialState = initialState;
-		this.transition = transition;
 		this.injections = injections;
 	}
 	
-	public PlotArgument(FunctionChain[] chainSequence, State initialState, MarkovTransition transition, String[] injections) {
+	public PlotArgument(FunctionChain[] chainSequence, State initialState, String[] injections) {
 		this.chainSequence = chainSequence;	
 		this.chainNames = getNames();
 		this.initialState = initialState;
-		this.transition = transition;
 		this.injections = injections;
 	}
 	

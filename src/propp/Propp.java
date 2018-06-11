@@ -53,7 +53,7 @@ public class Propp {
     			"ExposurePunishment",
     			"Reward"
     			};
-        PlotArgument arg = new PlotArgument(seq, new State(), new RandomTransition(), new String[0]);
+        PlotArgument arg = new PlotArgument(seq, new State(), new String[0]);
         PlotWalker walker = new PlotWalker(arg);
         List<Node> nodeSequence = new LinkedList<>();
         while(walker.hasNext()){

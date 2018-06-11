@@ -14,6 +14,7 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import myUtils.JsonDataManager;
+import propp.SystemState;
 import proppFunction.FunctionChain;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
@@ -38,7 +39,7 @@ public class PlotWalker implements Iterator<Node>{
     
     public PlotWalker(PlotArgument arg){
         this.chainSequence = arg.chainSequence;
-        this.transition = arg.transition;
+        this.transition = SystemState.getInstance().transition_function;
         chainIndex = 0;
         state = arg.initialState;
         currentChain = chainSequence[chainIndex];
