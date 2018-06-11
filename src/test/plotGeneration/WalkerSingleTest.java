@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.propp;
+package test.plotGeneration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,8 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import myUtils.ListUtil;
+import plotGeneration.WalkerSingle;
 import propp.NodeSequenceManager;
-import propp.WalkerSingle;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;

@@ -3,6 +3,7 @@ package propp.chains;
 import java.util.LinkedList;
 import java.util.List;
 
+import proppFunction.Edge;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import state.Predicate;

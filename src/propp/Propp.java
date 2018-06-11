@@ -9,12 +9,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import myUtils.ListUtil;
+import plotGeneration.PlotArgument;
+import plotGeneration.PlotWalker;
 import propp.chains.ChainUpdater;
 import proppFunction.AleatoryTransition;
-import proppFunction.FunctionChain;
 import proppFunction.Node;
-import proppFunction.NodeType;
 import proppFunction.SharedRandom;
+import state.State;
 
 /**
  *
@@ -27,33 +28,33 @@ public class Propp {
      */
     public static void main(String[] args) {
     	
-        ChainUpdater.updateAllChains();
+    	ChainUpdater.updateAllChains();
         SharedRandom.getInstance().setRandom();
-        WalkerMultiple wk = new WalkerMultiple(WalkerMultiple.defaultSequence(), new AleatoryTransition());
-        List<Node> ls = new LinkedList<>();
-        while(wk.hasNext()) {
-        	ls.add(wk.next());
-        }
-        List<String> injections = new LinkedList<String>();
-        injections.add("falsehero_killed");
-        //System.out.println(containsInjections(ls, injections));
+        List<Node> ls = walk();
         ListUtil.printList(NodeSequenceManager.getLabelSequence(ls), true);
-        
-    }
-    private static List<Node> walkSingleChain(String chain) {
-    	FunctionChain [] ch = new FunctionChain [] {
-    		FunctionChain.deserializeFrom(chain)
-    	};
-    	WalkerMultiple walker = new WalkerMultiple(ch, new AleatoryTransition());
-        List<Node> nodeSequence = new LinkedList<>();
-        while(walker.hasNext()){
-            nodeSequence.add(walker.next());
-        }
-        return nodeSequence;
+    	
     }
     
-    public static List<Node> walkAll() {
-        WalkerMultiple walker = new WalkerMultiple(WalkerMultiple.defaultSequence(), new AleatoryTransition());
+    public static List<Node> walk() {
+    	String[] seq = new String[] {
+    			"ReconDelivery",
+    			"Villainy",
+    			"Lack",
+    			"MediationCounteraction",
+    			"FirstFunctionReaction",
+    			"Acquisition",
+    			"Guidance",
+    			"Struggle",
+    			"Branding",
+    			"Liquidation",
+    			"Return",
+    			"FalseClaimsFalseReward",
+    			"Recognition",
+    			"ExposurePunishment",
+    			"Reward"
+    			};
+        PlotArgument arg = new PlotArgument(seq, new State(), new AleatoryTransition(), new String[0]);
+        PlotWalker walker = new PlotWalker(arg);
         List<Node> nodeSequence = new LinkedList<>();
         while(walker.hasNext()){
             nodeSequence.add(walker.next());

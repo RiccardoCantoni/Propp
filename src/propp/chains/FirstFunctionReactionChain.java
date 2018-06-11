@@ -20,7 +20,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
     public void createSave() {
         FunctionChain C = new FunctionChain();
         C.FunctionName = "FirstFunctionReaction";
-        Node n; 
+        Node n;
         String ta = "test_ack";
         n = new Node(ta, NodeType.PI);
         C.addNode(n);

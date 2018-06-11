@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.propp;
+package test.plotGeneration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,13 +14,15 @@ import java.util.List;
 import org.junit.Test;
 
 import myUtils.ListUtil;
+import plotGeneration.PlotArgument;
+import plotGeneration.PlotWalker;
 import propp.NodeSequenceManager;
-import propp.WalkerMultiple;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import proppFunction.PickFirstTransition;
 import state.Predicate;
+import state.State;
 
 /**
  *
@@ -40,7 +42,8 @@ public class WalkerMultipleTest {
         C0.addNode(n);
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
-        WalkerMultiple walker = new WalkerMultiple(new FunctionChain[]{C0,C1}, new PickFirstTransition());
+        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new PickFirstTransition(), new String[0]);
+        PlotWalker walker = new PlotWalker(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
             walk.add(walker.next());
@@ -66,7 +69,8 @@ public class WalkerMultipleTest {
         C0.addNode(n);
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
-        WalkerMultiple walker = new WalkerMultiple(new FunctionChain[]{C0,C1}, new PickFirstTransition());
+        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new PickFirstTransition(), new String[0]);
+        PlotWalker walker = new PlotWalker(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
             walk.add(walker.next());

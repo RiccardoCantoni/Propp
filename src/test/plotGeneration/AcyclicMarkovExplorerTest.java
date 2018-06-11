@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.propp;
+package test.plotGeneration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import org.junit.Test;
 
 import myUtils.ListUtil;
-import propp.AcyclicMarkovExplorer;
+import plotGeneration.AcyclicMarkovExplorer;
 import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
