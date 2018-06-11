@@ -11,11 +11,11 @@ import java.util.List;
  *
  * @author Riccardo
  */
-public class AleatoryTransition implements MarkovTransition{
+public class RandomTransition implements MarkovTransition{
     
 	SharedRandom rnd;
 	
-    public AleatoryTransition(){
+    public RandomTransition(){
         rnd = SharedRandom.getInstance();
     }
 

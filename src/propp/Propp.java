@@ -12,7 +12,7 @@ import myUtils.ListUtil;
 import plotGeneration.PlotArgument;
 import plotGeneration.PlotWalker;
 import propp.chains.ChainUpdater;
-import proppFunction.AleatoryTransition;
+import proppFunction.RandomTransition;
 import proppFunction.Node;
 import proppFunction.SharedRandom;
 import state.State;
@@ -53,7 +53,7 @@ public class Propp {
     			"ExposurePunishment",
     			"Reward"
     			};
-        PlotArgument arg = new PlotArgument(seq, new State(), new AleatoryTransition(), new String[0]);
+        PlotArgument arg = new PlotArgument(seq, new State(), new RandomTransition(), new String[0]);
         PlotWalker walker = new PlotWalker(arg);
         List<Node> nodeSequence = new LinkedList<>();
         while(walker.hasNext()){

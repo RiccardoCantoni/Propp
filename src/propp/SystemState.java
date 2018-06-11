@@ -6,6 +6,9 @@
 package propp;
 
 import myUtils.ConfigurationManager;
+import proppFunction.MarkovTransition;
+import proppFunction.PickFirstTransition;
+import proppFunction.RandomTransition;
 
 /**
  *
@@ -17,10 +20,12 @@ public class SystemState {
     
     public boolean loggingMode = false;
     public boolean unconstrained_mode = false;
+    public MarkovTransition transition_function;
     
     private SystemState() {
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
         unconstrained_mode = (boolean)ConfigurationManager.getConfig(boolean.class, "unconstrained_mode");
+        transition_function = this.getTransitionFunction((String)ConfigurationManager.getConfig(String.class, "transition_type"));
     }
     
     public static SystemState getInstance() {
@@ -28,6 +33,15 @@ public class SystemState {
           instance = new SystemState();
         }
         return instance;
+    }
+    
+    private MarkovTransition getTransitionFunction(String arg) {
+    	if (arg.equals("random"))
+    		return new RandomTransition();
+    	if (arg.equals("pickFirst"))
+    		return new PickFirstTransition();
+    	else
+    		throw new IllegalArgumentException("config: unrecognised transition type");
     }
     
 }
