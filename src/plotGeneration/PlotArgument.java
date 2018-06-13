@@ -64,6 +64,4 @@ public class PlotArgument {
     	return seq.toArray(new FunctionChain[seq.size()]);
     }
 	
-
-
 }

@@ -11,13 +11,17 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import myUtils.ListUtil;
 import plotGeneration.PlotArgument;
 import plotGeneration.PlotWalker;
 import propp.NodeSequenceManager;
+import propp.SystemState;
 import proppFunction.FunctionChain;
+import proppFunction.MarkovTransition;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import proppFunction.PickFirstTransition;
@@ -29,7 +33,24 @@ import state.State;
  * @author Riccardo
  */
 public class WalkerMultipleTest {
+	
+	private MarkovTransition t;
+	private boolean um;
     
+	@Before
+	public void before() {
+		t = SystemState.getInstance().transition_function;
+		um = SystemState.getInstance().unconstrained_mode;
+		SystemState.getInstance().transition_function = new PickFirstTransition();
+		SystemState.getInstance().unconstrained_mode = false;
+	}
+	
+	@After
+	public void after() {
+		SystemState.getInstance().transition_function = t;
+		SystemState.getInstance().unconstrained_mode = um;
+	}
+	
     /**
      * Test of hasNext method, of class WalkerMultiple.
      */
@@ -42,7 +63,7 @@ public class WalkerMultipleTest {
         C0.addNode(n);
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
-        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new PickFirstTransition(), new String[0]);
+        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new String[0]);
         PlotWalker walker = new PlotWalker(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
@@ -69,7 +90,7 @@ public class WalkerMultipleTest {
         C0.addNode(n);
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
-        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new PickFirstTransition(), new String[0]);
+        PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new String[0]);
         PlotWalker walker = new PlotWalker(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
