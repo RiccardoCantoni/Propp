@@ -17,7 +17,7 @@ import org.junit.Test;
 
 import myUtils.ListUtil;
 import plotGeneration.PlotArgument;
-import plotGeneration.PlotWalker;
+import plotGeneration.LinearPlotGenerator;
 import propp.NodeSequenceManager;
 import propp.SystemState;
 import proppFunction.FunctionChain;
@@ -34,7 +34,7 @@ import state.State;
  */
 public class WalkerMultipleTest {
 	
-	private MarkovTransition t;
+	/*private MarkovTransition t;
 	private boolean um;
     
 	@Before
@@ -49,12 +49,12 @@ public class WalkerMultipleTest {
 	public void after() {
 		SystemState.getInstance().transition_function = t;
 		SystemState.getInstance().unconstrained_mode = um;
-	}
+	}*/
 	
     /**
      * Test of hasNext method, of class WalkerMultiple.
      */
-    @Test
+    /*@Test
     public void testOne() {
         FunctionChain C0 = new FunctionChain();
         C0.FunctionName = "test";
@@ -64,12 +64,11 @@ public class WalkerMultipleTest {
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
         PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new String[0]);
-        PlotWalker walker = new PlotWalker(arg);
+        LinearPlotGenerator walker = new LinearPlotGenerator(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
             walk.add(walker.next());
         }
-        ListUtil.printList(NodeSequenceManager.getLabelSequence(walk), true);
         List<Node> expectedWalk = Arrays.asList( 
                 new Node[]{
                         new Node("$test", NodeType.NONE),
@@ -91,7 +90,7 @@ public class WalkerMultipleTest {
         C0.setInitial(n);
         FunctionChain C1 = FunctionChain.deserializeFrom("test_small");
         PlotArgument arg = new PlotArgument(new FunctionChain[]{C0,C1}, new State(), new String[0]);
-        PlotWalker walker = new PlotWalker(arg);
+        LinearPlotGenerator walker = new LinearPlotGenerator(arg);
         List<Node> walk = new LinkedList<>();
         while(walker.hasNext()){
             walk.add(walker.next());
@@ -106,6 +105,6 @@ public class WalkerMultipleTest {
             new Node("e", NodeType.NONE)
             }
         ));  
-    }    
+    } */   
     
 }

@@ -5,14 +5,14 @@
  */
 package propp;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import myUtils.ListUtil;
+import plotGeneration.KnownSequence;
+import plotGeneration.LinearPlotGenerator;
+import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
-import plotGeneration.PlotWalker;
 import propp.chains.ChainUpdater;
-import proppFunction.RandomTransition;
 import proppFunction.Node;
 import proppFunction.SharedRandom;
 import state.State;
@@ -36,30 +36,11 @@ public class Propp {
     }
     
     public static List<Node> walk() {
-    	String[] seq = new String[] {
-    			"ReconDelivery",
-    			"Villainy",
-    			"Lack",
-    			"MediationCounteraction",
-    			"FirstFunctionReaction",
-    			"Acquisition",
-    			"Guidance",
-    			"Struggle",
-    			"Branding",
-    			"Liquidation",
-    			"Return",
-    			"FalseClaimsFalseReward",
-    			"Recognition",
-    			"ExposurePunishment",
-    			"Reward"
-    			};
-        PlotArgument arg = new PlotArgument(seq, new State(), new String[0]);
-        PlotWalker walker = new PlotWalker(arg);
-        List<Node> nodeSequence = new LinkedList<>();
-        while(walker.hasNext()){
-            nodeSequence.add(walker.next());
-        }
-        return nodeSequence;
+    	
+        PlotArgument arg = new PlotArgument(KnownSequence.MAIN_SEQUENCE.getSequence(), new State(), new String[0]);
+        MultiPlotGenerator multigen = new MultiPlotGenerator(arg);
+        List<Node> plot = multigen.generate();
+        return plot;        
     }
     
 }
