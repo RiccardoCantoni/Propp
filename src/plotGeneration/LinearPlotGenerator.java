@@ -48,6 +48,7 @@ public class LinearPlotGenerator{
     
     public void generate() {
     	resetGeneration(arg);
+    	resumeGeneration();
     }
     
     public void resumeGeneration() {

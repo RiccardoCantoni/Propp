@@ -3,6 +3,8 @@ package plotGeneration;
 import java.util.LinkedList;
 import java.util.List;
 
+import myUtils.ListUtil;
+import propp.NodeSequenceManager;
 import proppFunction.Node;
 
 public class MultiPlotGenerator {
