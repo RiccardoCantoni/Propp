@@ -10,8 +10,7 @@ public class LiquidationChain implements ChainGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "Liquidation";
+		FunctionChain C = new FunctionChain("Liquidation");
 		Node n;
 		
 		n = new Node("item_seizure", NodeType.ACTION);

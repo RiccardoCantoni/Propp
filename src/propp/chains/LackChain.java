@@ -11,8 +11,7 @@ public class LackChain implements ChainGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C= new FunctionChain();
-		C.FunctionName = "Lack";
+		FunctionChain C= new FunctionChain("Lack");
 		Node n;
         
         n = new Node("lack_helper", NodeType.INTERNAL);

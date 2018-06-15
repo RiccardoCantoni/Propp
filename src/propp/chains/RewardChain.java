@@ -11,8 +11,7 @@ public class RewardChain implements ChainGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "Reward";
+		FunctionChain C = new FunctionChain("Reward");
 		Node n;
 		
 		PredicateMatcher captivity = new OrMatcher(new AtomMatcher("villainy", "abduction","_"), new AtomMatcher("villainy","imprisonment","_"));

@@ -10,8 +10,7 @@ public class RecognitionChain implements ChainGenerator{
 	@Override
 	public void createSave() {
 		
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "Recognition";
+		FunctionChain C = new FunctionChain("Recognition");
 		Node n;
 		
 		n = new Node("hero_presents_claims", NodeType.ACTION);

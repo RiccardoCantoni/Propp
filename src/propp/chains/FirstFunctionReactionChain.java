@@ -18,8 +18,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain();
-        C.FunctionName = "FirstFunctionReaction";
+        FunctionChain C = new FunctionChain("FirstFunctionReaction");
         Node n;
         String ta = "test_ack";
         n = new Node(ta, NodeType.PI);

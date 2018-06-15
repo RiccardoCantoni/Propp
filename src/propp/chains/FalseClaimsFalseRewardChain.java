@@ -9,8 +9,7 @@ public class FalseClaimsFalseRewardChain implements ChainGenerator {
 	@Override
 	public void createSave() {
 		
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "FalseClaimsFalseReward";
+		FunctionChain C = new FunctionChain("FalseClaimsFalseReward");
 		Node n;
 		
 		n = new Node("false_claims", NodeType.ACTION);

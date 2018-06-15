@@ -17,8 +17,7 @@ import state.Predicate;
 public class VillainyChain implements ChainGenerator{
     
     public void createSave(){ 
-    FunctionChain C = new FunctionChain();
-        C.FunctionName = "Villainy";        
+    FunctionChain C = new FunctionChain("Villainy");    
         Node n;
         
         n = new Node("abduction", NodeType.ACTION);

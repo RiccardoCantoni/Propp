@@ -10,8 +10,7 @@ public class ReturnChain implements ChainGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "Return";
+		FunctionChain C = new FunctionChain("Return");
 		Node n;
 		
 		n = new Node("hero_return", NodeType.ACTION);

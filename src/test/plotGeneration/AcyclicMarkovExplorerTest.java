@@ -46,7 +46,7 @@ public class AcyclicMarkovExplorerTest {
     
     @Test
     public void testMultiplePath() {
-        FunctionChain G = new FunctionChain();
+        FunctionChain G = new FunctionChain("test");
         Node n = new Node("a", NodeType.NONE);
         G.addNode(n);
         G.setInitial(n);

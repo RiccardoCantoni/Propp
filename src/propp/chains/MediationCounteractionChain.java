@@ -17,8 +17,7 @@ import state.Predicate;
 public class MediationCounteractionChain implements ChainGenerator{
 
     public void createSave() {
-        FunctionChain C = new FunctionChain();
-        C.FunctionName = "MediationCounteraction";
+        FunctionChain C = new FunctionChain("MediationCounteraction");
         Node n; 
         String bc = "begin_counteraction";
         String dp = "departure";

@@ -8,8 +8,7 @@ public class ExposurePunishmentChain implements ChainGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "ExposurePunishment";
+		FunctionChain C = new FunctionChain("ExposurePunishment");
 		Node n;
 		
 		n = new Node("falsehero_exposed", NodeType.EVENT);

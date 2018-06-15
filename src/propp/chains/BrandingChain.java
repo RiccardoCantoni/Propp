@@ -10,8 +10,7 @@ public class BrandingChain implements ChainGenerator{
 	@Override
 	public void createSave() {
 		// TODO Auto-generated method stub
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "Branding";
+		FunctionChain C = new FunctionChain("Branding");
 		Node n;
 			
 		n=new Node("branding_mark", NodeType.EVENT);

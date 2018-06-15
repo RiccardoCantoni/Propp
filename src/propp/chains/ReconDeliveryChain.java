@@ -8,8 +8,7 @@ public class ReconDeliveryChain implements ChainGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain();
-		C.FunctionName = "ReconDelivery";
+		FunctionChain C = new FunctionChain("ReconDelivery");
 		Node n;
 		
 		n = new Node("casual_encounter", NodeType.EVENT);

@@ -20,8 +20,7 @@ public class GuidanceChain implements ChainGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain();
-        C.FunctionName = "Guidance";
+        FunctionChain C = new FunctionChain("Guidance");
         Node n;
         Predicate atg = new Predicate("acquisition_type","guidance");
         Predicate ath = new Predicate("acquisition_type","helper");

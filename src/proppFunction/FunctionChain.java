@@ -24,9 +24,10 @@ public class FunctionChain implements Serializable{
     public Node entryPoint;
     public String FunctionName;
     
-    public FunctionChain(){
+    public FunctionChain(String name){
         nodes = new LinkedList<>();
         this.entryPoint = new Node("$entry_point", NodeType.NONE);
+        this.FunctionName = name;
     }
     
     public void addNode(Node n){

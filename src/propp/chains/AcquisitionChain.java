@@ -21,8 +21,7 @@ public class AcquisitionChain implements ChainGenerator{
     @Override
     public void createSave() {
         
-        FunctionChain C = new FunctionChain();
-        C.FunctionName = "Acquisition";
+        FunctionChain C = new FunctionChain("Acquisition");
         Node n;
         String ai = "item_acquisition";
         String ah = "helper_acquisition";

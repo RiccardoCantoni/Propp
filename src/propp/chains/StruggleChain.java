@@ -18,8 +18,7 @@ public class StruggleChain implements ChainGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain();
-        C.FunctionName = "Struggle";
+        FunctionChain C = new FunctionChain("Struggle");
         Node n;
         n=new Node("fight", NodeType.ACTION);
         C.addNode(n);

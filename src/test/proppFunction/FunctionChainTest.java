@@ -29,7 +29,7 @@ public class FunctionChainTest {
 
     @Test
     public void testAddNode() {
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         assertEquals(0, c.nodes.size());
         c.addNode(ne);
         c.addNode(n1);
@@ -39,7 +39,7 @@ public class FunctionChainTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void testAddNodeException() {
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         c.addNode(n1);
         c.addNode(n2);
         c.addNode(n1);
@@ -47,7 +47,7 @@ public class FunctionChainTest {
 
     @Test
     public void testAddEdge_Edge() {
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         c.addNode(n1);
         c.addEdge(n1,n2);
         assertEquals(c.nodes.get(0).successors()[0], n2);
@@ -59,13 +59,13 @@ public class FunctionChainTest {
     
     @Test(expected = NoSuchElementException.class)
     public void testAddEdge_EdgeException() {
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         c.addEdge("a","b");
     }
 
     @Test
     public void testaddEdge_INode_INode() {
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         c.addNode(n1);
         c.addEdge(n1,n2);
         assertEquals(c.nodes.get(0).successors()[0], n2);
@@ -77,7 +77,7 @@ public class FunctionChainTest {
     
     @Test
     public void testContains(){
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         Node n = new Node("aaa", NodeType.ACTION);
         Node nn = new Node("bbb", NodeType.ACTION);
         c.addNode(n);
@@ -87,7 +87,7 @@ public class FunctionChainTest {
     
     @Test
     public void testGetNodeById(){
-        FunctionChain c = new FunctionChain();
+        FunctionChain c = new FunctionChain("test");
         Node a = new Node("a", NodeType.EVENT);
         Node b = new Node("b", NodeType.INTERNAL);
         c.addNode(a);
