@@ -23,6 +23,10 @@ public class State {
         set = new PredicateSet();
     }
     
+    public PredicateSet getSet() {
+    	return set;
+    }
+    
     public void update(Node n){
         set.difference(n.toRemove);
         set.union(n.toAdd);
@@ -54,7 +58,6 @@ public class State {
     public void cleanInjections() {
     	Predicate injection = new Predicate("injection","_","_");
     	set.removeAllMatching(injection);
-    }
-    
+    }   
     
 }

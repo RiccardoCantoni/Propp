@@ -43,7 +43,6 @@ public class MultiPlotGenerator {
 				continue;
 			}
 		}
-		
 		return fullPlot;
 	}
 

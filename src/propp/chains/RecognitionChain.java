@@ -24,7 +24,7 @@ public class RecognitionChain implements ChainGenerator{
 		C.addEdge("hero_presents_claims","claims_denied");
 		C.addEdge("claims_received_by_dispatcher","claims_denied");
 		n = new Node("hero_lacks_proof", NodeType.EVENT);
-		n.toAdd.addPredicate(new Predicate("recognition_outcome","failure","_"));
+		n.toAdd.addPredicate(new Predicate("recognition_outcome","negative","_"));
 		C.addNode(n);
 		C.addEdge("claims_denied","hero_lacks_proof");
 		n = new Node("proof_required_item", NodeType.OUTCOME);
@@ -43,7 +43,7 @@ public class RecognitionChain implements ChainGenerator{
 		C.addNode(n);
 		C.addEdge("hero_confronts_falsehero","hero_recognised_by_mark");
 		n = new Node("hero_recognised", NodeType.OUTCOME);
-		n.toAdd.addPredicate(new Predicate("recognition_outcome","success","_"));
+		n.toAdd.addPredicate(new Predicate("recognition_outcome","positive","_"));
 		C.addNode(n);
 		C.addEdge("hero_recognised_by_mark","hero_recognised");
 		C.addEdge("hero_recognised_by_item","hero_recognised");
