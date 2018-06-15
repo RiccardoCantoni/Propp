@@ -19,10 +19,15 @@ public enum KnownSequence {
 				"ExposurePunishment",
 				"Reward"
 			}),
+	RETRY_RECON_SEQUENCE(
+			new String[] {
+					"Filler",
+					"FirstFunctionReaction"
+			}),
 	RETRY_TEST_SEQUENCE(
 			new String[] {
 					"Filler",
-					"FirstFunctionReaction",
+					"FirstFunctionReaction"
 				}),
 	RETRY_STRUGGLE_SEQUENCE(
 			new String[] {

@@ -12,6 +12,7 @@ import state.State;
 public class ImpasseScanner {
 	
 	Predicate[] impassePredicates = new Predicate[] {
+			new Predicate("recon_outcome","negative"),
 			new Predicate("donor_test_outcome","negative"),
 			new Predicate("guidance_outcome","negative"),
 			new Predicate("struggle_outcome","negative"),
