@@ -22,7 +22,7 @@ public enum KnownSequence {
 	RETRY_RECON_SEQUENCE(
 			new String[] {
 					"Filler",
-					"FirstFunctionReaction"
+					"ReconDelivery"
 			}),
 	RETRY_TEST_SEQUENCE(
 			new String[] {
@@ -31,6 +31,7 @@ public enum KnownSequence {
 				}),
 	RETRY_STRUGGLE_SEQUENCE(
 			new String[] {
+					"Return",
 					"Filler",
 					"FirstFunctionReaction",
 					"Acquisition",

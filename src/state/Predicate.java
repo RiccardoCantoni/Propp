@@ -43,6 +43,17 @@ public class Predicate implements Serializable{
     @Override
     public String toString(){
         return (pred+"("+subj+","+obj+")");
-    }   
+    }
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((obj == null) ? 0 : obj.hashCode());
+		result = prime * result + ((pred == null) ? 0 : pred.hashCode());
+		result = prime * result + ((subj == null) ? 0 : subj.hashCode());
+		return result;
+	}
+
         
 }

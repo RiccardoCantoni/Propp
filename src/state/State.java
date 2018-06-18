@@ -60,4 +60,8 @@ public class State {
     	set.removeAllMatching(injection);
     }   
     
+    public void removePredicate(Predicate p) {
+    	this.set.removeAllMatching(p);
+    }
+    
 }

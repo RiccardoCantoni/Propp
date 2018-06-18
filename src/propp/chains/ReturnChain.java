@@ -4,6 +4,7 @@ import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
+import state.NotMatcher;
 import state.Predicate;
 
 public class ReturnChain implements ChainGenerator {
@@ -24,7 +25,7 @@ public class ReturnChain implements ChainGenerator {
 		C.addNode(n);
 		C.addEdge("hero_return","unrecognised_arrival");
 		n = new Node("hero_escape", NodeType.ACTION);
-		n.preconditions = new AtomMatcher(new Predicate("struggle_outcome","negative","_"));
+		n.preconditions = new NotMatcher(new AtomMatcher(new Predicate("struggle_outcome","negative","_")));
 		C.addNode(n);
 		C.setInitial(n);
 		

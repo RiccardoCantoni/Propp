@@ -6,6 +6,7 @@ import java.util.List;
 import myUtils.ListUtil;
 import propp.NodeSequenceManager;
 import proppFunction.Node;
+import proppFunction.NodeType;
 
 public class MultiPlotGenerator {
 	
@@ -26,21 +27,25 @@ public class MultiPlotGenerator {
     	lingen.generate();
 		while(true) {	
 			pgs = lingen.getGenerationState();
-			if (pgs==PlotGenerationState.COMPLETED) {	
+			if (pgs==PlotGenerationState.COMPLETED) {
+				chainPlot = lingen.getPlot();
+				fullPlot.addAll(chainPlot);
 				break;
 			}			
 			if (pgs==PlotGenerationState.FUNCTION_TERMINATED) {
 				chainPlot = lingen.getPlot();
 				fullPlot.addAll(chainPlot);
-				if (scanner.scanPath(chainPlot, lingen.getState())) {
-					subarg = handler.handleImpasse(chainPlot, lingen.getState());
-					if (subarg!=null) {
-						//TODO SUBPLOT
-					}
+				Impasse impasse = scanner.scanPath(chainPlot, lingen.getState());
+				subarg = handler.handleImpasse(impasse);
+				if (subarg!=null) {
+					MultiPlotGenerator subplotGenerator = new MultiPlotGenerator(subarg);
+					fullPlot.add(new Node("SUBPLOT!", NodeType.NONE));
+					fullPlot.addAll(subplotGenerator.generate());
+					lingen.state.removePredicate(impasse.predicate);
+					fullPlot.add(new Node("SUBPLOT RESOLVED", NodeType.NONE));
 				}
 				lingen.nextFunction();
 				lingen.resumeGeneration();
-				continue;
 			}
 		}
 		return fullPlot;
