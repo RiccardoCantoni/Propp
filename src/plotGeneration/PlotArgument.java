@@ -30,8 +30,7 @@ public class PlotArgument {
 		this.chainNames = getNames();
 		this.initialState = initialState;
 		this.injections = injections;
-	}
-	
+	}	
 	
 	public FunctionChain[] loadChains() {
 		List<FunctionChain> out = new LinkedList<>();
