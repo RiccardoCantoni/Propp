@@ -33,8 +33,6 @@ public enum KnownSequence {
 			new String[] {
 					"Return",
 					"Filler",
-					"FirstFunctionReaction",
-					"Acquisition",
 					"Guidance",
 					"Struggle"
 				}),

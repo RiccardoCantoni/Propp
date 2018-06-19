@@ -54,3 +54,4 @@ public class StruggleChain implements ChainGenerator{
     }
     
 }
+ 

@@ -21,10 +21,12 @@ public class ImpasseHandler {
 		handlerSequenceMap.put(new Predicate("recognition_outcome","negative","_"), KnownSequence.RETRY_RECOGNITION_SEQUENCE);
 		handlerSequenceMap.put(new Predicate("subplot_required","quest_item","_"), KnownSequence.QUEST_ITEM_SEQUENCE);
 		handlerSequenceMap.put(new Predicate("subplot_required","quest_helper","_"), KnownSequence.QUEST_HELPER_SEQUENCE);
+		handlerSequenceMap.put(new Predicate("subplot_required","imposture","_"), KnownSequence.IMPOSTURE_SEQUENCE);
 	
 		handlerInjectionMap = new HashMap<Predicate, String>();
 		handlerInjectionMap.put(new Predicate("subplot_required","quest_item","_"), "filler_lack_item");
 		handlerInjectionMap.put(new Predicate("subplot_required","quest_helper","_"), "filler_lack_item");
+		handlerInjectionMap.put(new Predicate("subplot_required","imposture","_"), "unrecognised_return");
 	}
 	
 	public PlotArgument handleImpasse(Impasse impasse) {
@@ -46,5 +48,4 @@ public class ImpasseHandler {
 		return new PlotArgument(subseq, substate, injections);
 	}
 		
-
 }

@@ -14,7 +14,10 @@ public class ImpasseScanner {
 			new Predicate("donor_test_outcome","negative"),
 			new Predicate("guidance_outcome","negative"),
 			new Predicate("struggle_outcome","negative"),
-			new Predicate("recognition_outcome","negative")
+			new Predicate("recognition_outcome","negative"),
+			new Predicate("subplot_required","quest_item","_"),
+			new Predicate("subplot_required","quest_helper","_"),
+			new Predicate("subplot_required","imposture","_")
 	};
 	
 	public Impasse scanPath(List<Node> path, State finalstate) {
