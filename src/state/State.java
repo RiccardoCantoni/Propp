@@ -61,7 +61,7 @@ public class State {
     }   
     
     public void removePredicate(Predicate p) {
-    	this.set.removeAllMatching(p);
+    	this.set.removeOneMatching(p);
     }
     
 }

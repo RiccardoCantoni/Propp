@@ -48,6 +48,16 @@ public class PredicateSet implements Serializable{
         this.set.removeAll(toRemove);
     }
     
+    public void removeOneMatching(Predicate p) {
+    	AtomMatcher m = new AtomMatcher(p);
+    	for (int i=0; i<this.set.size(); i++) {
+    		if (m.matchSingle(this.set.get(i))) {
+    			this.set.remove(i);
+    			return;
+    		}
+    	}
+    }
+    
     public void union(PredicateSet ps){
         for (Predicate p: ps.set){
             this.addPredicate(p);
