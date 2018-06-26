@@ -5,10 +5,12 @@
  */
 package plotGeneration;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import myUtils.ListUtil;
 import myUtils.LogManager;
 import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
@@ -30,18 +32,21 @@ public class AcyclicMarkovExplorer {
     NodeTree tree;
     MarkovTransition transition;    
     
-    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, List<String>injections){
+    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, String[] injections){
         this.graph = graph;
         this.state = initialState;
+        injectAll(injections);
         this.transition = transition;
         List<Node> reversePath = new LinkedList<Node>(); 
-        int maxAttempts = 20, i=0;
-        while (i<maxAttempts && NodeSequenceManager.containsInjections(reversePath, injections)) {
+        int maxAttempts = 20;
+        for (int i=0; i<maxAttempts; i++) {
         	reversePath = exploreChain();
-        	i++;
+	        if (NodeSequenceManager.containsInjections(reversePath, injections)) {
+	        	Collections.reverse(reversePath);
+	        	return reversePath;
+	        }
         }
-        Collections.reverse(reversePath);
-        return reversePath;
+        throw new GraphExplorationException("injections failed at chain "+ graph.FunctionName, injections, state, reversePath);      
     }
     
     public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition){
@@ -82,9 +87,10 @@ public class AcyclicMarkovExplorer {
                     LogManager.addEntry("backtracking failed:");
                     LogManager.addEntry("node: "+currentNode.label);
                     LogManager.addEntry(state.toString());
-                    throw new GraphExplorationException("backtracking failed after node '" + currentNode.label +"' of chain "+graph.FunctionName);
+                    throw new GraphExplorationException(
+                    		"backtracking failed after node '" + currentNode.label +"' of chain "+graph.FunctionName);
                 }
-                currentNode = fringe.get(0);
+                currentNode = fringe.get(0);                
                 fringe.remove(0);
             }
         }
@@ -103,6 +109,12 @@ public class AcyclicMarkovExplorer {
             }
         }
         return successors;
+    }
+    
+    private void injectAll(String[] injections) {
+    	for (String i : injections) {
+    		state.inject(i);
+    	}
     }
     
 }

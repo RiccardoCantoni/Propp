@@ -32,13 +32,11 @@ public class Propp {
         SharedRandom.getInstance().setRandom();
         List<Node> ls = walk();
         ListUtil.printList(NodeSequenceManager.getLabelSequence(ls), true);
-    	
     }
     
-    public static List<Node> walk() {
-    	
+    public static List<Node> walk() {   
         PlotArgument arg = new PlotArgument(KnownSequence.MAIN_SEQUENCE.getSequence(), new State(), new String[0]);
-        MultiPlotGenerator multigen = new MultiPlotGenerator(arg);
+        MultiPlotGenerator multigen = new MultiPlotGenerator(arg, 0);
         List<Node> plot = multigen.generate();
         return plot;        
     }

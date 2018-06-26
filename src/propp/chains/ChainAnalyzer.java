@@ -3,7 +3,7 @@ package propp.chains;
 import java.util.LinkedList;
 import java.util.List;
 
-import proppFunction.Edge;
+import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import state.Predicate;
@@ -42,6 +42,16 @@ public class ChainAnalyzer {
 			labels.add(n.label);
 		}
 		return labels;
+	}
+	
+	public boolean canResolveInjections(String[] injections) {
+		List<String> labels = NodeSequenceManager.getLabelSequence(chain.nodes);
+		for (String injection : injections) {
+			for (String label: labels) {
+				if (label.equals(injection)) return true;
+			}
+		}
+		return false;
 	}
 	
 }

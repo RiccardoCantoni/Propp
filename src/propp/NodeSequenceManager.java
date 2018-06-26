@@ -28,11 +28,9 @@ public class NodeSequenceManager {
         return labels;
     }
     
-    public static boolean containsInjections(List<Node> seq, List<String>injections) {
-    	Node i = new Node("", NodeType.NONE);
+    public static boolean containsInjections(List<Node> seq, String[] injections) {
     	for (String s : injections) {
-    		i.label = s;
-    		if (!seq.contains(i)) 
+    		if (!seq.contains(new Node(s, NodeType.NONE))) 
     			return false;
     	}
     	return true;

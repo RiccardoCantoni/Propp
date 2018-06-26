@@ -64,14 +64,16 @@ public class ChainUpdater {
     
     private static void updateChain(String chainName) {
     	chainName = "propp.chains."+chainName+"Chain";
+    	ChainGenerator fc = null;
     	try {
     		Class c = Class.forName(chainName);
     		Constructor constructor = c.getConstructor();
-    		ChainGenerator fc = (ChainGenerator)constructor.newInstance();
-    		fc.createSave();
-    		}catch(Exception e) {
-    			System.out.println("chain update failed: "+chainName);
-    		}
+    		fc = (ChainGenerator)constructor.newInstance();
+    	}catch(Exception e) {
+    		System.out.println("reflexion error");
+    		e.printStackTrace();
+    	}
+    	fc.createSave();
     }
    
 }

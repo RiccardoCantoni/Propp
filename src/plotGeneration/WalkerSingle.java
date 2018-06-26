@@ -31,7 +31,7 @@ public class WalkerSingle implements Iterator<Node>{
     int pathIndex;
     List<String> injections;
     
-    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState, List<String> injections){
+    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState, String[] injections){
         this.chain = chain;
         this.transition = transition;
         this.state = initialState;
@@ -45,7 +45,7 @@ public class WalkerSingle implements Iterator<Node>{
         this.transition = transition;
         this.state = initialState;
         AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
-        path = explorer.explorationPath(chain, initialState, transition, new LinkedList<String>());
+        path = explorer.explorationPath(chain, initialState, transition);
         pathIndex = 0;
     }
 

@@ -51,8 +51,8 @@ public class State {
         return n.isValid(set);
     }
     
-    public void injectPrecondition(Node n) {
-    	set.addPredicate(new Predicate("injection",n.label,"_"));
+    public void inject(String label) {
+    	set.addPredicate(new Predicate("injection",label,"_"));
     }
     
     public void cleanInjections() {

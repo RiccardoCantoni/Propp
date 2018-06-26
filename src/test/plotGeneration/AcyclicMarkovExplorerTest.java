@@ -19,6 +19,8 @@ import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import proppFunction.PickFirstTransition;
+import state.AtomMatcher;
+import state.Predicate;
 import state.State;
 
 /**
@@ -63,5 +65,33 @@ public class AcyclicMarkovExplorerTest {
             new Node("b", NodeType.NONE)
             }
         ));
+    }
+    
+    @Test
+    public void testInjections() {
+    	FunctionChain C = new FunctionChain("test");
+    	AtomMatcher neverMatch = new AtomMatcher(new Predicate("this", "doesnt", "match"));
+    	Node n = new Node("a", NodeType.NONE);
+    	C.addNode(n);
+    	C.setInitial(n);
+    	n = new Node("b", NodeType.NONE);
+    	n.preconditions = neverMatch;
+    	C.addNode(n);
+    	n = new Node("c", NodeType.NONE);
+    	n.preconditions = neverMatch;
+    	C.addNode(n);
+    	C.addEdge("a","b");
+    	C.addEdge("a","c");
+    	String[] injections = new String[] {"c"};
+    	AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
+    	List<Node> path = explorer.explorationPath(C, new State(), new PickFirstTransition(), injections);
+    	assertTrue(ListUtil.listArrayEquals(path, 
+                new Node[]{
+                new Node("$entry_point", NodeType.NONE),
+                new Node("a", NodeType.NONE),
+                new Node("c", NodeType.NONE)
+                }
+            ));
+    	
     }
 }

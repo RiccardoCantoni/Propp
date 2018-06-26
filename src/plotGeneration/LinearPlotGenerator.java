@@ -5,16 +5,11 @@
  */
 package plotGeneration;
 
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-
-import myUtils.JsonDataManager;
 import propp.SystemState;
+import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
@@ -40,7 +35,7 @@ public class LinearPlotGenerator{
     
     
     WalkerSingle walkerSingle;
-    List<String> injections;
+    String[] injections;
     
     public LinearPlotGenerator(PlotArgument arg){
     	this.arg = arg;
@@ -66,8 +61,12 @@ public class LinearPlotGenerator{
         chainIndex = 0;
         state = arg.initialState;
         currentChain = chainSequence[chainIndex];
-        injections = Arrays.asList(arg.injections);
-        walkerSingle = new WalkerSingle(currentChain, transition, state);
+        this.injections = arg.injections;
+        if (injections.length>0 && new ChainAnalyzer(currentChain).canResolveInjections(injections)) {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        }else {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state);
+        }
     }
     
     void generationLoop() {
@@ -114,12 +113,16 @@ public class LinearPlotGenerator{
         return n;
     }
     
-    public void nextFunction() {
-        state = walkerSingle.getFinalState();
+    public void nextFunction() {    
+    	state = walkerSingle.getFinalState();
         plot = new LinkedList<Node>();
         chainIndex++;
         currentChain = chainSequence[chainIndex];
-        walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        if (new ChainAnalyzer(currentChain).canResolveInjections(injections)) {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        }else {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state);
+        }
     }
     
 }
