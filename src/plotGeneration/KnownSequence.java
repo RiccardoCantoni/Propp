@@ -14,9 +14,6 @@ public enum KnownSequence {
 				"Branding",
 				"Liquidation",
 				"Return",
-				"FalseClaimsFalseReward",
-				"Recognition",
-				"ExposurePunishment",
 				"Reward"
 			}),
 	RETRY_RECON_SEQUENCE(
@@ -46,8 +43,8 @@ public enum KnownSequence {
 			),
 	RETRY_RECOGNITION_SEQUENCE(
 			new String[] {
-					"Filler",
 					"Return",
+					"Filler",
 					"Recognition"
 				}
 			),
@@ -71,7 +68,6 @@ public enum KnownSequence {
 					"FalseClaimsFalseReward",
 					"Recognition",
 					"ExposurePunishment",
-					"Reward"
 				});
 	
 	

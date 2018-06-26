@@ -15,10 +15,14 @@ public class ReconDeliveryChain implements ChainGenerator {
 		n = new Node("casual_encounter", NodeType.EVENT);
 		C.addNode(n);
 		C.setInitial(n);
+		n = new Node("intended_encounter", NodeType.ACTION);
+		C.addNode(n);
+		C.setInitial(n);
 		n= new Node("villain_attempts_recon", NodeType.GOAL);
 		C.addNode(n);
 		C.setInitial(n);
 		C.addEdge("casual_encounter", "villain_attempts_recon");
+		C.addEdge("intended_encounter", "villain_attempts_recon");
 		n= new Node("approach", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("villain_attempts_recon", "approach");
