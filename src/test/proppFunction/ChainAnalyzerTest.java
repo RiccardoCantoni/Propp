@@ -14,10 +14,10 @@ public class ChainAnalyzerTest {
 		FunctionChain fillerChain = FunctionChain.deserializeFrom("Filler");
 		ChainAnalyzer returnAnalyzer = new ChainAnalyzer(returnChain);
 		ChainAnalyzer fillerAnalyzer = new ChainAnalyzer(fillerChain);
-		assertTrue(returnAnalyzer.canResolveInjections(new String[] {"unrecognised_arrival"}));
-		assertFalse(returnAnalyzer.canResolveInjections(new String[] {"pippo"}));
-		assertTrue(fillerAnalyzer.canResolveInjections(new String[] {"hero_quest"}));
-		assertFalse(fillerAnalyzer.canResolveInjections(new String[] {"pippo"}));
+		assertTrue(returnAnalyzer.resolvableInjections(new String[] {"unrecognised_arrival"}).length>0);
+		assertFalse(returnAnalyzer.resolvableInjections(new String[] {"pippo"}).length>0);
+		assertTrue(fillerAnalyzer.resolvableInjections(new String[] {"hero_quest"}).length>0);
+		assertFalse(fillerAnalyzer.resolvableInjections(new String[] {"pippo"}).length>0);
 	}
 
 }

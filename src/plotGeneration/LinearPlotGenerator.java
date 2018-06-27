@@ -62,8 +62,9 @@ public class LinearPlotGenerator{
         state = arg.initialState;
         currentChain = chainSequence[chainIndex];
         this.injections = arg.injections;
-        if (injections.length>0 && new ChainAnalyzer(currentChain).canResolveInjections(injections)) {
-        	walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        String[] resolvableInjections = new ChainAnalyzer(currentChain).resolvableInjections(injections); 
+        if (resolvableInjections.length>0) {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state, resolvableInjections);
         }else {
         	walkerSingle = new WalkerSingle(currentChain, transition, state);
         }
@@ -118,8 +119,9 @@ public class LinearPlotGenerator{
         plot = new LinkedList<Node>();
         chainIndex++;
         currentChain = chainSequence[chainIndex];
-        if (new ChainAnalyzer(currentChain).canResolveInjections(injections)) {
-        	walkerSingle = new WalkerSingle(currentChain, transition, state, injections);
+        String[] resolvableInjections = new ChainAnalyzer(currentChain).resolvableInjections(injections);
+        if (resolvableInjections.length>0) {
+        	walkerSingle = new WalkerSingle(currentChain, transition, state, resolvableInjections);
         }else {
         	walkerSingle = new WalkerSingle(currentChain, transition, state);
         }

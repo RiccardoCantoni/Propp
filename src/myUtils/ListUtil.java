@@ -42,8 +42,14 @@ public class ListUtil {
     
     public static <T> String listToString (List<T> ls, boolean newline){
         String s = "list: [";
+        if (newline) {
         s = ls.stream().map((item) -> item.toString()+";\r\n").reduce(s, String::concat);
         s = s.substring(0, s.length() - 2);
+        s += "]";
+        return s;
+        }
+        s = ls.stream().map((item) -> item.toString()+";").reduce(s, String::concat);
+        s = s.substring(0, s.length() - 1);
         s += "]";
         return s;
     }
@@ -55,7 +61,7 @@ public class ListUtil {
     
     public static <T> void printList(List<T> ls, boolean newline){
         System.out.println("list size: "+ls.size());
-        System.out.println(ListUtil.listToString(ls, true));
+        System.out.println(ListUtil.listToString(ls, newline));
     }
     
     public static <T> T pickRandom(List<T> ls) {

@@ -3,8 +3,9 @@ package propp.chains;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
-import state.AtomMatcher;
+import state.ConstantMatcher;
 import state.Predicate;
+import state.PredicateMatcher;
 
 public class FillerChain implements ChainGenerator{
 
@@ -13,7 +14,7 @@ public class FillerChain implements ChainGenerator{
 		FunctionChain C = new FunctionChain("Filler");
 		Node n;
 		
-		AtomMatcher neverMatch = new AtomMatcher(new Predicate("xxx","yyy","zzz"));
+		PredicateMatcher neverMatch = new ConstantMatcher(false);
 		//non existing predicate to ensure that paths are only followed if injected
 		//all nodes are blocked, unless injected
 		n = new Node("filler_villain_retry", NodeType.ACTION);

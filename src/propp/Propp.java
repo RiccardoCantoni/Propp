@@ -8,13 +8,12 @@ package propp;
 import java.util.LinkedList;
 import java.util.List;
 
-import myUtils.ListUtil;
+import TextGeneration.TextDictionary;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
 import propp.chains.ChainUpdater;
 import proppFunction.Node;
-import proppFunction.NodeType;
 import proppFunction.SharedRandom;
 import state.State;
 
@@ -29,10 +28,15 @@ public class Propp {
      */
     public static void main(String[] args) {
     	
+    	List<Node> ls = new LinkedList();
     	ChainUpdater.updateAllChains();
         SharedRandom.getInstance().setRandom();
-        List<Node> ls = plotContaining("recon_outcome_failure");
-        ListUtil.printList(NodeSequenceManager.getLabelSequence(ls), true);
+        TextDictionary TD = new TextDictionary();
+        //TD.unloadToCSV("dictionary.csv");
+        TD.loadFromCSV("dictionary.csv");
+        String txs = TD.getRandomText("label2");
+        System.out.print(txs);
+    
     }
     
     public static List<Node> walk() {   

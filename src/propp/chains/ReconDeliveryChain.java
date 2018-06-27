@@ -3,6 +3,7 @@ package propp.chains;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
+import state.ConstantMatcher;
 import state.Predicate;
 
 public class ReconDeliveryChain implements ChainGenerator {
@@ -51,6 +52,12 @@ public class ReconDeliveryChain implements ChainGenerator {
 		C.addNode(n);
 		C.setInitial(n);
 		C.addEdge("casual_hearing", "recon_outcome_success");
+		n = new Node("casual_hearing_imposture", NodeType.EVENT);
+		n.preconditions = new ConstantMatcher(false);
+		C.addNode(n);
+		C.setInitial(n);
+		C.addEdge("casual_hearing_imposture", "recon_outcome_success");
+		
 		n= new Node("recon_outcome_failure", NodeType.OUTCOME);
 		n.toAdd.addPredicate(new Predicate("recon_outcome", "negative", "_"));
 		C.addNode(n);

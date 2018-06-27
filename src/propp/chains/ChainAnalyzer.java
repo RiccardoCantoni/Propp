@@ -1,7 +1,9 @@
 package propp.chains;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
@@ -44,14 +46,13 @@ public class ChainAnalyzer {
 		return labels;
 	}
 	
-	public boolean canResolveInjections(String[] injections) {
+	public String[] resolvableInjections(String[] injections) {
 		List<String> labels = NodeSequenceManager.getLabelSequence(chain.nodes);
-		for (String injection : injections) {
-			for (String label: labels) {
-				if (label.equals(injection)) return true;
-			}
-		}
-		return false;
+		List<String> ls = Arrays.asList(injections)
+				.stream()
+				.filter(x->labels.contains(x))
+				.collect(Collectors.toList());
+		return ls.toArray(new String[ls.size()]);
 	}
 	
 }
