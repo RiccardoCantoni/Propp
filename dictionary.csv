@@ -1,4 +1,132 @@
-la,x,y,z
-lb,bb,bbb,b
-lc,t,t
-ld
+way_discovered;the hero discovers a way to reach the villain
+filler_lack_item;the hero requires an item
+test_outcome_failure;the hero fails the test
+approach;the villain approaches the hero
+casual_hearing;the villain overhears the hero
+reward_chiefdom;the hero becomes chief
+helper_acquisition;the donor decides to help the hero in his quest
+item_indication;the donor informs the hero about an item
+prisoner_desire_freedom;the prisoner asks to be freed
+hero_presents_claims;the hero claims his prize
+hero_recognised_by_item;the hero is recognised because of the item he is carrying
+way_not_found;the hero can not find a way to the villain
+test_outcome_success;the hero successfully completes the test
+false_claims_received;claims of the false hero are received
+lack_helper;a helper is required
+casual_hearing_imposture;the false hero overhears the hero talking about his success
+donor_test;the donor tests the hero
+magical_travel;the hero is magically transported
+falsehero_imprisoned;the false hero is imprisoned
+hero_arrival;the hero returns 
+donor_capture;the donor is captured
+donor_need;the donor has a pressing need
+hero_quest;the hero embarks in a search
+item_acquisition;the hero aquires the item
+helper_found;a helper is found
+hero_escape;the hero is forced to run
+false_claims;@false claims
+reward_betrothal;the hero is bethrothed
+way_followed;the hero follows the path 
+hero_recognised;the hero is recognised
+unrecognised_arrival;the hero returns but is not recognised
+aid_used;the hero uses an advantage
+reward_withdrawn;the reward to the false hero is withdrawn
+recon_outcome_success;the hero unwillingly gives away vital information
+branding_mark;the hero receives a boldily mark
+misfortune_announcement;the problem is announced to the hero
+ack_demand_imprisonment;the demans is received
+seizure;the villain seizes an item
+villain_killed;the villain is killed
+aid_unavailable;the villain has an advantage
+falsehero_rewarded;the false hero is rewarded
+lack_item;an item is needed
+struggle_outcome_positive;the hero is victorious
+hero_recognised_by_mark;the hero is recognised because of the bodily mark he carries
+falsehero_exiled;the false hero is exiled
+item_discovery;the hero finds an item
+hero_donor_ack;the hero sees the donor
+inquiry;he tries to interrogate the hero
+donor_hero_ack;the donor sees the hero
+falsehero_exposed;the false hero is exposed
+realisation;the hero realizes what happened
+villain_imprisoned;the villain is locked away
+pillaging;the villain pillages in item
+help_response_ack;the response is heard
+captive_freed;the prisoner is set free
+guided_travel;the hero is guided by the donor
+intended_encounter;the villain arranges to meet the hero
+item_preparation;an item is prepared
+observation;the hero is observed from hiding
+villain_defeated;the villain is defeated
+hero_lacks_proof;the hero cannot prove his identity
+filler_villain_retry;the villain tries again
+reward_kingdom;the hero is rewarded with a kingdom
+reward_land;the hero is rewarded with land
+answer;he answers
+help_response;the hero responds to the call for help
+donor_begging;the donor begs the hero
+item_desire;the hero desires the item
+branding_item;the hero aquires an item from the villain
+hero_confronts_falsehero;the hero confronts the false hero
+falsehero_punished;the false hero is punished
+filler_lack_helper;a helper is required
+donor_servitude;the donor accepts to become servant to the hero
+travel;the hero travels
+item_provides_wealth;the hero is made rich by an item
+claims_received_by_dispatcher;the dispatcher hears the claims
+false_claims_accepted;the claims of the false hero are accepted
+dispatch;the dispatcher dispatches the hero to solve the problem
+reward_wealth;the hero is rewarded with great wealth
+filler_hero_retry;the hero tries again
+demand_imprisonment;the villain demands someone to be imprisoned
+item_delivery;the item is delivered to the hero
+demand_murder;the villain demands someone to be murdered
+lack_freedom;the prisoner must be freed
+falsehero_killed;the false hero is killed
+conversation;the two engage in a conversation
+murder;someone is murdered
+help_request;the donor asks the hero for help
+contest;the two engage in a competition
+abduction;someone is abducted by the villain
+claims_denied;the claims are not accepted
+item_seizure;an item is seized away by the villain
+hero_return;the hero returns 
+reward_item;the hero is rewarded with an item
+proof_required_item;the hero needs an item to prove his identity
+casual_encounter;the villain meets the hero
+reward_marriage;the hero marries
+lack_wealth;someone is extremely poor
+donor_interrogation;the donor interrogates the hero
+way_showed;the donor shows a path to the hero
+hero_returning;the hero is returning
+departure;the hero departs
+misfortune_announcement_ack;the hero is told about the problem
+item_indication_ack;the hero learns how to find the item
+hero_desire_donor;the hero wants to catch the donor
+begin_counteraction;he hero decides to pursue this goal
+arrival;the hero arrives
+imprisonment;someone is imprisoned
+war_declaration;the villain starts a war
+recon_outcome_failure;the hero does not reveal any important information
+prisoner_request_freedom;the donor asks the hero to help him regain his freedom
+prisoner_hero_ack;the donor sees the hero
+guidance_acquisition;the hero is guided to the villain
+exchange_offer;the donor offers an exchange to the hero
+way_searched;the hero searches a way to reach the villain
+donor_attack;the donor attacks the hero
+aid_available;the hero has an advantage
+fight;the hero and the villain engage in combat
+approach_ack;the hero salutes
+dispatch_ack;the hero accepts
+struggle_outcome_negative;the hero is defeated
+initiative;the hero decides to try and solve the problem
+proof_required_mark;the hero does not possess any mark to prove his identity
+war;a war is being fought
+donor_display;the donor displays an item to the hero
+help_request_ack;the hero acknoweledges this plead for help
+test_outcome_failure_ack;the hero sees he has failed
+ack_demand_murder;a servant of the villain follows the order
+villain_attempts_recon;the villain attempts to obtain information from the hero
+test_outcome_success_ack;the donor tells the hero he has passed the test
+test_ack;the hero accepts the terms of the test
+lack_vengeance;vengeance is needed

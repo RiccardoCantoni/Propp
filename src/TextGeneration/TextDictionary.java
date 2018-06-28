@@ -22,7 +22,7 @@ public class TextDictionary {
 	
 	private Map <String, String[]> tdict;
 	
-	public TextDictionary(String filename) {
+	public TextDictionary() {
 		tdict = new HashMap<String, String[]>();
 	}
 	
@@ -53,7 +53,7 @@ public class TextDictionary {
 		try {
 	        br = new BufferedReader(new FileReader(filename));
 	        while ((line = br.readLine()) != null) {
-	            split = line.split(",");
+	            split = line.split(";");
 	            value = new String[split.length-1];
 	            System.arraycopy(split, 1, value, 0, split.length-1);
 	            tdict.put(split[0], value);
@@ -66,7 +66,7 @@ public class TextDictionary {
 
 	public String[] getTexts(String label) {
 		if (!tdict.containsKey(label)) {
-			throw new NoSuchElementException("label not found in dictionary");
+			return new String[0];
 		}
 		return tdict.get(label);
 	}
@@ -74,6 +74,7 @@ public class TextDictionary {
 	public String getRandomText(String label) {
 		SharedRandom rnd = SharedRandom.getInstance();
 		String[] txs = getTexts(label);
+		if (txs.length==0) return "";
 		return txs[rnd.nextInt(txs.length)];
 	}
 	
