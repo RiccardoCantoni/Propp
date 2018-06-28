@@ -4,18 +4,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
-import java.lang.reflect.Constructor;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import myUtils.JsonDataManager;
-import myUtils.ListUtil;
 import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
 import proppFunction.SharedRandom;
@@ -23,18 +21,9 @@ import proppFunction.SharedRandom;
 public class TextDictionary {
 	
 	private Map <String, String[]> tdict;
-	private String filename;
 	
 	public TextDictionary(String filename) {
 		tdict = new HashMap<String, String[]>();
-		this.filename = filename;
-	}
-	
-	public void mockDict() {
-		tdict.put("la", new String[] {"x","y","z"});
-		tdict.put("lb", new String[] {});
-		tdict.put("lc", new String[] {"t","t"});
-		unloadToCSV(filename);
 	}
 	
 	public void unloadToCSV(String filename) {
@@ -64,7 +53,7 @@ public class TextDictionary {
 		try {
 	        br = new BufferedReader(new FileReader(filename));
 	        while ((line = br.readLine()) != null) {
-	            split = line.split(";");
+	            split = line.split(",");
 	            value = new String[split.length-1];
 	            System.arraycopy(split, 1, value, 0, split.length-1);
 	            tdict.put(split[0], value);
@@ -76,6 +65,9 @@ public class TextDictionary {
 	}
 
 	public String[] getTexts(String label) {
+		if (!tdict.containsKey(label)) {
+			throw new NoSuchElementException("label not found in dictionary");
+		}
 		return tdict.get(label);
 	}
 	
@@ -85,14 +77,8 @@ public class TextDictionary {
 		return txs[rnd.nextInt(txs.length)];
 	}
 	
-	public void updateDictionary() {
-		//List<String> chainLabels = getAllLabels();
-		List<String> chainLabels = Arrays.asList(new String[] {
-				"la",
-				"lb",
-				"lc",
-				"ld"
-		});
+	public void updateDictionary(String filename) {
+		List<String> chainLabels = getAllLabels();
 		loadFromCSV(filename);
 		Map <String, String[]> newdict = new HashMap<String, String[]>();
 		for (String label : chainLabels) {
