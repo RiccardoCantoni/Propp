@@ -38,7 +38,8 @@ public class SharedRandom {
     
     public void setRandom(){
         rnd = new Random();
-        seedSet = true;
+        Long l = rnd.nextLong();
+        setSeed(l);
     }
     
     public int nextInt(int upperBound){
