@@ -18,14 +18,18 @@ public class SystemState {
     
     private static SystemState instance;
     
-    public boolean loggingMode = false;
-    public boolean unconstrained_mode = false;
+    public boolean loggingMode;
+    public boolean unconstrained_mode;
     public MarkovTransition transition_function;
+    public boolean debuggingMode;
+    public String textDictionaryFile;
     
     private SystemState() {
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
         unconstrained_mode = (boolean)ConfigurationManager.getConfig(boolean.class, "unconstrained_mode");
         transition_function = this.getTransitionFunction((String)ConfigurationManager.getConfig(String.class, "transition_type"));
+        loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "debug_mode");
+        textDictionaryFile = (String)ConfigurationManager.getConfig(String.class, "text_dictionary");
     }
     
     public static SystemState getInstance() {

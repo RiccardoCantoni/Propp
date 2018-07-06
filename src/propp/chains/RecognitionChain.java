@@ -3,6 +3,7 @@ package propp.chains;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
+import state.AtomMatcher;
 import state.Predicate;
 
 public class RecognitionChain implements ChainGenerator{
@@ -37,9 +38,11 @@ public class RecognitionChain implements ChainGenerator{
 		C.addNode(n);
 		C.addEdge("claims_denied","hero_confronts_falsehero");
 		n = new Node("hero_recognised_by_item", NodeType.PI);
+		n.preconditions = new AtomMatcher(new Predicate("branding","item","_"));
 		C.addNode(n);
 		C.addEdge("hero_confronts_falsehero","hero_recognised_by_item");
 		n = new Node("hero_recognised_by_mark", NodeType.PI);
+		n.preconditions = new AtomMatcher(new Predicate("branding","mark","_"));
 		C.addNode(n);
 		C.addEdge("hero_confronts_falsehero","hero_recognised_by_mark");
 		n = new Node("hero_recognised", NodeType.OUTCOME);

@@ -4,16 +4,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import myUtils.JsonDataManager;
+import propp.SystemState;
 import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
 import proppFunction.SharedRandom;
@@ -21,9 +25,14 @@ import proppFunction.SharedRandom;
 public class TextDictionary {
 	
 	private Map <String, String[]> tdict;
+	private String splitchar = ";";
 	
 	public TextDictionary() {
 		tdict = new HashMap<String, String[]>();
+	}
+	
+	public void loadDictionary() {
+		loadFromCSV(SystemState.getInstance().textDictionaryFile);
 	}
 	
 	public void unloadToCSV(String filename) {
@@ -33,7 +42,7 @@ public class TextDictionary {
 		        StringBuilder sb = new StringBuilder();
 		        sb.append(s);
 		        for (String ss : tdict.get(s)) {
-		        	sb.append(","+ss);
+		        	sb.append(splitchar+ss);
 		        }
 		        sb.append('\n');
 		        pw.write(sb.toString());
@@ -53,7 +62,7 @@ public class TextDictionary {
 		try {
 	        br = new BufferedReader(new FileReader(filename));
 	        while ((line = br.readLine()) != null) {
-	            split = line.split(";");
+	            split = line.split(splitchar);
 	            value = new String[split.length-1];
 	            System.arraycopy(split, 1, value, 0, split.length-1);
 	            tdict.put(split[0], value);
@@ -62,6 +71,9 @@ public class TextDictionary {
         	System.out.println("dictionary loading failed");
         	e.printStackTrace();
         }	
+		if (tdict.keySet().size() == 0) {
+			System.out.println("loading failed");
+		}
 	}
 
 	public String[] getTexts(String label) {
@@ -81,6 +93,9 @@ public class TextDictionary {
 	public void updateDictionary(String filename) {
 		List<String> chainLabels = getAllLabels();
 		loadFromCSV(filename);
+		int n = chainLabels.size()-tdict.size();
+		if (n>0)
+			System.out.println("Labels missing string: " + n);
 		Map <String, String[]> newdict = new HashMap<String, String[]>();
 		for (String label : chainLabels) {
 			if (tdict.containsKey(label)) {
@@ -90,6 +105,13 @@ public class TextDictionary {
 			}
 		}
 		tdict = newdict;
+		Path src = Paths.get(filename);
+		Path dst = Paths.get("backup_"+filename);
+		try {
+			Files.copy(src, dst, StandardCopyOption.REPLACE_EXISTING);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		unloadToCSV(filename);
 	}
 	

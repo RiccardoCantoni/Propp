@@ -9,6 +9,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import TextGeneration.TextDictionary;
+import TextGeneration.TextGenerator;
+import myUtils.ListUtil;
+import myUtils.LogManager;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
@@ -29,21 +32,27 @@ public class Propp {
     public static void main(String[] args) {
     	
     	List<Node> ls = new LinkedList();
+    	TextDictionary TD = new TextDictionary();
+    	TD.updateDictionary("dictionary.csv");
     	ChainUpdater.updateAllChains();
-        SharedRandom.getInstance().setRandom();
-        TextDictionary TD = new TextDictionary();
-        //TD.unloadToCSV("dictionary.csv");
+    	//-8952703234742336930l causes loop
+        SharedRandom.getInstance().setSeed(-8952703234742336930l);
+        
         TD.loadFromCSV("dictionary.csv");
-        String txs = TD.getRandomText("label2");
-        System.out.print(txs);
-    
+        for (int i = 0; i<1; i++) {
+        	ls = walk();
+        }
+        TextGenerator textgen = new TextGenerator();
+        String text = textgen.generateText(ls);
+        System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
+        //System.out.print(text);
     }
     
-    public static List<Node> walk() {   
+    public static List<Node> walk() {
         PlotArgument arg = new PlotArgument(KnownSequence.MAIN_SEQUENCE.getSequence(), new State(), new String[0]);
         MultiPlotGenerator multigen = new MultiPlotGenerator(arg, 0);
         List<Node> plot = multigen.generate();
-        return plot;        
+        return plot;
     }
     
     public static List<Node> plotContaining(String s){

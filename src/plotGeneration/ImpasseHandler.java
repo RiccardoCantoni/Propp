@@ -25,14 +25,14 @@ public class ImpasseHandler {
 		handlerSequenceMap.put(new Predicate("subplot_required","imposture","_"), KnownSequence.IMPOSTURE_SEQUENCE);
 	
 		handlerInjectionMap = new HashMap<Predicate, String[]>();
+		handlerInjectionMap.put(new Predicate("recon_outcome","negative","_"), new String[] {"filler_villain_retry", "intended_encounter"});
 		handlerInjectionMap.put(new Predicate("donor_test_outcome","negative","_"),new String[] {"filler_hero_retry"});
 		handlerInjectionMap.put(new Predicate("guidance_outcome","negative","_"), new String[] {"filler_hero_retry"});
 		handlerInjectionMap.put(new Predicate("struggle_outcome","negative","_"), new String[] {"filler_hero_retry"});
-		handlerInjectionMap.put(new Predicate("recon_outcome","negative","_"), new String[] {"filler_villain_retry", "intended_encounter"});
-		handlerInjectionMap.put(new Predicate("recognition_outcome","negative","_"), new String[] {"filler_hero_retry"});
+		handlerInjectionMap.put(new Predicate("recognition_outcome","negative","_"), new String[] {"filler_lack_item"});
 		handlerInjectionMap.put(new Predicate("subplot_required","quest_item","_"), new String[] {"filler_lack_item"});
 		handlerInjectionMap.put(new Predicate("subplot_required","quest_helper","_"), new String[] {"filler_lack_helper"});
-		handlerInjectionMap.put(new Predicate("subplot_required","imposture","_"), new String[] {"unrecognised_arrival", "casual_hearing_imposture"});
+		handlerInjectionMap.put(new Predicate("subplot_required","imposture","_"), new String[] {"unrecognised_arrival"});
 		
 	}
 	

@@ -60,6 +60,14 @@ public class VillainyChain implements ChainGenerator{
         n = C.addEdge("war_declaration", "war");
         n.type = NodeType.ACTION;
         n.toAdd.addPredicate(new Predicate("villainy","war"));
+        n = new Node("villain_runs", NodeType.ACTION);
+        C.addNode(n);
+        C.addEdge("abduction","villain_runs");
+        C.addEdge("seizure","villain_runs");
+        C.addEdge("pillaging","villain_runs");
+        C.addEdge("murder","villain_runs");
+        C.addEdge("war","villain_runs");
+        C.addEdge("imprisonment","villain_runs");
         
         C.serialize();
     }

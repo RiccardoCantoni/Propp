@@ -29,7 +29,7 @@ public class LiquidationChain implements ChainGenerator{
 		n = new Node("villain_imprisoned", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("villain_defeated","villain_imprisoned");
-		n = new Node("item_provides wealth", NodeType.EVENT);
+		n = new Node("item_provides_wealth", NodeType.EVENT);
 		n.preconditions = new AtomMatcher(new Predicate("lack","wealth","_"));
 		n.toRemove.addPredicate(new Predicate("lack","wealth","_"));
 		C.addNode(n);

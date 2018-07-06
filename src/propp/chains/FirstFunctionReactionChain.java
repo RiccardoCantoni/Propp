@@ -76,7 +76,10 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n.toAdd.addPredicate(new Predicate("donor_test_type","attack"));
         C.addNode(n);
         C.setInitial(n);
-        C.addEdge("donor_attack",ta);
+        n = new Node("donor_fight", NodeType.EVENT);
+        C.addNode(n);
+        C.addEdge("donor_attack","donor_fight");
+        C.addEdge("donor_fight",ta);
         n = new Node("donor_display", NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("donor_test_type","exchange"));
         C.addNode(n);

@@ -65,8 +65,6 @@ public class AcquisitionChain implements ChainGenerator{
         C.addNode(n);
         C.addEdge("item_discovery","item_desire");
         C.addEdge("item_desire",ai);
-        C.addEdge("item_desire",ah);
-        C.addEdge("item_desire",ag);
         n = new Node("item_seizure", NodeType.ACTION);
         C.addNode(n);
         C.addEdge("item_desire","item_seizure");
