@@ -39,8 +39,8 @@ public class MultiPlotGenerator {
 		while(true) {	
 			pgs = lingen.getGenerationState();	
 			chainPlot = lingen.getPlot();
-			if (SystemState.getInstance().debuggingMode) {
-				ListUtil.printList(NodeSequenceManager.getLabelSequence(chainPlot));
+			if (SystemState.getInstance().debugMode) {
+				ListUtil.printList(NodeSequenceManager.getLabelSequence(chainPlot), true);
 			}
 			fullPlot.addAll(chainPlot);
 			Impasse impasse = scanner.scanPath(chainPlot, lingen.getState());

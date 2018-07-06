@@ -37,7 +37,7 @@ public class Propp {
     	ChainUpdater.updateAllChains();
     	//-8952703234742336930l causes loop
         SharedRandom.getInstance().setSeed(-8952703234742336930l);
-        
+        System.out.println("debm: "+SystemState.getInstance().debugMode);
         TD.loadFromCSV("dictionary.csv");
         for (int i = 0; i<1; i++) {
         	ls = walk();

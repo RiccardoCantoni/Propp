@@ -21,14 +21,14 @@ public class SystemState {
     public boolean loggingMode;
     public boolean unconstrained_mode;
     public MarkovTransition transition_function;
-    public boolean debuggingMode;
+    public boolean debugMode;
     public String textDictionaryFile;
     
     private SystemState() {
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
         unconstrained_mode = (boolean)ConfigurationManager.getConfig(boolean.class, "unconstrained_mode");
         transition_function = this.getTransitionFunction((String)ConfigurationManager.getConfig(String.class, "transition_type"));
-        loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "debug_mode");
+        debugMode = (boolean)ConfigurationManager.getConfig(boolean.class, "debug_mode");
         textDictionaryFile = (String)ConfigurationManager.getConfig(String.class, "text_dictionary");
     }
     
