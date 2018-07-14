@@ -50,7 +50,6 @@ public enum KnownSequence {
 			),
 	QUEST_ITEM_SEQUENCE(
 			new String[] {
-					"Filler",
 					"Lack",
 					"FirstFunctionReaction",
 					"Acquisition"

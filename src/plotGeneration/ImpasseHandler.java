@@ -14,6 +14,7 @@ public class ImpasseHandler {
 	public Map<Predicate, String[]> handlerInjectionMap;
 	
 	public ImpasseHandler() {
+		
 		handlerSequenceMap = new HashMap<Predicate,KnownSequence>();
 		handlerSequenceMap.put(new Predicate("recon_outcome","negative","_"), KnownSequence.RETRY_RECON_SEQUENCE);
 		handlerSequenceMap.put(new Predicate("donor_test_outcome","negative","_"), KnownSequence.RETRY_TEST_SEQUENCE);
@@ -30,7 +31,7 @@ public class ImpasseHandler {
 		handlerInjectionMap.put(new Predicate("guidance_outcome","negative","_"), new String[] {"filler_hero_retry"});
 		handlerInjectionMap.put(new Predicate("struggle_outcome","negative","_"), new String[] {"filler_hero_retry"});
 		handlerInjectionMap.put(new Predicate("recognition_outcome","negative","_"), new String[] {"filler_lack_item"});
-		handlerInjectionMap.put(new Predicate("subplot_required","quest_item","_"), new String[] {"filler_lack_item"});
+		handlerInjectionMap.put(new Predicate("subplot_required","quest_item","_"), new String[] {});
 		handlerInjectionMap.put(new Predicate("subplot_required","quest_helper","_"), new String[] {"filler_lack_helper"});
 		handlerInjectionMap.put(new Predicate("subplot_required","imposture","_"), new String[] {"unrecognised_arrival"});
 		

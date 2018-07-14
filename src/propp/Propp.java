@@ -35,16 +35,14 @@ public class Propp {
     	TextDictionary TD = new TextDictionary();
     	TD.updateDictionary("dictionary.csv");
     	ChainUpdater.updateAllChains();
-    	//-8952703234742336930l causes loop
-        SharedRandom.getInstance().setSeed(-8952703234742336930l);
-        System.out.println("debm: "+SystemState.getInstance().debugMode);
+        SharedRandom.getInstance().setSeed(-9222746572149235879l);
         TD.loadFromCSV("dictionary.csv");
         for (int i = 0; i<1; i++) {
         	ls = walk();
         }
         TextGenerator textgen = new TextGenerator();
         String text = textgen.generateText(ls);
-        System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
+        //System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         //System.out.print(text);
     }
     

@@ -1,6 +1,0 @@
-
-GRAPH_EXPLORATION_EXCEPTION:
-injections failed at chain ReconDelivery
-state: state: recon_outcome(positive,_),villainy(murder,$character),help_request(dispatcher,_),dispatch($dispatcher,$hero),departure($hero,_),donor_test_type(attack,_),donor_test_outcome(positive,_),acquisition_type(item,_),item_acquired($item,_),location($hero,$location),guidance_outcome(positive,_),struggle_outcome(positive,_),branding(item,_),injection(casual_hearing_imposture,_),
-sequence: list: [recon_outcome_success; casual_hearing; $entry_point]
-injections: list: [casual_hearing_imposture]
