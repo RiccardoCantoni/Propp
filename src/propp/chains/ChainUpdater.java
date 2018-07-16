@@ -37,30 +37,7 @@ public class ChainUpdater {
         System.out.println((a.size()+1)+" chains updated successfully");
         
         //checkPredicateConsistency();
-    }
-    
-    private static void checkPredicateConsistency() {
-    	throw new UnsupportedOperationException("legacy method, needs to be reimplemented");
-    	/*ChainAnalyzer ca;
-    	PredicateMatcher m;
-    	PredicateSet added = new PredicateSet();
-    	List<Predicate> required = new LinkedList<>();
-    	List<FunctionChain> chainSeq = Arrays.asList(defaultSequence());
-    	for (FunctionChain c : chainSeq) {
-    		ca = new ChainAnalyzer(c);
-    		for (Predicate p : ca.getAddedPredicates()) {
-    			added.addPredicate(p);
-    		}
-    		required.addAll(ca.getRequiredPredicates());
-    	}
-    	for (Predicate req : required) {
-    		m = new AtomMatcher(req);
-    		if (!m.matchAny(added)) { 
-    			throw new IllegalArgumentException("precondition contains unknown predicate: "+req.toString());
-    		}
-    	}*/
-    }
-    
+    } 
     
     private static void updateChain(String chainName) {
     	chainName = "propp.chains."+chainName+"Chain";
