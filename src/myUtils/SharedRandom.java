@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proppFunction;
+package myUtils;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -36,6 +37,12 @@ public class SharedRandom {
         seedSet = true;
     }
     
+    public long getSeed(){
+        if (!seedSet)
+            throw new IllegalStateException("shared random generator not initialized");
+        return currentSeed;
+    }
+    
     public void setRandom(){
         rnd = new Random();
         Long l = rnd.nextLong();
@@ -53,12 +60,29 @@ public class SharedRandom {
             throw new IllegalStateException("shared random generator not initialized");
         return rnd.nextFloat();
     }
-
-    public long getSeed(){
+    
+    public double nextDouble() {
         if (!seedSet)
             throw new IllegalStateException("shared random generator not initialized");
-        return currentSeed;
+        return rnd.nextDouble();    	
     }
+
+    public int roulette(float[] probabilities) {
+    	float sum = 0;
+    	for (int i=0; i<probabilities.length; i++) {
+    		sum+=probabilities[i];
+    	}
+    	float x = this.nextFloat()*sum;
+    	float acc = 0;
+    	for (int i=0; i<probabilities.length; i++) {
+    		acc+=probabilities[i];
+    		if (x<=acc) 
+    			return i;
+    	}
+    	return -1;
+    	
+    }
+			
     
 
     

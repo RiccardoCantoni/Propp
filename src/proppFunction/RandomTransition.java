@@ -7,6 +7,8 @@ package proppFunction;
 
 import java.util.List;
 
+import myUtils.SharedRandom;
+
 /**
  *
  * @author Riccardo

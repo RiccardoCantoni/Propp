@@ -26,6 +26,7 @@ public class Node implements Serializable{
     public PredicateSet toAdd, toRemove;
     public PredicateMatcher preconditions;
     public String label;
+    public int localFrequency;
     
     public Node(){
        this.successors = new LinkedList<>();
@@ -34,6 +35,7 @@ public class Node implements Serializable{
        this.toAdd = new PredicateSet();
        this.toRemove = new PredicateSet();
        this.label = "";
+       this.localFrequency = 0;
     }
     
     public Node(NodeType t, Predicate[] preconditions, Predicate[] toAdd, Predicate[] toRemove){
@@ -43,6 +45,7 @@ public class Node implements Serializable{
         this.toAdd = new PredicateSet(toAdd);
         this.toRemove = new PredicateSet(toRemove);
         this.label = "";
+        this.localFrequency = 0;
     }
     
     public Node(String label, NodeType type){
@@ -52,6 +55,7 @@ public class Node implements Serializable{
        this.toAdd = new PredicateSet();
        this.toRemove = new PredicateSet();
        this.label = label;
+       this.localFrequency = 0;
     }
     
      public Node(String label){
@@ -61,6 +65,7 @@ public class Node implements Serializable{
        this.toAdd = new PredicateSet();
        this.toRemove = new PredicateSet();
        this.label = label;
+       this.localFrequency = 0;
     }
 
     public Node[] successors() {

@@ -1,5 +1,7 @@
 way_discovered;HERO discovers a way to LOCATION;HERO finds a path to LOCATION
 filler_lack_item;ITEM is needed;HERO needs ITEM
+answer_imposture;HERO answers
+conversation_imposture;HERO and FALSEHERO engage in a conversation;FALSEHERO and HERO talk briefly
 test_outcome_failure;HERO has failed the test
 approach;VILLAIN approaches HERO
 casual_hearing;VILLAIN overhears HERO;VILLAIN hears HERO from afar
@@ -11,16 +13,18 @@ hero_presents_claims;HERO presents his claims to DISPATCHER
 hero_recognised_by_item;HERO is recognised from his ITEM;ITEM proves the identity of HERO
 way_not_found;HERO cannot find a way to LOCATION;HERO does not know how to reach LOCATION
 test_outcome_success;HERO has passed the test
+observation_imposture;FALSEHERO secretly observes HERO;while HERO is returning, FALSEHERO observes him
 false_claims_received;DISPATCHER listen to FALSEHERO presenting his claims;DISPATCHER ponders about the claims 
 lack_helper;someone who can help is needed;a help is required
-casual_hearing_imposture;FALSEHERO overhears HERO talking about his success
 donor_test;HERO is tested by DONOR
+casual_hearing_imposture;FALSEHERO overhears HERO talking about his success
 magical_travel;HERO is magically transported to LOCATION;DONOR magically brings HERO to LOCATION
 falsehero_imprisoned;FALSEHERO is imprisoned;FALSEHERO is thrown in prison;FALSEHERO is locked away;FALSEHERO is brought away in chains
 hero_arrival;HERO has returned;HERO is back
 donor_capture;DONOR is captured by HERO;HERO catches DONOR;DONOR is caught
 donor_need;DONOR is in need;DONOR asks for help
 hero_quest;HERO embraks in the quest
+falsehero_approach;FALSEHERO approaches HERO
 item_acquisition;HERO aquires ITEM
 helper_found;HERO has found DONOR to help
 hero_escape;HERO is forced to run away;HERO barely escapes with his life
@@ -38,6 +42,7 @@ seizure;VILLAIN seizes ITEM;VILLAIN steals ITEM
 villain_killed;VILLAIN is killed;VILLAIN is dead
 falsehero_rewarded;FALSEHERO is rewarded
 lack_item;ITEM is needed
+intended_encounter_imposture;FALSEHERO goes up to HERO
 struggle_outcome_positive;HERO is victorious;HERO defeats VILLAIN
 hero_recognised_by_mark;HERO is recognised by the mark he is carrying
 falsehero_exiled;FALSEHERO is exiled;FALSEHERO is cast away, never to be allowed back
@@ -70,7 +75,7 @@ item_desire;HERO desires ITEM;HERO wants ITEM
 branding_item;HERO obtains ITEM
 aid_helper_available;HERO asks DONOR for help
 hero_confronts_falsehero;HERO confronts FALSEHERO
-villain_runs;VILLAIN runs away to LOCATION;VILLAIN goes in hiding at LOCATION;VILLAIN goes back to LOCATION
+villain_runs;VILLAIN runs away to LOCATION;VILLAIN goes in hiding at LOCATION;VILLAIN retreats to LOCATION
 falsehero_punished;FALSEHERO is punished
 filler_lack_helper;external help is required
 donor_servitude;DONOR decides to become servant to HERO;DONOR accepts helping HERO
@@ -81,10 +86,13 @@ false_claims_accepted;DISPATCHER acknoweledges the claims presented by FALSEHERO
 dispatch;DISPATCHER sends HERO on the mission
 reward_wealth;HERO is rewarded with great wealth;HERO is rewarded with a bag of gold
 filler_hero_retry;HERO resumes his travelling
+falsehero_approach_ack;HERO sees FALSEHERO coming toward him
+recon_outcome_success_imposture;FALSEHERO learns of what HERO has done
 demand_imprisonment;VILLAIN demands FRIEND to be imprisoned
 item_delivery;DONOR gives ITEM to HERO
 demand_murder;VILLAIN demands FRIEND to be murdered
 lack_freedom;FRIEND shall be freed
+falsehero_inquiry;FALSEHERO asks several questions to HERO
 falsehero_killed;FALSEHERO is killed;FALSEHERO is executed
 conversation;the two engage in a conversation
 murder;FRIEND is murdered
@@ -108,6 +116,7 @@ misfortune_announcement_ack;HERO receives the announcement;HERO acknowledges the
 item_indication_ack;HERO learns the whereabouts of ITEM;DONOR explains to HERO where ITEM is
 hero_desire_donor;HERO wants to catch DONOR
 aid_item_unavailable;HERO has nothing to fight with;HERO is unable to effectively fight VILLAIN
+falsehero_attempts_recon;FALSEHERO attempts to know more about who HERO is
 begin_counteraction;HERO considers about the quest at hand
 arrival;HERO arrives to LOCATION;HERO finally gets to LOCATION
 imprisonment;FRIEND is imprisoned
@@ -116,6 +125,7 @@ recon_outcome_failure;HERO does not reveal any important information
 prisoner_request_freedom;DONOR asks HERO for freedom
 prisoner_hero_ack;DONOR is held in captivity. He sees HERO approaching
 guidance_acquisition;DONOR offers HERO to guide him;HERO accepts DONOR as guide
+casual_encounter_imposture;HERO and FALSEHERO casually meet
 exchange_offer;DONOR offers HERO an exchange;DONOR offers a trade
 way_searched;HERO searches a way to reach LOCATION
 donor_attack;DONOR attacks HERO;DONOR suddenly attacks HERO
@@ -125,7 +135,7 @@ dispatch_ack;HERO receives the request
 struggle_outcome_negative;HERO is defeated;VILLAIN is victorious
 initiative;HERO decides to embark in the quest
 aid_helper_unavailable;HERO is alone facing VILLAIN
-proof_required_mark;HERO needs to prove his claims
+recon_outcome_failure_imposture;FALSEHERO, not having learned anything of importance, leaves;FALSEHERO leaves
 war;the war rages on
 donor_display;DONOR is displayng ITEM;DONOR shows ITEM
 help_request_ack;HERO receives the request

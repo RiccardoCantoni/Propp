@@ -6,6 +6,7 @@
 package propp;
 
 import myUtils.ConfigurationManager;
+import proppFunction.InverseLocalFrequencyTransition;
 import proppFunction.MarkovTransition;
 import proppFunction.PickFirstTransition;
 import proppFunction.RandomTransition;
@@ -44,8 +45,9 @@ public class SystemState {
     		return new RandomTransition();
     	if (arg.equals("pickFirst"))
     		return new PickFirstTransition();
-    	else
-    		throw new IllegalArgumentException("config: unrecognised transition type");
+    	if (arg.equals("inverseFrequency"))
+    		return new InverseLocalFrequencyTransition();
+    	throw new IllegalArgumentException("config: unrecognised transition type");
     }
     
 }

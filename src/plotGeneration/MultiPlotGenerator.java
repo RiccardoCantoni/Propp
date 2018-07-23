@@ -5,12 +5,12 @@ import java.util.List;
 
 import myUtils.ListUtil;
 import myUtils.LogManager;
+import myUtils.SharedRandom;
 import propp.NodeSequenceManager;
 import propp.SystemState;
 import proppFunction.GraphExplorationException;
 import proppFunction.Node;
 import proppFunction.NodeType;
-import proppFunction.SharedRandom;
 
 public class MultiPlotGenerator {
 	
@@ -42,7 +42,10 @@ public class MultiPlotGenerator {
 			if (SystemState.getInstance().debugMode) {
 				ListUtil.printList(NodeSequenceManager.getLabelSequence(chainPlot), true);
 			}
-			fullPlot.addAll(chainPlot);
+			for (Node n: chainPlot) {
+				n.localFrequency++;
+				fullPlot.add(n);
+			}
 			Impasse impasse = scanner.scanPath(chainPlot, lingen.getState());
 			subarg = handler.handleImpasse(impasse);
 			if (subarg!=null) {

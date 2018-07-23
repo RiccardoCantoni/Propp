@@ -13,15 +13,19 @@ public class TextGenerator {
 		List<TextElement> textElements = new LinkedList<>();
 		for (Node n : nodelist) {
 			TextElement te;
-			if (n.label.charAt(0)=='$') {
-				textElements.add(new SpecialElement(n.label.substring(1)));
+			if (n.type == NodeType.NONE) {
+				if (n.label.charAt(0)=='$') {
+					textElements.add(new SpecialElement(n.label.substring(1)));
+				}else {
+					textElements.add(new SpecialElement(n.label));
+				}
 			}else {
 				textElements.add(new StringElement(n.label));
 			}
 			
 		}
 		for (TextElement elem : textElements) {
-			text+=elem.yield()+"\n";
+			text+=elem.yield()+";\n";
 		}
 		return text;
 	}

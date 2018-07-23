@@ -63,7 +63,7 @@ public enum KnownSequence {
 				}),
 	IMPOSTURE_SEQUENCE(
 			new String[] {
-					"ReconDelivery",
+					"ReconDeliveryImposture",
 					"FalseClaimsFalseReward",
 					"Recognition",
 					"ExposurePunishment",

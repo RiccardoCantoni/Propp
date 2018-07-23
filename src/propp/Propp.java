@@ -16,6 +16,7 @@ import TextGeneration.TextDictionary;
 import TextGeneration.TextGenerator;
 import myUtils.JsonDataManager;
 import myUtils.ListUtil;
+import myUtils.SharedRandom;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
@@ -23,7 +24,6 @@ import propp.chains.ChainAnalyzer;
 import propp.chains.ChainUpdater;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
-import proppFunction.SharedRandom;
 import state.State;
 
 /**
@@ -36,21 +36,19 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	analyzeState(new LinkedList<String>(),new LinkedList<String>(),new LinkedList<String>());
-    	
-    	/*List<Node> ls = new LinkedList();
+    	ChainUpdater.updateAllChains();   	
+    	List<Node> ls = new LinkedList();
     	TextDictionary TD = new TextDictionary();
-    	TD.updateDictionary("dictionary.csv");
-    	ChainUpdater.updateAllChains();
-        SharedRandom.getInstance().setSeed(-9222746572149235879l);
+    	TD.updateDictionary("dictionary.csv");    	
+        SharedRandom.getInstance().setRandom();
         TD.loadFromCSV("dictionary.csv");
         for (int i = 0; i<1; i++) {
         	ls = walk();
         }
         TextGenerator textgen = new TextGenerator();
-        String text = textgen.generateText(ls);*/
-        //System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
-        //System.out.print(text);
+        String text = textgen.generateText(ls);
+        System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
+        System.out.print(text);
     }
     
     public static List<Node> walk() {

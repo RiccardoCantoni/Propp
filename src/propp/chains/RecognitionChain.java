@@ -31,9 +31,6 @@ public class RecognitionChain implements ChainGenerator{
 		n = new Node("proof_required_item", NodeType.OUTCOME);
 		C.addNode(n);
 		C.addEdge("hero_lacks_proof", "proof_required_item");
-		n = new Node("proof_required_mark", NodeType.OUTCOME);
-		C.addNode(n);
-		C.addEdge("hero_lacks_proof", "proof_required_mark");
 		n = new Node("hero_confronts_falsehero", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("claims_denied","hero_confronts_falsehero");

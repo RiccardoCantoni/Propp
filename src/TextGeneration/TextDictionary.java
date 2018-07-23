@@ -17,10 +17,10 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import myUtils.JsonDataManager;
+import myUtils.SharedRandom;
 import propp.SystemState;
 import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
-import proppFunction.SharedRandom;
 
 public class TextDictionary {
 	
@@ -78,7 +78,7 @@ public class TextDictionary {
 
 	public String[] getTexts(String label) {
 		if (!tdict.containsKey(label)) {
-			return new String[0];
+			return new String[] {"text_not_found: "+label};
 		}
 		return tdict.get(label);
 	}

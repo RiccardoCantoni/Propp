@@ -11,7 +11,7 @@ import org.junit.Test;
 import genericGraph.DAGPeeler;
 import genericGraph.DirectedAcyclicGraph;
 import myUtils.ListUtil;
-import proppFunction.SharedRandom;
+import myUtils.SharedRandom;
 
 public class testDAGpeeler {
 
