@@ -13,6 +13,7 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import TextGeneration.ExistantType;
+import TextGeneration.Text;
 import TextGeneration.TextDictionary;
 import TextGeneration.TextGenerator;
 import myUtils.JsonDataManager;
@@ -45,10 +46,11 @@ public class Propp {
         TD.loadFromCSV("dictionary.csv");
         ls = walk();
         TextGenerator textgen = new TextGenerator();
-        String text = textgen.generateText(ls);
+        Text text = textgen.generateText(ls);
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
-        System.out.print(text);
+        System.out.println(text.title);
+        System.out.println(text.body);
     }
     
     public static List<Node> walk() {

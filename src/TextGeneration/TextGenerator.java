@@ -12,14 +12,17 @@ import state.State;
 
 public class TextGenerator {
 	
-	public String generateText(List<Node> nodeList){
+	public Text generateText(List<Node> nodeList){
 		String text = "";
 		List<TextElement> textElements = getTextElements(nodeList);
 		State state = new State();
 		for (TextElement elem : textElements) {
 			text+=elem.yield(state)+" ";
 		}
-		return text;
+		Text t = new Text();
+		t.body = text;
+		t.title = new TitleGenerator().generateTitle(state);
+		return t;
 	}
 	
 	List<TextElement> getTextElements(List<Node> nodeList){
