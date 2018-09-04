@@ -49,10 +49,10 @@ public class SharedRandom {
         setSeed(l);
     }
     
-    public int nextInt(int upperBound){
+    public int nextInt(int upperBoundExclusive){
         if (!seedSet)
             throw new IllegalStateException("shared random generator not initialized");
-        return rnd.nextInt(upperBound);
+        return rnd.nextInt(upperBoundExclusive);
     }
     
     public float nextFloat(){

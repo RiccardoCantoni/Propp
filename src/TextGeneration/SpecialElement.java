@@ -1,5 +1,7 @@
 package TextGeneration;
 
+import state.State;
+
 public class SpecialElement implements TextElement{
 	
 	String str;
@@ -9,8 +11,12 @@ public class SpecialElement implements TextElement{
 	}
 
 	@Override
-	public String yield() {
-		return "--"+str+"--";
+	public String yield(State state) {
+		if (str.equals("STOP")) 
+			return "\n";
+		return "&"+str;
 	}
+	
+	
 
 }

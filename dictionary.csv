@@ -105,7 +105,7 @@ aid_item_available;HERO has ITEM;HERO now owns ITEM
 hero_return;HERO returns;HERO is back
 reward_item;HERO is rewarded with an item
 proof_required_item;HERO needs ITEM to prove his claims
-casual_encounter;VILLAIN casually enounters HERO;VILLAIN meets HERO
+casual_encounter;VILLAIN casually encounters HERO;VILLAIN meets HERO
 reward_marriage;HERO gets married;HERO marries
 lack_wealth;FRIEND lives in poverty
 donor_interrogation;DONOR interrogates HERO;DONOR tests HERO with questions

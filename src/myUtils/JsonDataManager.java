@@ -19,6 +19,7 @@ public class JsonDataManager {
 			JsonObject obj = reader.readObject();
 			arr = obj.getJsonArray(name);			
 		}catch(Exception e){
+			e.printStackTrace();
 			System.out.println("JSON exception: unable to find array "+name);
 		}
 		return arr;

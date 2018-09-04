@@ -32,6 +32,10 @@ public class State {
         set.union(n.toAdd);
     }
     
+    public void addPredicate(Predicate p) {
+    	set.addPredicate(p);
+    }
+    
     public void rollback(Node n){
         set.difference(n.toAdd);
         set.union(n.toRemove);

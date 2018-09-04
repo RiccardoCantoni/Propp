@@ -1,5 +1,7 @@
 package TextGeneration;
 
+import state.State;
+
 public class StringElement implements TextElement{
 	
 	public StringElement(String str) {
@@ -10,7 +12,7 @@ public class StringElement implements TextElement{
 	
 
 	@Override
-	public String yield() {
+	public String yield(State state) {
 		TextDictionary td = new TextDictionary();
 		td.loadDictionary();
 		return td.getRandomText(label);

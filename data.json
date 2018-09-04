@@ -68,5 +68,52 @@
       "name": "ReconDeliveryImposture",
       "code": "rdi"
     }
+  ],
+  "heroes": [
+    "Ivàn",
+    "Boris",
+    "the fanner",
+    "the farmer",
+    "the knight",
+    "the fisherman",
+    "Luke Skywalker"
+  ],
+  "villains": [
+  	"the evil king",
+  	"the black knight",
+  	"the witch",
+  	"the orc"
+  ],
+  "donors": [
+  	"the golden bird",
+  	"the unicorn",
+  	"the man of the forest",
+  	"pippo",
+  	"the pixie",
+  	"the old lady",
+  	"the old man"
+  ],
+  "dispatchers": [
+  	"the village elder",
+  	"the king",
+  	"the prince"
+  ],
+  "friends": [
+  	"the village elder",
+  	"the old man",
+  	"the old woman"
+  ],
+  "items": [
+  	"magical sword",
+  	"magical bow",
+  	"flying shoes"
+  ],
+  "locations": [
+  	"the castle",
+  	"the forest",
+  	"the mountain",
+  	"the city",
+  	"the tower",
+  	"the enchanted lake"
   ]
 }

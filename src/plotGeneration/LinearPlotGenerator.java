@@ -110,7 +110,7 @@ public class LinearPlotGenerator{
     Node next() {
         n = walkerSingle.next();
         if (n.label.equals("$entry_point"))
-        	n.label = "$"+currentChain.FunctionName;
+        	n.label = "&"+currentChain.FunctionName;
         return n;
     }
     

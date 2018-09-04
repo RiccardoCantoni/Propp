@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
+import TextGeneration.ExistantType;
 import TextGeneration.TextDictionary;
 import TextGeneration.TextGenerator;
 import myUtils.JsonDataManager;
