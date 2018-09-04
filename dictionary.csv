@@ -34,7 +34,7 @@ way_followed;HERO follows the path to LOCATION
 hero_recognised;HERO is finally recognised;the identity of HERO is confirmed
 unrecognised_arrival;HERO returns but he is not recognised;HERO returns in disguise
 reward_withdrawn;the reward to FALSEHERO is withdrawn
-recon_outcome_success;HERO unwillingly reveals information;informations are revealed
+recon_outcome_success;HERO unwillingly reveals information;some information is revealed
 branding_mark;HERO receives a bodily mark;HERO is scarred
 misfortune_announcement;FRIEND tells HERO what happened;FRIEND announces the misfortune to HERO
 ack_demand_imprisonment;the demand is accepted by a servant

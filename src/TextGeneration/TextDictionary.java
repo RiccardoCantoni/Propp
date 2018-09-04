@@ -1,5 +1,7 @@
 package TextGeneration;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -94,8 +96,13 @@ public class TextDictionary {
 		List<String> chainLabels = getAllLabels();
 		loadFromCSV(filename);
 		int n = chainLabels.size()-tdict.size();
-		if (n>0)
-			System.out.println("Labels missing string: " + n);
+		if (n>0) {
+			System.out.println("Labels missing a string: "+n);
+			for (String l : chainLabels) {
+				if (!tdict.containsKey(l))
+					System.out.println(l);
+			}
+		}
 		Map <String, String[]> newdict = new HashMap<String, String[]>();
 		for (String label : chainLabels) {
 			if (tdict.containsKey(label)) {
@@ -122,7 +129,13 @@ public class TextDictionary {
     	JsonArray chains = jdm.loadArray("chains");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));
-    		labels.addAll(ca.getLabels());
+    		for (String label : ca.getLabels()) {
+    			if (labels.contains(label)) {
+    				System.out.println("WARNING: duplicate label "+label);
+    			}else {
+    				labels.add(label);
+    			}
+    		}
     	}
     	return labels;
     }

@@ -43,12 +43,11 @@ public class Propp {
     	TD.updateDictionary("dictionary.csv");    	
         SharedRandom.getInstance().setRandom();
         TD.loadFromCSV("dictionary.csv");
-        for (int i = 0; i<1; i++) {
-        	ls = walk();
-        }
+        ls = walk();
         TextGenerator textgen = new TextGenerator();
         String text = textgen.generateText(ls);
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
+        System.out.println("==========");
         System.out.print(text);
     }
     

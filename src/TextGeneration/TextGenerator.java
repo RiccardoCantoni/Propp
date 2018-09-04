@@ -19,7 +19,6 @@ public class TextGenerator {
 		for (TextElement elem : textElements) {
 			text+=elem.yield(state)+" ";
 		}
-		System.out.print("STATE: "+state.toString());
 		return text;
 	}
 	

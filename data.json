@@ -69,22 +69,22 @@
       "code": "rdi"
     }
   ],
-  "heroes": [
-    "Ivàn",
+  "HERO": [
+    "Ivan",
     "Boris",
-    "the fanner",
+    "the tanner",
     "the farmer",
     "the knight",
     "the fisherman",
     "Luke Skywalker"
   ],
-  "villains": [
+  "VILLAIN": [
   	"the evil king",
   	"the black knight",
   	"the witch",
   	"the orc"
   ],
-  "donors": [
+  "DONOR": [
   	"the golden bird",
   	"the unicorn",
   	"the man of the forest",
@@ -93,22 +93,22 @@
   	"the old lady",
   	"the old man"
   ],
-  "dispatchers": [
+  "DISPATCHER": [
   	"the village elder",
   	"the king",
   	"the prince"
   ],
-  "friends": [
+  "FRIEND": [
   	"the village elder",
   	"the old man",
   	"the old woman"
   ],
-  "items": [
+  "ITEM": [
   	"magical sword",
   	"magical bow",
   	"flying shoes"
   ],
-  "locations": [
+  "LOCATION": [
   	"the castle",
   	"the forest",
   	"the mountain",

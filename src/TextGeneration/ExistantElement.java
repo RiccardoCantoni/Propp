@@ -1,5 +1,6 @@
 package TextGeneration;
 
+import state.AtomMatcher;
 import state.Predicate;
 import state.State;
 
@@ -15,8 +16,18 @@ public class ExistantElement implements TextElement{
 
 	@Override
 	public String yield(State state) {
-		state.addPredicate(new Predicate("test","test","test"));
-		return "$"+str;
+		Predicate p = state.getSet().find(new Predicate(type.name(),"_","_"));
+		if (p!=null) {  //existant already introduced
+			return p.subj;
+		}
+		return introduceExistant(type, state); //intro new existant
+	}
+	
+	String introduceExistant(ExistantType type, State state) {
+		ExistantDictionary dict = new ExistantDictionary();
+		String existant = dict.getRandomExistant(type);
+		state.addPredicate(new Predicate(type.name(),existant,"_"));
+		return existant;
 	}
 	
 	ExistantType getType(String str) {
