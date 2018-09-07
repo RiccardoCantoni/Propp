@@ -12,7 +12,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import plotGeneration.AcyclicMarkovExplorer;
 import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
@@ -43,7 +43,7 @@ public class AcyclicMarkovExplorerTest {
                 new Node("d", NodeType.NONE),
                 new Node("f", NodeType.NONE)
                 });
-        assertTrue(ListUtil.listEquals(path, path2)); 
+        assertTrue(ListUtils.listEquals(path, path2)); 
     }
     
     @Test
@@ -58,7 +58,7 @@ public class AcyclicMarkovExplorerTest {
         G.addEdge("a", "b");
         AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
         List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
-        assertTrue(ListUtil.listArrayEquals(path, 
+        assertTrue(ListUtils.listArrayEquals(path, 
             new Node[]{
             new Node("$entry_point", NodeType.NONE),
             new Node("a", NodeType.NONE),
@@ -85,13 +85,13 @@ public class AcyclicMarkovExplorerTest {
     	String[] injections = new String[] {"c"};
     	AcyclicMarkovExplorer explorer = new AcyclicMarkovExplorer();
     	List<Node> path = explorer.explorationPath(C, new State(), new PickFirstTransition(), injections);
-    	assertTrue(ListUtil.listArrayEquals(path, 
+    	assertTrue(ListUtils.listArrayEquals(path, 
                 new Node[]{
                 new Node("$entry_point", NodeType.NONE),
                 new Node("a", NodeType.NONE),
                 new Node("c", NodeType.NONE)
                 }
             ));
-    	
     }
+    
 }

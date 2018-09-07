@@ -3,6 +3,7 @@ package TextGeneration;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -23,6 +24,7 @@ public class TextGenerator {
 		}
 		Text t = new Text();
 		t.body = text;
+		t.length = nodeList.size();
 		t.title = new TitleGenerator().generateTitle(state);
 		DebugUtils.debugPrint("=== text generation terminated ===");
 		return t;
@@ -39,8 +41,12 @@ public class TextGenerator {
 		}
 		List<String> strings = new LinkedList<String>();
 		for (TextElement e : textElements) {
-			strings.addAll(Arrays.asList(e.yield(null).split("\\s+")));
-			strings.add("&STOP"); //newline at the end of an event
+			String str = e.yield(null);
+			if (str!=null) {
+				List<String> ls = Arrays.asList(str.split("\\s+"));
+				strings.addAll(ls);
+				strings.add("&STOP"); //newline at the end of an event
+			}
 		}
 		textElements.clear();
 		for (String s: strings) {

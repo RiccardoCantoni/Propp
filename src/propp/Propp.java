@@ -16,9 +16,10 @@ import TextGeneration.ExistantType;
 import TextGeneration.Text;
 import TextGeneration.TextDictionary;
 import TextGeneration.TextGenerator;
-import myUtils.JsonDataManager;
-import myUtils.ListUtil;
+import myUtils.JsonManager;
+import myUtils.ListUtils;
 import myUtils.SharedRandom;
+import plotGeneration.FrequencyDB;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
@@ -38,15 +39,17 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	ChainUpdater.updateAllChains();   	
-    	List<Node> ls = new LinkedList();
+    	FrequencyDB fdb = FrequencyDB.getInstance();
+    	fdb.loadGlobalFrequencies();
+    	fdb.saveGlobalFrequencies();
+    	ChainUpdater.updateAllChains();   	 
     	TextDictionary TD = new TextDictionary();
     	TD.updateDictionary("dictionary.csv");    	
-        SharedRandom.getInstance().setSeed(123);
+        SharedRandom.getInstance().setRandom();
         TD.loadFromCSV("dictionary.csv");
-        ls = walk();
         TextGenerator textgen = new TextGenerator();
-        Text text = textgen.generateText(ls);
+        List<Node> ls = walk();
+    	Text text = textgen.generateText(ls);
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
         System.out.println(text.title);
@@ -69,7 +72,7 @@ public class Propp {
     }
     
     public static void analyzeState(List<String> chains, List<String>in, List<String> out) {
-    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonManager jdm = new JsonManager("data.json");
     	JsonArray a = jdm.loadArray("chains");
     	ChainAnalyzer ca;
     	FunctionChain fc;
@@ -81,9 +84,9 @@ public class Propp {
         	System.out.println("chain: "+chainName);
         	List<String> tmp = ca.getRequiredPredicates().stream().map(p -> p.toString()).collect(Collectors.toList());
         	in.addAll(tmp);
-        	ListUtil.printList(tmp, false);
+        	ListUtils.printList(tmp, false);
         	tmp = ca.getAddedPredicates().stream().map(p -> p.toString()).collect(Collectors.toList());
-        	ListUtil.printList(tmp, false);
+        	ListUtils.printList(tmp, false);
         	out.addAll(tmp);
     	}
     	List<String> inLackingOut = in;
@@ -91,9 +94,9 @@ public class Propp {
     	List<String> outLackingIn = out;
     	outLackingIn.removeAll(in);
     	System.out.println("produces lacking consumer");
-    	ListUtil.printList(outLackingIn, false);
+    	ListUtils.printList(outLackingIn, false);
     	System.out.println("consumers lacking producer");
-    	ListUtil.printList(inLackingOut, false);
+    	ListUtils.printList(inLackingOut, false);
     	
     }
     

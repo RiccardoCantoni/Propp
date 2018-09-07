@@ -7,7 +7,7 @@ import java.util.List;
 import javax.json.JsonArray;
 import javax.json.JsonString;
 
-import myUtils.JsonDataManager;
+import myUtils.JsonManager;
 import myUtils.SharedRandom;
 
 public class ExistantDictionary {
@@ -20,7 +20,7 @@ public class ExistantDictionary {
 	
 	private String[] loadDictionary(String dictname) {
 		try {
-			JsonDataManager jm = new JsonDataManager("data.json");
+			JsonManager jm = new JsonManager("data.json");
 	    	JsonArray ja = jm.loadArray(dictname);
 	    	List<String> tmp = new LinkedList<>();  	
 	    	for (JsonString o : ja.getValuesAs(JsonString.class)) {

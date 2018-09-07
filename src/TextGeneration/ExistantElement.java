@@ -33,7 +33,8 @@ public class ExistantElement implements TextElement{
 	ExistantType getType(String str) {
 		if (str.equals("HERO")) {
 			return ExistantType.HERO;
-		}else if (str.equals("VILLAIN")) {
+		}
+		else if (str.equals("VILLAIN")) {
 			return ExistantType.VILLAIN;
 		}
 		else if (str.equals("DONOR")) {
@@ -44,6 +45,9 @@ public class ExistantElement implements TextElement{
 		}
 		else if (str.equals("FRIEND")) {
 			return ExistantType.FRIEND;
+		}
+		else if (str.equals("FALSEHERO")) {
+			return ExistantType.FALSEHERO;
 		}
 		else if (str.equals("ITEM")) {
 			return ExistantType.ITEM;

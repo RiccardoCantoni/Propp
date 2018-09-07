@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Riccardo
  */
-public class ListUtil {
+public class ListUtils {
     
     public static <T> boolean listEquals (List<T> ls1, List<T> ls2){
         if (ls1.size()!= ls2.size()){
@@ -27,7 +27,7 @@ public class ListUtil {
     
     public static <T> boolean listArrayEquals (List<T> ls1, T[] array){
         List<T> ls2 = Arrays.asList(array);
-           return ListUtil.listEquals(ls1,ls2);
+           return ListUtils.listEquals(ls1,ls2);
     }
     
     public static <T> String listToString (List<T> ls){
@@ -54,12 +54,12 @@ public class ListUtil {
     
     public static <T> void printList(List<T> ls){
         System.out.println("list size: "+ls.size());
-        System.out.println(ListUtil.listToString(ls));
+        System.out.println(ListUtils.listToString(ls));
     }
     
     public static <T> void printList(List<T> ls, boolean newline){
         System.out.println("list size: "+ls.size());
-        System.out.println(ListUtil.listToString(ls, newline));
+        System.out.println(ListUtils.listToString(ls, newline));
     }
     
     public static <T> T pickRandom(List<T> ls) {

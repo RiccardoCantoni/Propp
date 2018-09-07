@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import genericGraph.DirectedAcyclicGraph;
 import genericGraph.DirectedEdge;
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 
 public class testDAG {
 	
@@ -29,7 +29,7 @@ public class testDAG {
 	public void addNodeTest() {
 		List<Integer> ls2 = new LinkedList<>();
 		ls2 = Arrays.asList(new Integer[] {1,2,3,4,5});
-		assertTrue(ListUtil.listEquals(dag.nodeSet(), ls2));
+		assertTrue(ListUtils.listEquals(dag.nodeSet(), ls2));
 	}
 	
 	@Test
@@ -39,7 +39,7 @@ public class testDAG {
 		dag.addEdge(1, 3);
 		ls2.add(new DirectedEdge<Integer>(1,2));
 		ls2.add(new DirectedEdge<Integer>(1,3));
-		assertTrue(ListUtil.listEquals(dag.edges(), ls2));
+		assertTrue(ListUtils.listEquals(dag.edges(), ls2));
 	}
 	
 	@Test
@@ -49,7 +49,7 @@ public class testDAG {
 		dag.addEdge(1, 3);
 		dag.addEdge(2, 4);
 		ls2 = Arrays.asList(new Integer[] {2,3});
-		assertTrue(ListUtil.listEquals(dag.successors(1), ls2));
+		assertTrue(ListUtils.listEquals(dag.successors(1), ls2));
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class testDAG {
 		dag.addEdge(2, 4);
 		dag.addEdge(3, 4);
 		ls2 = Arrays.asList(new Integer[] {2,3});
-		assertTrue(ListUtil.listEquals(dag.predecessors(4), ls2));
+		assertTrue(ListUtils.listEquals(dag.predecessors(4), ls2));
 	}
 	
 	

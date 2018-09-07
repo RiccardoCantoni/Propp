@@ -10,9 +10,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import myUtils.LogManager;
 import propp.NodeSequenceManager;
+import propp.SystemState;
 import proppFunction.FunctionChain;
 import proppFunction.GraphExplorationException;
 import proppFunction.MarkovTransition;
@@ -30,7 +31,14 @@ public class AcyclicMarkovExplorer {
     FunctionChain graph;
     State state;
     NodeTree tree;
-    MarkovTransition transition;    
+    MarkovTransition transition; 
+    FrequencyDB fdb;
+    boolean globalFrequency;
+
+    public AcyclicMarkovExplorer() {
+    	this.fdb = FrequencyDB.getInstance();
+    	this.globalFrequency = SystemState.getInstance().globalFrequencyActive;
+    }
     
     public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, String[] injections){
         this.graph = graph;
@@ -42,6 +50,14 @@ public class AcyclicMarkovExplorer {
         for (int i=0; i<maxAttempts; i++) {
         	reversePath = exploreChain();
 	        if (NodeSequenceManager.containsInjections(reversePath, injections)) {
+	        	for (Node n : reversePath) {
+	            	fdb.updateLocalFrequency(n);
+	            }
+	        	if (globalFrequency) {
+	        		for (Node n : reversePath) {
+		            	fdb.updateGlobalFrequency(n);
+		            }
+	        	}
 	        	Collections.reverse(reversePath);
 	        	return reversePath;
 	        }
@@ -54,6 +70,16 @@ public class AcyclicMarkovExplorer {
         this.state = initialState;
         this.transition = transition;
         List<Node> reversePath = exploreChain();
+        updateLocalFrequency(reversePath);
+        FrequencyDB fdb = FrequencyDB.getInstance();
+        for (Node n : reversePath) {
+        	fdb.updateLocalFrequency(n);
+        }
+        if (globalFrequency) {
+    		for (Node n : reversePath) {
+            	fdb.updateGlobalFrequency(n);
+            }
+    	}
         Collections.reverse(reversePath);
         return reversePath;
     }
@@ -114,6 +140,18 @@ public class AcyclicMarkovExplorer {
     private void injectAll(String[] injections) {
     	for (String i : injections) {
     		state.inject(i);
+    	}
+    }
+    
+    private void updateLocalFrequency(List<Node> nodes) {
+    	for (Node n:nodes) {
+    		fdb.updateLocalFrequency(n);
+    	}
+    }
+    
+    private void updateGlobalFrequency(List<Node> nodes) {
+    	for (Node n:nodes) {
+    		fdb.updateGlobalFrequency(n);
     	}
     }
     

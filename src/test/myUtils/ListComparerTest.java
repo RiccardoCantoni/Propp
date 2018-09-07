@@ -13,7 +13,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 
 /**
  *
@@ -48,8 +48,8 @@ public class ListComparerTest {
      */
     @Test
     public void testCompareToList() {
-        assertTrue(ListUtil.listEquals(ls1, ls2));
-        assertFalse(ListUtil.listEquals(ls1,ls3));
+        assertTrue(ListUtils.listEquals(ls1, ls2));
+        assertFalse(ListUtils.listEquals(ls1,ls3));
     }
 
     /**
@@ -57,9 +57,9 @@ public class ListComparerTest {
      */
     @Test
     public void testCompareToArray() {
-        assertTrue(ListUtil.listArrayEquals(ls1, a1));
-        assertFalse(ListUtil.listArrayEquals(ls1, a2));
-        assertFalse(ListUtil.listArrayEquals(ls1, a3));
+        assertTrue(ListUtils.listArrayEquals(ls1, a1));
+        assertFalse(ListUtils.listArrayEquals(ls1, a2));
+        assertFalse(ListUtils.listArrayEquals(ls1, a3));
     }
     
 }

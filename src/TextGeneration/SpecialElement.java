@@ -14,9 +14,8 @@ public class SpecialElement implements TextElement{
 	public String yield(State state) {
 		if (str.equals("STOP")) 
 			return "\n";
-		return "&"+str;
+		return null;
+		//return "&"+str;
 	}
 	
-	
-
 }

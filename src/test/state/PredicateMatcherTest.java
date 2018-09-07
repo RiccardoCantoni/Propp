@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import state.AndMatcher;
 import state.AtomMatcher;
 import state.NotMatcher;
@@ -99,7 +99,7 @@ public class PredicateMatcherTest {
         ps.addPredicate(p1);
         PredicateMatcher m = new AndMatcher(new OrMatcher(p1m,p2m),new NotMatcher(p3m));
         //(A | B) & !C
-        assertTrue(ListUtil.listArrayEquals(m.requiredPredicates(), new Predicate[] {p1,p2,p3}));
+        assertTrue(ListUtils.listArrayEquals(m.requiredPredicates(), new Predicate[] {p1,p2,p3}));
     }
 
 }

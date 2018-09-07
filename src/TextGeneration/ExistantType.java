@@ -6,6 +6,7 @@ public enum ExistantType {
 	DONOR,
 	DISPATCHER,
 	FRIEND,
+	FALSEHERO,
 	ITEM,
 	LOCATION
 }

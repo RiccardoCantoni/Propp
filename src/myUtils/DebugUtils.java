@@ -13,7 +13,7 @@ public class DebugUtils {
 	
 	public static void debugPrintList(List<String> ls) {
 		if (!SystemState.getInstance().debugMode) return;
-		ListUtil.printList(ls);
+		ListUtils.printList(ls);
 	}
 
 }

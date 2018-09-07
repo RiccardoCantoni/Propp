@@ -3,11 +3,11 @@ package myUtils;
 import java.io.*;
 import javax.json.*;
 
-public class JsonDataManager {
+public class JsonManager {
 	
 	File file;
 	
-	public JsonDataManager(String file) {
+	public JsonManager(String file) {
 		this.file = new File(file);
 	}
 	

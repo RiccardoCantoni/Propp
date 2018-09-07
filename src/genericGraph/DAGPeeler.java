@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import proppFunction.GraphExplorationException;
 
 public class DAGPeeler<T> implements Iterator<T>{
@@ -29,7 +29,7 @@ public class DAGPeeler<T> implements Iterator<T>{
 		if (peelable.isEmpty()) {
 			throw new GraphExplorationException("invalid DAG: loop detected");
 		}
-		T n = ListUtil.pickRandom(peelable); 
+		T n = ListUtils.pickRandom(peelable); 
 		removeOutgoing(n);
 		updateState(n);
 		return n;

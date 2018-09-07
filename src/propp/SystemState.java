@@ -6,7 +6,7 @@
 package propp;
 
 import myUtils.ConfigurationManager;
-import proppFunction.InverseLocalFrequencyTransition;
+import proppFunction.InverseFrequencyTransition;
 import proppFunction.MarkovTransition;
 import proppFunction.PickFirstTransition;
 import proppFunction.RandomTransition;
@@ -24,6 +24,7 @@ public class SystemState {
     public MarkovTransition transition_function;
     public boolean debugMode;
     public String textDictionaryFile;
+    public boolean globalFrequencyActive;
     
     private SystemState() {
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
@@ -31,6 +32,7 @@ public class SystemState {
         transition_function = this.getTransitionFunction((String)ConfigurationManager.getConfig(String.class, "transition_type"));
         debugMode = (boolean)ConfigurationManager.getConfig(boolean.class, "debug_mode");
         textDictionaryFile = (String)ConfigurationManager.getConfig(String.class, "text_dictionary");
+        globalFrequencyActive = (boolean)ConfigurationManager.getConfig(boolean.class, "global_frequency_active");
     }
     
     public static SystemState getInstance() {
@@ -46,7 +48,7 @@ public class SystemState {
     	if (arg.equals("pickFirst"))
     		return new PickFirstTransition();
     	if (arg.equals("inverseFrequency"))
-    		return new InverseLocalFrequencyTransition();
+    		return new InverseFrequencyTransition();
     	throw new IllegalArgumentException("config: unrecognised transition type");
     }
     

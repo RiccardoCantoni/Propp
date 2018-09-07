@@ -13,7 +13,7 @@ import java.util.List;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
-import myUtils.JsonDataManager;
+import myUtils.JsonManager;
 import proppFunction.FunctionChain;
 import state.AtomMatcher;
 import state.Predicate;
@@ -26,7 +26,7 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){ 	
-    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonManager jdm = new JsonManager("data.json");
     	JsonArray a = jdm.loadArray("chains");
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
     		updateChain(o.getString("name"));

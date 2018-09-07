@@ -6,7 +6,7 @@ import java.util.List;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
-import myUtils.JsonDataManager;
+import myUtils.JsonManager;
 import proppFunction.FunctionChain;
 import proppFunction.MarkovTransition;
 import state.State;
@@ -55,7 +55,7 @@ public class PlotArgument {
 	
 	private static FunctionChain[] loadAllChains(){
     	List<FunctionChain> seq = new LinkedList<>();
-    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonManager jdm = new JsonManager("data.json");
     	JsonArray chains = jdm.loadArray("chains");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		seq.add(FunctionChain.deserializeFrom(o.getString("name")));

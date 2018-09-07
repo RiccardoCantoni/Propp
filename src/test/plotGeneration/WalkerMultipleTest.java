@@ -15,7 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import plotGeneration.PlotArgument;
 import plotGeneration.LinearPlotGenerator;
 import propp.NodeSequenceManager;

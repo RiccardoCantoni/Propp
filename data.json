@@ -103,10 +103,13 @@
   	"the old man",
   	"the old woman"
   ],
+  "FALSEHERO": [
+  	"the false hero"
+  ],
   "ITEM": [
-  	"magical sword",
-  	"magical bow",
-  	"flying shoes"
+  	"the magical sword",
+  	"the magical bow",
+  	"the flying shoes"
   ],
   "LOCATION": [
   	"the castle",

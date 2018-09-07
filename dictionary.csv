@@ -20,7 +20,7 @@ donor_test;HERO is tested by DONOR
 casual_hearing_imposture;FALSEHERO overhears HERO talking about his success
 magical_travel;HERO is magically transported to LOCATION;DONOR magically brings HERO to LOCATION
 falsehero_imprisoned;FALSEHERO is imprisoned;FALSEHERO is thrown in prison;FALSEHERO is locked away;FALSEHERO is brought away in chains
-hero_arrival;HERO has returned;HERO is back
+hero_arrival;HERO has returned;HERO has arrived
 donor_capture;DONOR is captured by HERO;HERO catches DONOR;DONOR is caught
 donor_need;DONOR is in need;DONOR asks for help
 hero_quest;HERO embraks in the quest
@@ -57,7 +57,7 @@ pillaging;VILLAIN pillages LOCATION;LOCATION is pillaged by VILLAIN
 aid_item_used;HERO has ITEM;ITEM helps HERO in the fight
 help_response_ack;@help_response_ack
 donor_fight;DONOR and HERO fight each other;DONOR and HERO engage in combat;a fight ensues
-captive_freed;DONOR is freed
+captive_freed;FRIEND is freed
 guided_travel;HERO is guided by DONOR to LOCATION;DONOR guides HERO to LOCATION
 aid_helper_used;DONOR helps HERO
 intended_encounter;VILLAIN goes up to HERO
@@ -117,7 +117,7 @@ item_indication_ack;HERO learns the whereabouts of ITEM;DONOR explains to HERO w
 hero_desire_donor;HERO wants to catch DONOR
 aid_item_unavailable;HERO has nothing to fight with;HERO is unable to effectively fight VILLAIN
 falsehero_attempts_recon;FALSEHERO attempts to know more about who HERO is
-begin_counteraction;HERO considers about the quest at hand
+begin_counteraction;the quest begins
 arrival;HERO arrives to LOCATION;HERO finally gets to LOCATION
 imprisonment;FRIEND is imprisoned
 war_declaration;VILLAIN starts a war

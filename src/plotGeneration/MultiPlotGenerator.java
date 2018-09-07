@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import myUtils.DebugUtils;
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import myUtils.LogManager;
 import myUtils.SharedRandom;
 import propp.NodeSequenceManager;
@@ -42,7 +42,6 @@ public class MultiPlotGenerator {
 			chainPlot = lingen.getPlot();
 			DebugUtils.debugPrintList(NodeSequenceManager.getLabelSequence(chainPlot));
 			for (Node n: chainPlot) {
-				n.localFrequency++;
 				fullPlot.add(n);
 			}
 			Impasse impasse = scanner.scanPath(chainPlot, lingen.getState());

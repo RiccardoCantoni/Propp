@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import genericGraph.DAGPeeler;
 import genericGraph.DirectedAcyclicGraph;
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import myUtils.SharedRandom;
 
 public class testDAGpeeler {
@@ -41,8 +41,8 @@ DirectedAcyclicGraph<Integer> dag;
 		List<Integer> ls1 = Arrays.asList(new Integer[] {1,2,3,4});
 		List<Integer> ls2 = Arrays.asList(new Integer[] {1,3,2,4});
 		assertTrue(
-				ListUtil.listEquals(out, ls1) ||
-				ListUtil.listEquals(out, ls2)
+				ListUtils.listEquals(out, ls1) ||
+				ListUtils.listEquals(out, ls2)
 				);
 	}
 	

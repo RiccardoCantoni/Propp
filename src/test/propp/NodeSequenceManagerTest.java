@@ -12,7 +12,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import myUtils.ListUtil;
+import myUtils.ListUtils;
 import propp.NodeSequenceManager;
 import proppFunction.Node;
 import proppFunction.NodeType;
@@ -41,7 +41,7 @@ public class NodeSequenceManagerTest {
         seq.add(new Node("c", NodeType.NONE));
         List<String> s2 = NodeSequenceManager.getLabelSequence(seq);
         s2 = NodeSequenceManager.clearLabelSequence(s2);
-        assertTrue(ListUtil.listEquals(s1,s2));
+        assertTrue(ListUtils.listEquals(s1,s2));
     }
     
 }

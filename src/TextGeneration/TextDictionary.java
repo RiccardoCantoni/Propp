@@ -18,7 +18,7 @@ import java.util.Map;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
-import myUtils.JsonDataManager;
+import myUtils.JsonManager;
 import myUtils.SharedRandom;
 import propp.SystemState;
 import propp.chains.ChainAnalyzer;
@@ -125,7 +125,7 @@ public class TextDictionary {
 	private static List<String> getAllLabels(){
     	List<String> labels = new LinkedList<>();
     	ChainAnalyzer ca;
-    	JsonDataManager jdm = new JsonDataManager("data.json");
+    	JsonManager jdm = new JsonManager("data.json");
     	JsonArray chains = jdm.loadArray("chains");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));
