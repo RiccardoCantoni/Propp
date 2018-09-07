@@ -42,7 +42,7 @@ public class Propp {
     	List<Node> ls = new LinkedList();
     	TextDictionary TD = new TextDictionary();
     	TD.updateDictionary("dictionary.csv");    	
-        SharedRandom.getInstance().setRandom();
+        SharedRandom.getInstance().setSeed(123);
         TD.loadFromCSV("dictionary.csv");
         ls = walk();
         TextGenerator textgen = new TextGenerator();

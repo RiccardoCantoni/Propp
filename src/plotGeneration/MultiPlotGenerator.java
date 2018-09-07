@@ -3,6 +3,7 @@ package plotGeneration;
 import java.util.LinkedList;
 import java.util.List;
 
+import myUtils.DebugUtils;
 import myUtils.ListUtil;
 import myUtils.LogManager;
 import myUtils.SharedRandom;
@@ -39,9 +40,7 @@ public class MultiPlotGenerator {
 		while(true) {	
 			pgs = lingen.getGenerationState();	
 			chainPlot = lingen.getPlot();
-			if (SystemState.getInstance().debugMode) {
-				ListUtil.printList(NodeSequenceManager.getLabelSequence(chainPlot), true);
-			}
+			DebugUtils.debugPrintList(NodeSequenceManager.getLabelSequence(chainPlot));
 			for (Node n: chainPlot) {
 				n.localFrequency++;
 				fullPlot.add(n);
@@ -50,16 +49,17 @@ public class MultiPlotGenerator {
 			subarg = handler.handleImpasse(impasse);
 			if (subarg!=null) {
 				MultiPlotGenerator subplotGenerator = new MultiPlotGenerator(subarg, depth+1);
-				fullPlot.add(new Node("SUBPLOT "+(depth+1), NodeType.NONE));
+				DebugUtils.debugPrint("NEW SUBPLOT, depth: "+(depth+1));
 				fullPlot.addAll(subplotGenerator.generate());
 				lingen.state.removePredicate(impasse.predicate);
-				fullPlot.add(new Node("SUBPLOT RESOLVED "+(depth+1), NodeType.NONE));
+				DebugUtils.debugPrint("SUBPLOT RESOLVED, depth: "+(depth+1));
 			}
 			if (pgs == PlotGenerationState.COMPLETED)
 				break;
 			lingen.nextFunction();
 			lingen.resumeGeneration();
 		}
+		if (depth==0) DebugUtils.debugPrint("=== plot generation terminated ===");
 		return fullPlot;
 	}
 

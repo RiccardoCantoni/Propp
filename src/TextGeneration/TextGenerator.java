@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
+import myUtils.DebugUtils;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.State;
@@ -13,6 +14,7 @@ import state.State;
 public class TextGenerator {
 	
 	public Text generateText(List<Node> nodeList){
+		DebugUtils.debugPrint("=== text generation initiated ===");
 		String text = "";
 		List<TextElement> textElements = getTextElements(nodeList);
 		State state = new State();
@@ -22,6 +24,7 @@ public class TextGenerator {
 		Text t = new Text();
 		t.body = text;
 		t.title = new TitleGenerator().generateTitle(state);
+		DebugUtils.debugPrint("=== text generation terminated ===");
 		return t;
 	}
 	
