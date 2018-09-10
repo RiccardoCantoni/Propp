@@ -12,14 +12,18 @@ import java.util.stream.Collectors;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
+import TextGeneration.Text;
+import TextGeneration.TextDictionary;
+import TextGeneration.TextGenerator;
 import myUtils.JsonManager;
 import myUtils.ListUtils;
-import myUtils.RandomSequencePicker;
 import myUtils.SharedRandom;
+import plotGeneration.FrequencyDB;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
 import plotGeneration.PlotArgument;
 import propp.chains.ChainAnalyzer;
+import propp.chains.ChainUpdater;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import state.State;
@@ -34,14 +38,8 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	SharedRandom.getInstance().setRandom();
-    	RandomSequencePicker<Integer> rsp = new RandomSequencePicker<>(new Integer[] {1,2,3,4,5});
-    	for (int i=0; i<30; i++) {
-    		System.out.print(rsp.next());
-    	}
-    	/*FrequencyDB fdb = FrequencyDB.getInstance();
+    	FrequencyDB fdb = FrequencyDB.getInstance();
     	fdb.loadGlobalFrequencies();
-    	fdb.saveGlobalFrequencies();
     	ChainUpdater.updateAllChains();   	 
     	TextDictionary TD = new TextDictionary();
     	TD.updateDictionary("dictionary.csv");    	
@@ -52,8 +50,8 @@ public class Propp {
     	Text text = textgen.generateText(ls);
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
-        System.out.println(text.title);
-        System.out.println(text.body);*/
+        text.prettyPrint();
+        fdb.saveGlobalFrequencies();
     }
     
     public static List<Node> walk() {

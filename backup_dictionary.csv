@@ -119,7 +119,7 @@ aid_item_unavailable;HERO has nothing to fight with;HERO is unable to effectivel
 falsehero_attempts_recon;FALSEHERO attempts to know more about who HERO is
 begin_counteraction;the quest begins
 arrival;HERO arrives to LOCATION;HERO finally gets to LOCATION
-imprisonment;FRIEND is imprisoned
+imprisonment;FRIEND is imprisoned by VILLAIN
 war_declaration;VILLAIN starts a war
 recon_outcome_failure;HERO does not reveal any important information
 prisoner_request_freedom;DONOR asks HERO for freedom

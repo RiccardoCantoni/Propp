@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 
 import myUtils.DebugUtils;
+import myUtils.ListUtils;
+import propp.NodeSequenceManager;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.State;
@@ -16,48 +18,56 @@ public class TextGenerator {
 	
 	public Text generateText(List<Node> nodeList){
 		DebugUtils.debugPrint("=== text generation initiated ===");
-		String text = "";
-		List<TextElement> textElements = getTextElements(nodeList);
 		State state = new State();
-		for (TextElement elem : textElements) {
-			text+=elem.yield(state)+" ";
-		}
+		String[] lines = getLines(nodeList, state);
 		Text t = new Text();
-		t.body = text;
-		t.length = nodeList.size();
+		t.body = lines;
+		t.length = lines.length;
 		t.title = new TitleGenerator().generateTitle(state);
 		DebugUtils.debugPrint("=== text generation terminated ===");
 		return t;
 	}
 	
-	List<TextElement> getTextElements(List<Node> nodeList){
-		List<TextElement> textElements = new LinkedList<>();
-		for (Node n : nodeList) {
-			if (n.type == NodeType.NONE) {
-				textElements.add(new SpecialElement(n.label.substring(1)));
-			}else {
-				textElements.add(new StringElement(n.label));
+	private String[] getLines(List<Node> nodes, State state) {
+		List<String> lines = new LinkedList<>();
+		TextElement[] tes = null;
+		for (Node n : nodes) {
+			tes = N2Te(n,state);
+			String line = "";
+			if (tes!=null) {
+				for (TextElement te : tes) {
+					line+=te.yield(state)+" ";
+				}
+			lines.add(line);
+			DebugUtils.debugPrint(line);
 			}
+			
 		}
-		List<String> strings = new LinkedList<String>();
-		for (TextElement e : textElements) {
-			String str = e.yield(null);
-			if (str!=null) {
-				List<String> ls = Arrays.asList(str.split("\\s+"));
-				strings.addAll(ls);
-				strings.add("&STOP"); //newline at the end of an event
-			}
+		return lines.toArray(new String[lines.size()]);
+	}
+	
+	private TextElement[] N2Te(Node n, State state) {
+		List<TextElement> telist = new LinkedList<>();
+		List<String> strlist = new LinkedList<>();
+		TextElement te;
+		String str;
+		if (n.type == NodeType.NONE) {
+			te = new SpecialElement(n.label.substring(1));
+		}else {
+			te = new StringElement(n.label);
 		}
-		textElements.clear();
-		for (String s: strings) {
+		str = te.yield(state);
+		if (str==null) return null;
+		strlist = Arrays.asList(str.split("\\s+"));
+		for (String s : strlist) {
 			if (s.charAt(0)=='&') {
-				textElements.add(new SpecialElement(s.substring(1)));
+				telist.add(new SpecialElement(s.substring(1)));
 			}else if (StringUtils.isAllUpperCase(s)) {
-				textElements.add(new ExistantElement(s));
+				telist.add(new ExistantElement(s));
 			}else {
-				textElements.add(new PlainElement(s));
+				telist.add(new PlainElement(s));
 			}
 		}
-		return textElements;
+		return telist.toArray(new TextElement[telist.size()]);
 	}
 }

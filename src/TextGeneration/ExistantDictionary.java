@@ -1,21 +1,31 @@
 package TextGeneration;
 
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.json.JsonArray;
 import javax.json.JsonString;
 
 import myUtils.JsonManager;
+import myUtils.RandomSequencePicker;
 import myUtils.SharedRandom;
 
 public class ExistantDictionary {
 	
 	SharedRandom rnd;
+	Map<String,RandomSequencePicker<String>> pickers = new HashMap<String, RandomSequencePicker<String>>();
 	
 	public ExistantDictionary() {
     	rnd = SharedRandom.getInstance();
+    	ExistantType[] types = ExistantType.class.getEnumConstants();
+    	RandomSequencePicker<String> rsp;
+    	for (ExistantType type : types) {
+    		String[] seq = loadDictionary(type.name());
+    		rsp = new RandomSequencePicker<>(seq);
+    		pickers.put(type.name(), rsp);
+    	}
 	}
 	
 	private String[] loadDictionary(String dictname) {
@@ -35,7 +45,6 @@ public class ExistantDictionary {
 	}
 		
 	public String getRandomExistant(ExistantType type) {
-		String[] ls = loadDictionary(type.name());
-		return ls[rnd.nextInt(ls.length)];
+		return pickers.get(type.name()).next();
 	}
 }
