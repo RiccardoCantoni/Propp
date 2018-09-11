@@ -30,6 +30,7 @@ public class MultiPlotGenerator {
 		ImpasseHandler handler = new ImpasseHandler();
 		PlotArgument subarg = null;
 		List<Node> fullPlot = new LinkedList<Node>();
+		fullPlot.add(new Node("$SUBPLOT",NodeType.NONE));
 		if (depth == MAX_DEPTH) { //loop detection
 			throw new IllegalStateException("seed:"+SharedRandom.getInstance().getSeed());   
 		}
@@ -47,6 +48,7 @@ public class MultiPlotGenerator {
 			Impasse impasse = scanner.scanPath(chainPlot, lingen.getState());
 			subarg = handler.handleImpasse(impasse);
 			if (subarg!=null) {
+				fullPlot.add(new Node("$SUBPLOT",NodeType.NONE));
 				MultiPlotGenerator subplotGenerator = new MultiPlotGenerator(subarg, depth+1);
 				DebugUtils.debugPrint("NEW SUBPLOT, depth: "+(depth+1));
 				fullPlot.addAll(subplotGenerator.generate());
@@ -58,7 +60,11 @@ public class MultiPlotGenerator {
 			lingen.nextFunction();
 			lingen.resumeGeneration();
 		}
-		if (depth==0) DebugUtils.debugPrint("=== plot generation terminated ===");
+		fullPlot.add(new Node("$RESOLVED",NodeType.NONE));
+		if (depth==0) { 
+			DebugUtils.debugPrint("=== plot generation terminated ===");
+			DebugUtils.debugPrintList(NodeSequenceManager.getLabelSequence(fullPlot));
+		}
 		return fullPlot;
 	}
 

@@ -11,7 +11,7 @@ public class PlainElement implements TextElement {
 	}
 
 	@Override
-	public String yield(State state) {
+	public String yield(TextGenerationState state) {
 		return str;
 	}
 

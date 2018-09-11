@@ -11,9 +11,17 @@ public class SpecialElement implements TextElement{
 	}
 
 	@Override
-	public String yield(State state) {
+	public String yield(TextGenerationState state) {
 		if (str.equals("STOP")) 
 			return "\n";
+		if (str.equals("SUBPLOT")) {
+			state.subplot();
+			return null;
+		}
+		if (str.equals("RESOLVED")){
+			state.subplotResolved();
+			return null;
+		}
 		return null;
 		//return "&"+str;
 	}

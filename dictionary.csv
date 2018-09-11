@@ -34,7 +34,7 @@ way_followed;HERO follows the path to LOCATION
 hero_recognised;HERO is finally recognised;the identity of HERO is confirmed
 unrecognised_arrival;HERO returns but he is not recognised;HERO returns in disguise
 reward_withdrawn;the reward to FALSEHERO is withdrawn
-recon_outcome_success;HERO unwillingly reveals information;some information is revealed
+recon_outcome_success;HERO unwillingly reveals information, upon which VILLAIN hatches a plan;some information is revealed, upon which VILLAIN hatches a plan
 branding_mark;HERO receives a bodily mark;HERO is scarred
 misfortune_announcement;FRIEND tells HERO what happened;FRIEND announces the misfortune to HERO
 ack_demand_imprisonment;the demand is accepted by a servant
@@ -142,6 +142,6 @@ help_request_ack;HERO receives the request
 test_outcome_failure_ack;HERO understands he has failed the test;HERO regrets failing the test
 ack_demand_murder;the request is accepted
 villain_attempts_recon;VILLAIN attempts to obtain information about HERO
-test_outcome_success_ack;HERO understands he has passed the test
+test_outcome_success_ack;Donor will now help HERO;DONOR decides to help HERO;HERO will now be helped by DONOR
 test_ack;HERO begins the test
 lack_vengeance;vengeance is required

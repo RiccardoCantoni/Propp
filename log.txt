@@ -1,0 +1,104 @@
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+18 chains updated successfully
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+dictionary unloaded to dictionary.csv
+SEED: 218911274386298002
+==========
+the farmer and the black knight
+
+the black knight goes up to the farmer 
+the black knight attempts to obtain information about the farmer 
+the farmer is secretly observed 
+the farmer unwillingly reveals information, upon which the black knight hatches a plan 
+the old woman is imprisoned by the black knight 
+the black knight goes in hiding at the forest 
+vengeance is required 
+the farmer realizes what happened 
+the farmer decides to embark in the quest 
+the quest begins 
+the farmer departs 
+pippo suddenly attacks the farmer 
+a fight ensues 
+the farmer begins the test 
+the farmer has passed the test 
+pippo will now help the farmer
+the farmer finds the flying shoes 
+the farmer wants the flying shoes 
+the farmer aquires the flying shoes 
+pippo magically brings the farmer to the forest 
+the farmer finally gets to the forest 
+the farmer fights the black knight 
+the farmer is alone facing the black knight 
+the black knight is victorious 
+the farmer is forced to run away 
+the farmer resumes his travelling 
+the farmer discovers a way to the forest 
+the farmer follows the path to the forest 
+the farmer finally gets to the forest 
+the farmer and the black knight engage in a contest 
+the farmer has nothing to fight with 
+the farmer is defeated 
+the farmer barely escapes with his life 
+the farmer resumes his travelling 
+the farmer travels to the forest 
+the farmer finally gets to the forest 
+the farmer and the black knight engage in a contest 
+the farmer defeats the black knight 
+the farmer receives a bodily mark 
+the black knight is defeated 
+the black knight is killed 
+the farmer returns 
+the farmer is returning 
+the false hero overhears the farmer talking about his success 
+the false hero learns of what the farmer has done 
+the false hero presents his claims to the village elder 
+the village elder acknoweledges the claims presented by the false hero 
+the false hero is rewarded 
+the farmer presents his claims to the village elder 
+the village elder listen to the farmer presenting his claims 
+the claims are denied 
+the farmer lacks any proof of his identity 
+the farmer needs the magical bow to prove his claims 
+the farmer returns 
+the farmer has arrived 
+the farmer embraks in the quest 
+the magical sword is needed 
+the old woman shall be freed 
+pippo is held in captivity. He sees the farmer approaching 
+pippo desires freedom 
+pippo asks the farmer for freedom 
+the farmer begins the test 
+the farmer has passed the test 
+the farmer understands he has passed the test 
+pippo gives the magical bow to the farmer 
+the farmer aquires the magical bow 
+the farmer presents his claims to the village elder 
+the village elder listen to the farmer presenting his claims 
+the claims are not accepted 
+the farmer cannot proof his claims 
+the farmer needs the magical bow to prove his claims 
+the farmer returns 
+the farmer has arrived 
+the farmer embraks in the quest 
+the magical bow is needed 
+vengeance is required 
+the unicorn attacks the farmer 
+the unicorn and the farmer fight each other 
+the farmer begins the test 
+the farmer has passed the test 
+the farmer understands he has passed the test 
+the unicorn gives the magical sword to the farmer 
+the farmer aquires the magical sword 
+the farmer presents his claims to the village elder 
+the village elder listen to the farmer presenting his claims 
+the claims are denied 
+the farmer confronts the false hero 
+the farmer is recognised by the mark he is carrying 
+the identity of the farmer is confirmed 
+the false hero is exposed 
+the reward to the false hero is withdrawn 
+the false hero is punished 
+the false hero is thrown in prison 
+the farmer becomes king 

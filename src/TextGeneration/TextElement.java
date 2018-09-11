@@ -4,6 +4,6 @@ import state.State;
 
 public interface TextElement {
 	
-	public String yield(State state);
+	public String yield(TextGenerationState state);
 
 }

@@ -15,18 +15,18 @@ public class ExistantElement implements TextElement{
 	}
 
 	@Override
-	public String yield(State state) {
-		Predicate p = state.getSet().find(new Predicate(type.name(),"_","_"));
+	public String yield(TextGenerationState state) {
+		Predicate p = state.getCurrentState().getSet().find(new Predicate(type.name(),"_","_"));
 		if (p!=null) {  //existant already introduced
 			return p.subj;
 		}
 		return introduceExistant(type, state); //intro new existant
 	}
 	
-	String introduceExistant(ExistantType type, State state) {
+	String introduceExistant(ExistantType type, TextGenerationState state) {
 		ExistantDictionary dict = new ExistantDictionary();
 		String existant = dict.getRandomExistant(type);
-		state.addPredicate(new Predicate(type.name(),existant,"_"));
+		state.getCurrentState().addPredicate(new Predicate(type.name(),existant,"_"));
 		return existant;
 	}
 	

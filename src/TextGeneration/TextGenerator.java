@@ -18,17 +18,17 @@ public class TextGenerator {
 	
 	public Text generateText(List<Node> nodeList){
 		DebugUtils.debugPrint("=== text generation initiated ===");
-		State state = new State();
-		String[] lines = getLines(nodeList, state);
+		TextGenerationState tgs = new TextGenerationState();
+		String[] lines = getLines(nodeList, tgs);
 		Text t = new Text();
 		t.body = lines;
 		t.length = lines.length;
-		t.title = new TitleGenerator().generateTitle(state);
+		t.title = new TitleGenerator().generateTitle(tgs.getCurrentState());
 		DebugUtils.debugPrint("=== text generation terminated ===");
 		return t;
 	}
 	
-	private String[] getLines(List<Node> nodes, State state) {
+	private String[] getLines(List<Node> nodes, TextGenerationState state) {
 		List<String> lines = new LinkedList<>();
 		TextElement[] tes = null;
 		for (Node n : nodes) {
@@ -46,7 +46,7 @@ public class TextGenerator {
 		return lines.toArray(new String[lines.size()]);
 	}
 	
-	private TextElement[] N2Te(Node n, State state) {
+	private TextElement[] N2Te(Node n, TextGenerationState state) {
 		List<TextElement> telist = new LinkedList<>();
 		List<String> strlist = new LinkedList<>();
 		TextElement te;

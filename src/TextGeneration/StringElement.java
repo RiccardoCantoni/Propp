@@ -12,7 +12,7 @@ public class StringElement implements TextElement{
 	
 
 	@Override
-	public String yield(State state) {
+	public String yield(TextGenerationState state) {
 		TextDictionary td = new TextDictionary();
 		td.loadDictionary();
 		return td.getRandomText(label);

@@ -73,7 +73,9 @@ public class PredicateSet implements Serializable{
     public List<Predicate> findAll(Predicate p){
         AtomMatcher m = new AtomMatcher(p);
         List<Predicate> out = new LinkedList<>();
-        for (Predicate pr : this.set){
+        Predicate pr;
+        for (int i=this.set.size()-1; i>=0; i--) {
+        	pr = set.get(i);
             if (m.matchSingle(pr)){
                 out.add(pr);
             }
@@ -85,7 +87,7 @@ public class PredicateSet implements Serializable{
         List<Predicate> ls = this.findAll(p);
         if (ls.isEmpty())
             return null;
-        return ls.get(0);
+        return ls.get(ls.size()-1);
     }
     
     public int size(){
