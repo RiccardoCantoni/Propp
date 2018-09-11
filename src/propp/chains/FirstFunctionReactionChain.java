@@ -21,8 +21,12 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         FunctionChain C = new FunctionChain("FirstFunctionReaction");
         Node n;
         String ta = "test_ack";
+        String intro = "donor_intro";
         n = new Node(ta, NodeType.PI);
         C.addNode(n);
+        n = new Node(intro, NodeType.EVENT);
+        C.addNode(n);
+        C.setInitial(n);
         n = new Node("test_outcome_success", NodeType.ACTION);
         C.addNode(n);
         C.addEdge("test_ack","test_outcome_success");
@@ -40,17 +44,17 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("donor_test", NodeType.ACTION);
         n.toAdd.addPredicate(new Predicate("donor_test_type","test"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"donor_test");
         C.addEdge("donor_test",ta);
         n = new Node("donor_interrogation", NodeType.ACTION);
         n.toAdd.addPredicate(new Predicate("donor_test_type","interrogation"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"donor_interrogation");
         C.addEdge("donor_interrogation",ta);
         n = new Node("prisoner_hero_ack", NodeType.PERCEPTION);
         n.toAdd.addPredicate(new Predicate("donor_test_type","free_prisoner"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"prisoner_hero_ack");
         n = new Node("prisoner_desire_freedom", NodeType.INTERNAL);
         C.addNode(n);
         C.addEdge("prisoner_hero_ack","prisoner_desire_freedom");
@@ -61,7 +65,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("hero_donor_ack", NodeType.PERCEPTION);
         n.toAdd.addPredicate(new Predicate("donor_test_type","release_captive"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"hero_donor_ack");
         n = new Node("hero_desire_donor", NodeType.INTERNAL);
         C.addNode(n);
         C.addEdge("hero_donor_ack","hero_desire_donor");
@@ -75,7 +79,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("donor_attack", NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("donor_test_type","attack"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"donor_attack");
         n = new Node("donor_fight", NodeType.EVENT);
         C.addNode(n);
         C.addEdge("donor_attack","donor_fight");
@@ -83,7 +87,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("donor_display", NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("donor_test_type","exchange"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"donor_display");
         n = new Node("donor_hero_ack", NodeType.PI);
         C.addNode(n);
         C.addEdge("donor_display","donor_hero_ack");
@@ -94,7 +98,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("donor_need", NodeType.EVENT);
         n.toAdd.addPredicate(new Predicate("donor_test_type","service"));
         C.addNode(n);
-        C.setInitial(n);
+        C.addEdge(intro,"donor_need");
         C.addEdge("donor_need",ta);
 
         C.serialize();

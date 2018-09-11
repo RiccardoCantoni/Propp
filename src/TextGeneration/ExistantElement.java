@@ -21,6 +21,7 @@ public class ExistantElement implements TextElement{
 			return p.subj;
 		}
 		return introduceExistant(type, state); //intro new existant
+		
 	}
 	
 	String introduceExistant(ExistantType type, TextGenerationState state) {

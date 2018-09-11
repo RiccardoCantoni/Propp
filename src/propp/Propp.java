@@ -51,6 +51,7 @@ public class Propp {
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
         text.prettyPrint();
+        
         fdb.saveGlobalFrequencies();
     }
     

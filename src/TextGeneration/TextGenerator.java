@@ -3,16 +3,12 @@ package TextGeneration;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
 import myUtils.DebugUtils;
-import myUtils.ListUtils;
-import propp.NodeSequenceManager;
 import proppFunction.Node;
 import proppFunction.NodeType;
-import state.State;
 
 public class TextGenerator {
 	
@@ -41,14 +37,13 @@ public class TextGenerator {
 			lines.add(line);
 			DebugUtils.debugPrint(line);
 			}
-			
 		}
 		return lines.toArray(new String[lines.size()]);
 	}
 	
 	private TextElement[] N2Te(Node n, TextGenerationState state) {
-		List<TextElement> telist = new LinkedList<>();
 		List<String> strlist = new LinkedList<>();
+		List<TextElement> telist = new LinkedList<>();
 		TextElement te;
 		String str;
 		if (n.type == NodeType.NONE) {
@@ -68,6 +63,9 @@ public class TextGenerator {
 				telist.add(new PlainElement(s));
 			}
 		}
+		
 		return telist.toArray(new TextElement[telist.size()]);
 	}
+	
+	
 }

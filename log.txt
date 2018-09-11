@@ -102,3 +102,91 @@ the reward to the false hero is withdrawn
 the false hero is punished 
 the false hero is thrown in prison 
 the farmer becomes king 
+
+
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+18 chains updated successfully
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+dictionary unloaded to dictionary.csv
+SEED: 5878965488596338435
+==========
+Luke Skywalker and the orc
+
+the orc casually encounters Luke Skywalker 
+the orc attempts to obtain information about Luke Skywalker 
+Luke Skywalker is spied upon 
+some information is revealed, upon which the orc hatches a plan 
+the orc seizes the flying shoes 
+the orc runs away to the forest 
+the flying shoes is needed 
+the village elder asks Luke Skywalker for help 
+Luke Skywalker receives the request 
+Luke Skywalker responds to the call for help 
+@help_response_ack 
+the village elder sends Luke Skywalker on the mission 
+Luke Skywalker receives the request 
+the quest begins 
+Luke Skywalker departs 
+Luke Skywalker sees the old lady 
+Luke Skywalker wants to catch the old lady 
+Luke Skywalker catches the old lady 
+the old lady begs Luke Skywalker 
+Luke Skywalker begins the test 
+Luke Skywalker has failed the test 
+Luke Skywalker regrets failing the test 
+Luke Skywalker resumes his travelling 
+pippo tests Luke Skywalker with questions 
+Luke Skywalker begins the test 
+Luke Skywalker has failed the test 
+Luke Skywalker regrets failing the test 
+Luke Skywalker resumes his travelling 
+Luke Skywalker is tested by the old lady 
+Luke Skywalker begins the test 
+Luke Skywalker has passed the test 
+Donor will now help Luke Skywalker 
+the old lady gives the flying shoes to Luke Skywalker 
+Luke Skywalker aquires the flying shoes 
+Luke Skywalker searches a way to reach the forest 
+Luke Skywalker cannot find a way to the forest 
+Luke Skywalker resumes his travelling 
+the golden bird shows the magical bow 
+the golden bird sees Luke Skywalker 
+the golden bird offers Luke Skywalker an exchange 
+Luke Skywalker begins the test 
+Luke Skywalker has failed the test 
+Luke Skywalker regrets failing the test 
+Luke Skywalker resumes his travelling 
+the pixie is held in captivity. He sees Luke Skywalker approaching 
+the pixie desires freedom 
+the pixie asks Luke Skywalker for freedom 
+Luke Skywalker begins the test 
+Luke Skywalker has failed the test 
+Luke Skywalker understands he has failed the test 
+Luke Skywalker resumes his travelling 
+the unicorn attacks Luke Skywalker 
+a fight ensues 
+Luke Skywalker begins the test 
+Luke Skywalker has passed the test 
+Donor will now help Luke Skywalker 
+Luke Skywalker finds the magical bow 
+Luke Skywalker desires the magical bow 
+Luke Skywalker seizes the magical bow 
+Luke Skywalker aquires the magical bow 
+Luke Skywalker is magically transported to the forest 
+Luke Skywalker arrives to the forest 
+Luke Skywalker and the orc engage in a contest 
+the orc is victorious 
+Luke Skywalker barely escapes with his life 
+Luke Skywalker resumes his travelling 
+Luke Skywalker discovers a way to the forest 
+Luke Skywalker follows the path to the forest 
+Luke Skywalker arrives to the forest 
+Luke Skywalker fights the orc 
+Luke Skywalker defeats the orc 
+Luke Skywalker receives a bodily mark 
+Luke Skywalker seizes the magical bow 
+Luke Skywalker returns 
+Luke Skywalker has arrived 
+Luke Skywalker is rewarded with a bag of gold 
