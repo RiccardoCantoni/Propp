@@ -30,7 +30,7 @@ public class ExistantDictionary {
 	
 	private String[] loadDictionary(String dictname) {
 		try {
-			JsonManager jm = new JsonManager("data.json");
+			JsonManager jm = new JsonManager("existent_data.json");
 	    	JsonArray ja = jm.loadArray(dictname);
 	    	List<String> tmp = new LinkedList<>();  	
 	    	for (JsonString o : ja.getValuesAs(JsonString.class)) {

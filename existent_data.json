@@ -1,0 +1,53 @@
+{
+  "HERO": [
+    "Ivan",
+    "Boris",
+    "the tanner",
+    "the farmer",
+    "the knight",
+    "the fisherman",
+    "Luke Skywalker"
+  ],
+  "VILLAIN": [
+  	"the evil king",
+  	"the black knight",
+  	"the witch",
+  	"the orc"
+  ],
+  "DONOR": [
+  	"the golden bird",
+  	"the unicorn",
+  	"the hermit",
+  	"pippo",
+  	"the pixie",
+  	"the old lady",
+  	"the old man"
+  ],
+  "DISPATCHER": [
+  	"the village elder",
+  	"the king",
+  	"the prince"
+  ],
+  "FRIEND": [
+  	"the princess",
+  	"the little girl",
+  	"the old man",
+  	"the old woman"
+  ],
+  "FALSEHERO": [
+  	"the false hero"
+  ],
+  "ITEM": [
+  	"the magical sword",
+  	"the magical bow",
+  	"the flying shoes"
+  ],
+  "LOCATION": [
+  	"the castle",
+  	"the forest",
+  	"the mountain",
+  	"the city",
+  	"the tower",
+  	"the enchanted lake"
+  ]
+}

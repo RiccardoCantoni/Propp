@@ -26,8 +26,8 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){ 	
-    	JsonManager jdm = new JsonManager("data.json");
-    	JsonArray a = jdm.loadArray("chains");
+    	JsonManager jdm = new JsonManager("function_data.json");
+    	JsonArray a = jdm.loadArray("functions");
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
     		updateChain(o.getString("name"));
     	}

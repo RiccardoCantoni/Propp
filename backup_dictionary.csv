@@ -1,150 +1,150 @@
-way_discovered;HERO discovers a way to LOCATION;HERO finds a path to LOCATION;;
-filler_lack_item;ITEM is needed;HERO needs ITEM;;
-answer_imposture;HERO answers;;;
-conversation_imposture;HERO and FALSEHERO engage in a conversation;FALSEHERO and HERO talk briefly;;
-test_outcome_failure;HERO has failed the test;;;
-approach;VILLAIN approaches HERO;;;
-casual_hearing;VILLAIN overhears HERO;VILLAIN hears HERO from afar;;
-reward_chiefdom;HERO becomes chief;HERO is given a chiefdom;;
-helper_acquisition;DONOR decides to help HERO;DONOR decides to follow HERO and help him;DONOR joins HERO in his quest;
-item_indication;DONOR shows ITEM to HERO;HERO is shown ITEM by DONOR;;
-prisoner_desire_freedom;DONOR desires freedom;DONOR wants to be free;;
-hero_presents_claims;HERO presents his claims to DISPATCHER;;;
-hero_recognised_by_item;HERO is recognised from his ITEM;ITEM proves the identity of HERO;;
-way_not_found;HERO cannot find a way to LOCATION;HERO does not know how to reach LOCATION;;
-test_outcome_success;HERO has passed the test;;;
-observation_imposture;FALSEHERO secretly observes HERO;while HERO is returning, FALSEHERO observes him;;
-false_claims_received;DISPATCHER listen to FALSEHERO presenting his claims;DISPATCHER ponders about the claims ;;
-lack_helper;someone who can help is needed;a help is required;;
-donor_test;HERO is tested by DONOR;;;
-casual_hearing_imposture;FALSEHERO overhears HERO talking about his success;;;
-magical_travel;HERO is magically transported to LOCATION;DONOR magically brings HERO to LOCATION;;
+way_discovered;HERO discovers a way to LOCATION;HERO finds a path to LOCATION
+filler_lack_item;ITEM is needed;HERO needs ITEM
+answer_imposture;HERO answers
+conversation_imposture;HERO and FALSEHERO engage in a conversation;FALSEHERO and HERO talk briefly
+test_outcome_failure;HERO has failed the test
+approach;VILLAIN approaches HERO
+casual_hearing;VILLAIN overhears HERO;VILLAIN hears HERO from afar
+reward_chiefdom;HERO becomes chief;HERO is given a chiefdom
+helper_acquisition;DONOR decides to help HERO;DONOR decides to follow HERO and help him;DONOR joins HERO in his quest
+item_indication;DONOR shows ITEM to HERO;HERO is shown ITEM by DONOR
+prisoner_desire_freedom;DONOR desires freedom;DONOR wants to be free
+hero_presents_claims;HERO presents his claims to DISPATCHER
+hero_recognised_by_item;HERO is recognised from his ITEM;ITEM proves the identity of HERO
+way_not_found;HERO cannot find a way to LOCATION;HERO does not know how to reach LOCATION
+test_outcome_success;HERO has passed the test
+observation_imposture;FALSEHERO secretly observes HERO;while HERO is returning, FALSEHERO observes him
+false_claims_received;DISPATCHER listen to FALSEHERO presenting his claims;DISPATCHER ponders about the claims 
+lack_helper;someone who can help is needed;a help is required
+donor_test;HERO is tested by DONOR
+casual_hearing_imposture;FALSEHERO overhears HERO talking about his success
+magical_travel;HERO is magically transported to LOCATION;DONOR magically brings HERO to LOCATION
 falsehero_imprisoned;FALSEHERO is imprisoned;FALSEHERO is thrown in prison;FALSEHERO is locked away;FALSEHERO is brought away in chains
-hero_arrival;HERO has returned;HERO has arrived;;
-donor_capture;DONOR is captured by HERO;HERO catches DONOR;DONOR is caught;
-donor_need;DONOR is in need;DONOR asks for help;;
-hero_quest;HERO embarks on the quest;;;
-falsehero_approach;FALSEHERO approaches HERO;;;
-item_acquisition;HERO aquires ITEM;;;
-helper_found;HERO has found DONOR to help;;;
-hero_escape;HERO is forced to run away;HERO barely escapes with his life;;
-false_claims;FALSEHERO presents his claims to DISPATCHER;;;
-reward_betrothal;HERO becomes bethrothed;;;
+hero_arrival;HERO has returned;HERO has arrived
+donor_capture;DONOR is captured by HERO;HERO catches DONOR;DONOR is caught
+donor_need;DONOR is in need;DONOR asks for help
+hero_quest;HERO embarks on the quest
+falsehero_approach;FALSEHERO approaches HERO
+item_acquisition;HERO aquires ITEM
+helper_found;HERO has found DONOR to help
+hero_escape;HERO is forced to run away;HERO barely escapes with his life
+false_claims;FALSEHERO presents his claims to DISPATCHER
+reward_betrothal;HERO becomes bethrothed
 hero_reach_location;HERO reaches LOCATION;HERO arrives at LOCATION;HERO is now at LOCATION;HERO is passing by LOCATION
-way_followed;HERO follows the path to LOCATION;;;
-hero_recognised;HERO is finally recognised;the identity of HERO is confirmed;;
-unrecognised_arrival;HERO returns but he is not recognised;HERO returns in disguise;;
-reward_withdrawn;the reward to FALSEHERO is withdrawn;;;
-recon_outcome_success;HERO unwillingly reveals information, upon which VILLAIN hatches a plan;some information is revealed, upon which VILLAIN hatches a plan;;
-branding_mark;HERO receives a bodily mark;HERO is scarred;;
-misfortune_announcement;DISPATCHER tells HERO what happened;DISPATCHER announces the misfortune to HERO;;
-ack_demand_imprisonment;the demand is accepted by a servant;;;
-seizure;VILLAIN seizes ITEM;VILLAIN steals ITEM;;
-villain_killed;VILLAIN is killed;VILLAIN is dead;;
-falsehero_rewarded;FALSEHERO is rewarded;;;
-lack_item;ITEM is needed;;;
-intended_encounter_imposture;FALSEHERO goes up to HERO;;;
-struggle_outcome_positive;HERO is victorious;HERO defeats VILLAIN;;
-hero_recognised_by_mark;HERO is recognised by the mark he is carrying;;;
-falsehero_exiled;FALSEHERO is exiled;FALSEHERO is cast away, never to be allowed back;;
-item_discovery;HERO finds ITEM;;;
-hero_donor_ack;HERO sees DONOR;;;
-inquiry;HERO is interrogated;;;
-no_recon;HERO lives at LOCATION;;;
-donor_hero_ack;DONOR sees HERO;;;
-falsehero_exposed;FALSEHERO is exposed;FALSEHERO is recognised as the impostor he is;;
-realisation;HERO realizes what happened;HERO was present;;
-villain_imprisoned;VILLAIN is imprisoned;VILLAIN is in chains;;
-pillaging;VILLAIN pillages LOCATION;LOCATION is pillaged by VILLAIN;;
-aid_item_used;HERO has ITEM;ITEM helps HERO in the fight;;
-help_response_ack;DISPATCHER thanks HERO;;;
-donor_fight;DONOR and HERO fight each other;DONOR and HERO engage in combat;a fight ensues;
-captive_freed;FRIEND is freed;;;
-guided_travel;HERO is guided by DONOR to LOCATION;DONOR guides HERO to LOCATION;;
-aid_helper_used;DONOR helps HERO;;;
-intended_encounter;VILLAIN goes up to HERO;;;
-item_preparation;DONOR prepares ITEM for HERO;DONOR makes ITEM ready for HERO;;
-observation;HERO is secretly observed;HERO is spied upon;;
-villain_defeated;VILLAIN is defeated;HERO is victorious;;
-hero_lacks_proof;HERO cannot prove his claims;HERO lacks any proof of his identity;;
-filler_villain_retry;VILLAIN tries again;;;
-reward_kingdom;HERO becomes king;;;
-reward_land;HERO is rewarded with land;;;
-answer;HERO answers;;;
-help_response;HERO responds to the call for help;HERO decides to help;;
-donor_begging;DONOR begs HERO;;;
-item_desire;HERO desires ITEM;HERO wants ITEM;;
-branding_item;HERO obtains ITEM;;;
-aid_helper_available;HERO asks DONOR for help;;;
-hero_confronts_falsehero;HERO confronts FALSEHERO;;;
-villain_runs;VILLAIN runs away to LOCATION;VILLAIN goes in hiding at LOCATION;VILLAIN retreats to LOCATION;
-falsehero_punished;FALSEHERO is punished;;;
-filler_lack_helper;external help is required;;;
-donor_servitude;DONOR decides to become servant to HERO;DONOR accepts helping HERO;;
-travel;HERO travels to LOCATION;HERO goes to LOCATION;;
-item_provides_wealth;ITEM provides wealth;ITEM makes HERO rich;;
-claims_received_by_dispatcher;DISPATCHER listens to HERO presenting his claims;;;
-false_claims_accepted;DISPATCHER acknoweledges the claims presented by FALSEHERO;;;
-dispatch;DISPATCHER sends HERO on the mission;;;
-reward_wealth;HERO is rewarded with great wealth;HERO is rewarded with a bag of gold;;
-filler_hero_retry;HERO resumes his travelling;;;
-falsehero_approach_ack;HERO sees FALSEHERO coming toward him;;;
-donor_intro;DONOR is at LOCATION;at LOCATION lives DONOR;;
-recon_outcome_success_imposture;FALSEHERO learns of what HERO has done;;;
-demand_imprisonment;VILLAIN demands FRIEND to be imprisoned;;;
-item_delivery;DONOR gives ITEM to HERO;;;
-demand_murder;VILLAIN demands FRIEND to be murdered;;;
-lack_freedom;FRIEND shall be freed;;;
-falsehero_inquiry;FALSEHERO asks several questions to HERO;;;
-falsehero_killed;FALSEHERO is killed;FALSEHERO is executed;;
-conversation;the two engage in a conversation;;;
-murder;FRIEND is murdered;;;
-help_request;DISPATCHER asks HERO for help;;;
-contest;HERO and VILLAIN engage in a contest;;;
-abduction;VILLAIN abducts FRIEND;;;
-claims_denied;the claims are denied;the claims are not accepted;;
-item_seizure;HERO seizes ITEM;;;
-aid_item_available;HERO has ITEM;HERO now owns ITEM;;
-hero_return;HERO returns;HERO is back;;
-reward_item;HERO is rewarded with an item;;;
-proof_required_item;HERO needs something to prove his claims with;;;
-casual_encounter;VILLAIN casually encounters HERO;VILLAIN meets HERO;;
-reward_marriage;HERO gets married;HERO marries;;
-lack_wealth;FRIEND lives in poverty;;;
-donor_interrogation;DONOR interrogates HERO;DONOR tests HERO with questions;;
-way_showed;DONOR shows HERO a path to LOCATION;;;
-hero_returning;HERO is returning;;;
-departure;HERO departs;;;
-misfortune_announcement_ack;HERO receives the announcement;HERO acknowledges the problem;;
-item_indication_ack;HERO learns the whereabouts of ITEM;DONOR explains to HERO where ITEM is;;
-hero_desire_donor;HERO wants to catch DONOR;;;
-aid_item_unavailable;HERO has nothing to fight with;HERO is unable to effectively fight VILLAIN;;
-falsehero_attempts_recon;FALSEHERO attempts to know more about who HERO is;;;
-begin_counteraction;the quest begins;;;
-arrival;HERO arrives to LOCATION;HERO finally gets to LOCATION;;
-imprisonment;FRIEND is imprisoned by VILLAIN;;;
-war_declaration;VILLAIN starts a war;;;
-recon_outcome_failure;HERO does not reveal any important information;;;
-prisoner_request_freedom;DONOR asks HERO for freedom;;;
-prisoner_hero_ack;DONOR is held in captivity. He sees HERO approaching;;;
-guidance_acquisition;DONOR offers HERO to guide him;HERO accepts DONOR as guide;;
-casual_encounter_imposture;HERO and FALSEHERO casually meet;;;
-exchange_offer;DONOR offers HERO an exchange;DONOR offers a trade;;
-way_searched;HERO searches a way to reach LOCATION;;;
-donor_attack;DONOR attacks HERO;DONOR suddenly attacks HERO;;
-fight;HERO fights VILLAIN;VILLAIN and HERO fight;;
-approach_ack;HERO sees him;;;
-dispatch_ack;HERO prepares ;;;
-struggle_outcome_negative;HERO is defeated;VILLAIN is victorious;;
-initiative;HERO decides to embark in the quest;;;
-aid_helper_unavailable;HERO cannot defeat VILLAIN;;;
-recon_outcome_failure_imposture;FALSEHERO, not having learned anything of importance, leaves;FALSEHERO leaves;;
-war;the war rages on;;;
-donor_display;DONOR is displaying ITEM;DONOR is showing ITEM for trade;;
-help_request_ack;HERO receives the request;;;
-test_outcome_failure_ack;HERO understands he has failed the test;HERO regrets failing the test;;
-ack_demand_murder;the request is accepted;;;
-villain_attempts_recon;VILLAIN attempts to obtain information about HERO;;;
-test_outcome_success_ack;DONOR will now help HERO;DONOR decides to help HERO;HERO will now be helped by DONOR;
-test_ack;HERO begins the test;;;
-lack_vengeance;vengeance is required;the villainy has to be avenged;;
+way_followed;HERO follows the path to LOCATION
+hero_recognised;HERO is finally recognised;the identity of HERO is confirmed
+unrecognised_arrival;HERO returns but he is not recognised;HERO returns in disguise
+reward_withdrawn;the reward to FALSEHERO is withdrawn
+recon_outcome_success;HERO unwillingly reveals information, upon which VILLAIN hatches a plan;some information is revealed, upon which VILLAIN hatches a plan
+branding_mark;HERO receives a bodily mark;HERO is scarred
+misfortune_announcement;DISPATCHER tells HERO what happened;DISPATCHER announces the misfortune to HERO
+ack_demand_imprisonment;the demand is accepted by a servant
+seizure;VILLAIN seizes ITEM;VILLAIN steals ITEM
+villain_killed;VILLAIN is killed;VILLAIN is dead
+falsehero_rewarded;FALSEHERO is rewarded
+lack_item;ITEM is needed
+intended_encounter_imposture;FALSEHERO goes up to HERO
+struggle_outcome_positive;HERO is victorious;HERO defeats VILLAIN
+hero_recognised_by_mark;HERO is recognised by the mark he is carrying
+falsehero_exiled;FALSEHERO is exiled;FALSEHERO is cast away, never to be allowed back
+item_discovery;HERO finds ITEM
+hero_donor_ack;HERO sees DONOR
+inquiry;HERO is interrogated
+no_recon;HERO lives at LOCATION
+donor_hero_ack;DONOR sees HERO
+falsehero_exposed;FALSEHERO is exposed;FALSEHERO is recognised as the impostor he is
+realisation;HERO realizes what happened;HERO was present
+villain_imprisoned;VILLAIN is imprisoned;VILLAIN is in chains
+pillaging;VILLAIN pillages LOCATION;LOCATION is pillaged by VILLAIN
+aid_item_used;HERO has ITEM;ITEM helps HERO in the fight
+help_response_ack;DISPATCHER thanks HERO
+donor_fight;DONOR and HERO fight each other;DONOR and HERO engage in combat;a fight ensues
+captive_freed;FRIEND is freed
+guided_travel;HERO is guided by DONOR to LOCATION;DONOR guides HERO to LOCATION
+aid_helper_used;DONOR helps HERO
+intended_encounter;VILLAIN goes up to HERO
+item_preparation;DONOR prepares ITEM for HERO;DONOR makes ITEM ready for HERO
+observation;HERO is secretly observed;HERO is spied upon
+villain_defeated;VILLAIN is defeated;HERO is victorious
+hero_lacks_proof;HERO cannot prove his claims;HERO lacks any proof of his identity
+filler_villain_retry;VILLAIN tries again
+reward_kingdom;HERO becomes king
+reward_land;HERO is rewarded with land
+answer;HERO answers
+help_response;HERO responds to the call for help;HERO decides to help
+donor_begging;DONOR begs HERO
+item_desire;HERO desires ITEM;HERO wants ITEM
+branding_item;HERO obtains ITEM
+aid_helper_available;HERO asks DONOR for help
+hero_confronts_falsehero;HERO confronts FALSEHERO
+villain_runs;VILLAIN runs away to LOCATION;VILLAIN goes in hiding at LOCATION;VILLAIN retreats to LOCATION
+falsehero_punished;FALSEHERO is punished
+filler_lack_helper;external help is required
+donor_servitude;DONOR decides to become servant to HERO;DONOR accepts helping HERO
+travel;HERO travels to LOCATION;HERO goes to LOCATION
+item_provides_wealth;ITEM provides wealth;ITEM makes HERO rich
+claims_received_by_dispatcher;DISPATCHER listens to HERO presenting his claims
+false_claims_accepted;DISPATCHER acknoweledges the claims presented by FALSEHERO
+dispatch;DISPATCHER sends HERO on the mission
+reward_wealth;HERO is rewarded with great wealth;HERO is rewarded with a bag of gold
+filler_hero_retry;HERO resumes his travelling
+falsehero_approach_ack;HERO sees FALSEHERO coming toward him
+donor_intro;DONOR is at LOCATION;at LOCATION lives DONOR
+recon_outcome_success_imposture;FALSEHERO learns of what HERO has done
+demand_imprisonment;VILLAIN demands FRIEND to be imprisoned
+item_delivery;DONOR gives ITEM to HERO
+demand_murder;VILLAIN demands FRIEND to be murdered
+lack_freedom;FRIEND shall be freed
+falsehero_inquiry;FALSEHERO asks several questions to HERO
+falsehero_killed;FALSEHERO is killed;FALSEHERO is executed
+conversation;the two engage in a conversation
+murder;FRIEND is murdered
+help_request;DISPATCHER asks HERO for help
+contest;HERO and VILLAIN engage in a contest
+abduction;VILLAIN abducts FRIEND
+claims_denied;the claims are denied;the claims are not accepted
+item_seizure;HERO seizes ITEM
+aid_item_available;HERO has ITEM;HERO now owns ITEM
+hero_return;HERO returns;HERO is back
+reward_item;HERO is rewarded with an item
+proof_required_item;HERO needs something to prove his claims with
+casual_encounter;VILLAIN casually encounters HERO;VILLAIN meets HERO
+reward_marriage;HERO gets married;HERO marries
+lack_wealth;FRIEND lives in poverty
+donor_interrogation;DONOR interrogates HERO;DONOR tests HERO with questions
+way_showed;DONOR shows HERO a path to LOCATION
+hero_returning;HERO is returning
+departure;HERO departs
+misfortune_announcement_ack;HERO receives the announcement;HERO acknowledges the problem
+item_indication_ack;HERO learns the whereabouts of ITEM;DONOR explains to HERO where ITEM is
+hero_desire_donor;HERO wants to catch DONOR
+aid_item_unavailable;HERO has nothing to fight with;HERO is unable to effectively fight VILLAIN
+falsehero_attempts_recon;FALSEHERO attempts to know more about who HERO is
+begin_counteraction;the quest begins
+arrival;HERO arrives to LOCATION;HERO finally gets to LOCATION
+imprisonment;FRIEND is imprisoned by VILLAIN
+war_declaration;VILLAIN starts a war
+recon_outcome_failure;HERO does not reveal any important information
+prisoner_request_freedom;DONOR asks HERO for freedom
+prisoner_hero_ack;DONOR is held in captivity. He sees HERO approaching
+guidance_acquisition;DONOR offers HERO to guide him;HERO accepts DONOR as guide
+casual_encounter_imposture;HERO and FALSEHERO casually meet
+exchange_offer;DONOR offers HERO an exchange;DONOR offers a trade
+way_searched;HERO searches a way to reach LOCATION
+donor_attack;DONOR attacks HERO;DONOR suddenly attacks HERO
+fight;HERO fights VILLAIN;VILLAIN and HERO fight
+approach_ack;HERO sees him
+dispatch_ack;HERO prepares 
+struggle_outcome_negative;HERO is defeated;VILLAIN is victorious
+initiative;HERO decides to embark in the quest
+aid_helper_unavailable;HERO cannot defeat VILLAIN
+recon_outcome_failure_imposture;FALSEHERO, not having learned anything of importance, leaves;FALSEHERO leaves
+war;the war rages on
+donor_display;DONOR is displaying ITEM;DONOR is showing ITEM for trade
+help_request_ack;HERO receives the request
+test_outcome_failure_ack;HERO understands he has failed the test;HERO regrets failing the test
+ack_demand_murder;the request is accepted
+villain_attempts_recon;VILLAIN attempts to obtain information about HERO
+test_outcome_success_ack;DONOR will now help HERO;DONOR decides to help HERO;HERO will now be helped by DONOR
+test_ack;HERO begins the test
+lack_vengeance;vengeance is required;the villainy has to be avenged

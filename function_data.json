@@ -1,0 +1,72 @@
+{
+  "functions": [
+    {
+      "name": "ReconDelivery",
+      "code": "rd"
+    },
+    {
+      "name": "Villainy",
+      "code": "A"
+    },
+    {
+      "name": "Lack",
+      "code": "a"
+    },
+    {
+      "name": "MediationCounteraction",
+      "code": "BC"
+    },
+    {
+      "name": "FirstFunctionReaction",
+      "code": "DE"
+    },
+    {
+      "name": "Acquisition",
+      "code": "F"
+    },
+    {
+      "name": "Guidance",
+      "code": "G"
+    },
+    {
+      "name": "Struggle",
+      "code": "H"
+    },
+    {
+      "name": "Branding",
+      "code": "J"
+    },
+    {
+      "name": "Liquidation",
+      "code": "K"
+    },
+    {
+      "name": "Return",
+      "code": "Rt"
+    },
+    {
+      "name": "FalseClaimsFalseReward",
+      "code": "L"
+    },
+    {
+      "name": "Recognition",
+      "code": "Q"
+    },
+    {
+      "name": "ExposurePunishment",
+      "code": "ExU"
+    },
+    {
+      "name": "Reward",
+      "code": "Rw"
+    },
+    {
+      "name": "Filler",
+      "code": "Fi"
+    },
+    {
+      "name": "ReconDeliveryImposture",
+      "code": "rdi"
+    }
+  ]
+}

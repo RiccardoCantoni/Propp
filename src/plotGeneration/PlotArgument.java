@@ -55,8 +55,8 @@ public class PlotArgument {
 	
 	private static FunctionChain[] loadAllChains(){
     	List<FunctionChain> seq = new LinkedList<>();
-    	JsonManager jdm = new JsonManager("data.json");
-    	JsonArray chains = jdm.loadArray("chains");
+    	JsonManager jdm = new JsonManager("function_data.json");
+    	JsonArray chains = jdm.loadArray("functions");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		seq.add(FunctionChain.deserializeFrom(o.getString("name")));
     	}

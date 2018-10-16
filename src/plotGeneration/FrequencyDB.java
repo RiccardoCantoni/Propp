@@ -127,8 +127,8 @@ public class FrequencyDB {
     private static List<String> getAllLabels(){
     	List<String> labels = new LinkedList<>();
     	ChainAnalyzer ca;
-    	JsonManager jdm = new JsonManager("data.json");
-    	JsonArray chains = jdm.loadArray("chains");
+    	JsonManager jdm = new JsonManager("function_data.json");
+    	JsonArray chains = jdm.loadArray("functions");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));
     		for (String label : ca.getLabels()) {
