@@ -14,6 +14,7 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 import myUtils.JsonManager;
+import propp.Configuration;
 import proppFunction.FunctionChain;
 import state.AtomMatcher;
 import state.Predicate;
@@ -26,7 +27,7 @@ import state.PredicateSet;
 public class ChainUpdater {
     
     public static void updateAllChains(){ 	
-    	JsonManager jdm = new JsonManager("function_data.json");
+    	JsonManager jdm = new JsonManager(Configuration.getInstance().functions_data_location);
     	JsonArray a = jdm.loadArray("functions");
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
     		updateChain(o.getString("name"));

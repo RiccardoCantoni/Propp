@@ -13,7 +13,7 @@ import java.util.List;
 import org.junit.Test;
 
 import myUtils.ListUtils;
-import propp.NodeSequenceManager;
+import plotGeneration.NodeSequenceManager;
 import proppFunction.Node;
 import proppFunction.NodeType;
 

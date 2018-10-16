@@ -21,6 +21,7 @@ import myUtils.SharedRandom;
 import plotGeneration.FrequencyDB;
 import plotGeneration.KnownSequence;
 import plotGeneration.MultiPlotGenerator;
+import plotGeneration.NodeSequenceManager;
 import plotGeneration.PlotArgument;
 import propp.chains.ChainAnalyzer;
 import propp.chains.ChainUpdater;
@@ -51,7 +52,8 @@ public class Propp {
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
         text.prettyPrint();
-        
+        JsonManager jm= new JsonManager("out.json");
+        jm.writeOutput(text.body);
         fdb.saveGlobalFrequencies();
     }
     

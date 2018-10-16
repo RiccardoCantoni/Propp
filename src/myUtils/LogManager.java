@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
 
-import propp.SystemState;
+import propp.Configuration;
 
 /**
  *
@@ -30,7 +30,7 @@ public class LogManager {
     }
     
     public static void addEntry(String entry){
-        if (!SystemState.getInstance().loggingMode) return;
+        if (!Configuration.getInstance().loggingMode) return;
         try {
             PrintWriter writer = new PrintWriter(new FileOutputStream(logfile, true));
             writer.append("\r\n"+entry);

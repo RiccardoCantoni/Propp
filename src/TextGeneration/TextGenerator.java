@@ -1,31 +1,39 @@
 package TextGeneration;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 
 import org.apache.commons.lang3.StringUtils;
 
 import myUtils.DebugUtils;
+import myUtils.JsonManager;
+import propp.Configuration;
 import proppFunction.Node;
 import proppFunction.NodeType;
 
 public class TextGenerator {
 	
+	Map<String,String> labelActivityMap;
+	
 	public Text generateText(List<Node> nodeList){
 		DebugUtils.debugPrint("=== text generation initiated ===");
+		loadActivityMap();
 		TextGenerationState tgs = new TextGenerationState();
-		String[] lines = getLines(nodeList, tgs);
-		Text t = new Text();
-		t.body = lines;
-		t.length = lines.length;
-		t.title = new TitleGenerator().generateTitle(tgs.getCurrentState());
+		OutputItem[] body = process(nodeList, tgs);
+		String title = new TitleGenerator().generateTitle(tgs.getCurrentState());
 		DebugUtils.debugPrint("=== text generation terminated ===");
-		return t;
+		return new Text(title, body);
 	}
 	
-	private String[] getLines(List<Node> nodes, TextGenerationState state) {
-		List<String> lines = new LinkedList<>();
+	private OutputItem[] process(List<Node> nodes, TextGenerationState state) {
+		List<OutputItem> lines = new LinkedList<>();
 		TextElement[] tes = null;
 		for (Node n : nodes) {
 			tes = N2Te(n,state);
@@ -34,14 +42,14 @@ public class TextGenerator {
 				for (TextElement te : tes) {
 					line+=te.yield(state)+" ";
 				}
-			lines.add(line);
+			lines.add(new OutputItem(n.label,line,getActivity(n.label)));
 			DebugUtils.debugPrint(line);
 			}
 		}
-		return lines.toArray(new String[lines.size()]);
+		return lines.toArray(new OutputItem[lines.size()]);
 	}
 	
-	private TextElement[] N2Te(Node n, TextGenerationState state) {
+	TextElement[] N2Te(Node n, TextGenerationState state) {
 		List<String> strlist = new LinkedList<>();
 		List<TextElement> telist = new LinkedList<>();
 		TextElement te;
@@ -67,5 +75,24 @@ public class TextGenerator {
 		return telist.toArray(new TextElement[telist.size()]);
 	}
 	
+	String getActivity(String label){
+		String a = labelActivityMap.get(label);
+		if (a==null) return "";
+		System.out.println(a+"==========");
+		return a;
+	}
+	
+	void loadActivityMap() {
+		List<String> labels = JsonManager.getAllLabels(false);
+		labelActivityMap = new HashMap<>();
+		JsonManager jm = new JsonManager(Configuration.getInstance().activity_mapping_location);
+		JsonArray mapping = jm.loadArray("mapping");
+		for (JsonObject o : mapping.getValuesAs(JsonObject.class)) {
+			if (!labels.contains(o.getString("label")))
+				throw new NoSuchElementException("exergame mapping: label not found");
+			labelActivityMap.put(o.getString("label"), o.getString("activity"));
+    	}
+	}
+
 	
 }

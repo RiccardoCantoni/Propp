@@ -11,6 +11,7 @@ import javax.json.JsonString;
 import myUtils.JsonManager;
 import myUtils.RandomSequencePicker;
 import myUtils.SharedRandom;
+import propp.Configuration;
 
 public class ExistantDictionary {
 	
@@ -30,7 +31,7 @@ public class ExistantDictionary {
 	
 	private String[] loadDictionary(String dictname) {
 		try {
-			JsonManager jm = new JsonManager("existent_data.json");
+			JsonManager jm = new JsonManager(Configuration.getInstance().existents_data_location);
 	    	JsonArray ja = jm.loadArray(dictname);
 	    	List<String> tmp = new LinkedList<>();  	
 	    	for (JsonString o : ja.getValuesAs(JsonString.class)) {

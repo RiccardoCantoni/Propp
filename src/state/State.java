@@ -5,7 +5,7 @@
  */
 package state;
 
-import propp.SystemState;
+import propp.Configuration;
 import proppFunction.Node;
 
 /**
@@ -14,12 +14,12 @@ import proppFunction.Node;
  */
 public class State {
 	
-	SystemState system;
+	Configuration system;
     
     private PredicateSet set;
     
     public State(){
-    	system = SystemState.getInstance();
+    	system = Configuration.getInstance();
         set = new PredicateSet();
     }
     

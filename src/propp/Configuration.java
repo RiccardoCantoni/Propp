@@ -15,29 +15,39 @@ import proppFunction.RandomTransition;
  *
  * @author Riccardo
  */
-public class SystemState {
+public class Configuration {
     
-    private static SystemState instance;
+    private static Configuration instance;
     
     public boolean loggingMode;
     public boolean unconstrained_mode;
     public MarkovTransition transition_function;
     public boolean debugMode;
-    public String textDictionaryFile;
     public boolean globalFrequencyActive;
+    public boolean outputEnabled;
     
-    private SystemState() {
+    public String functions_data_location;
+    public String existents_data_location;
+    public String activity_mapping_location;
+    public String text_dictionary_location;
+    
+    private Configuration() {
+    	outputEnabled = (boolean)ConfigurationManager.getConfig(boolean.class, "output"); 
         loggingMode = (boolean)ConfigurationManager.getConfig(boolean.class, "logging");
         unconstrained_mode = (boolean)ConfigurationManager.getConfig(boolean.class, "unconstrained_mode");
         transition_function = this.getTransitionFunction((String)ConfigurationManager.getConfig(String.class, "transition_type"));
         debugMode = (boolean)ConfigurationManager.getConfig(boolean.class, "debug_mode");
-        textDictionaryFile = (String)ConfigurationManager.getConfig(String.class, "text_dictionary");
         globalFrequencyActive = (boolean)ConfigurationManager.getConfig(boolean.class, "global_frequency_active");
+        
+        functions_data_location = (String)ConfigurationManager.getConfig(String.class, "functions_data_location");
+        existents_data_location = (String)ConfigurationManager.getConfig(String.class, "existents_data_location");
+        activity_mapping_location = (String)ConfigurationManager.getConfig(String.class, "activity_mapping_location");
+        text_dictionary_location = (String)ConfigurationManager.getConfig(String.class, "text_dictionary_location");
     }
     
-    public static SystemState getInstance() {
+    public static Configuration getInstance() {
         if(instance == null) {
-          instance = new SystemState();
+          instance = new Configuration();
         }
         return instance;
     }

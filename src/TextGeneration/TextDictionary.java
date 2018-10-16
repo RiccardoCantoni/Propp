@@ -1,7 +1,5 @@
 package TextGeneration;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -11,18 +9,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-
 import myUtils.JsonManager;
 import myUtils.SharedRandom;
-import propp.SystemState;
-import propp.chains.ChainAnalyzer;
-import proppFunction.FunctionChain;
+import propp.Configuration;
 
 public class TextDictionary {
 	
@@ -34,7 +26,7 @@ public class TextDictionary {
 	}
 	
 	public void loadDictionary() {
-		loadFromCSV(SystemState.getInstance().textDictionaryFile);
+		loadFromCSV(Configuration.getInstance().text_dictionary_location);
 	}
 	
 	public void unloadToCSV(String filename) {
@@ -93,7 +85,7 @@ public class TextDictionary {
 	}
 	
 	public void updateDictionary(String filename) {
-		List<String> chainLabels = getAllLabels();
+		List<String> chainLabels = JsonManager.getAllLabels(true);
 		loadFromCSV(filename);
 		int n = chainLabels.size()-tdict.size();
 		if (n>0) {
@@ -121,23 +113,5 @@ public class TextDictionary {
 		}
 		unloadToCSV(filename);
 	}
-	
-	private static List<String> getAllLabels(){
-    	List<String> labels = new LinkedList<>();
-    	ChainAnalyzer ca;
-    	JsonManager jdm = new JsonManager("function_data.json");
-    	JsonArray chains = jdm.loadArray("functions");
-    	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
-    		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));
-    		for (String label : ca.getLabels()) {
-    			if (labels.contains(label)) {
-    				System.out.println("WARNING: duplicate label "+label);
-    			}else {
-    				labels.add(label);
-    			}
-    		}
-    	}
-    	return labels;
-    }
 	
 }

@@ -8,7 +8,7 @@ package plotGeneration;
 import java.util.LinkedList;
 import java.util.List;
 
-import propp.SystemState;
+import propp.Configuration;
 import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
 import proppFunction.MarkovTransition;
@@ -57,7 +57,7 @@ public class LinearPlotGenerator{
     	plot = new LinkedList<Node>();
     	generationState = PlotGenerationState.EARLY;
         this.chainSequence = arg.chainSequence;
-        this.transition = SystemState.getInstance().transition_function;
+        this.transition = Configuration.getInstance().transition_function;
         chainIndex = 0;
         state = arg.initialState;
         currentChain = chainSequence[chainIndex];

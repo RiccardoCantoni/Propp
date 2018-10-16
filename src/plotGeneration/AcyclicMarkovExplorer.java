@@ -12,8 +12,7 @@ import java.util.List;
 
 import myUtils.ListUtils;
 import myUtils.LogManager;
-import propp.NodeSequenceManager;
-import propp.SystemState;
+import propp.Configuration;
 import proppFunction.FunctionChain;
 import proppFunction.GraphExplorationException;
 import proppFunction.MarkovTransition;
@@ -35,7 +34,7 @@ public class AcyclicMarkovExplorer {
     boolean globalFrequency;
 
     public AcyclicMarkovExplorer() {
-    	this.globalFrequency = SystemState.getInstance().globalFrequencyActive;
+    	this.globalFrequency = Configuration.getInstance().globalFrequencyActive;
     }
     
     public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, String[] injections){

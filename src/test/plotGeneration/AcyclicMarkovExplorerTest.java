@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import myUtils.ListUtils;
 import plotGeneration.AcyclicMarkovExplorer;
-import propp.NodeSequenceManager;
+import plotGeneration.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;

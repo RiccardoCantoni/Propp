@@ -10,8 +10,8 @@ import java.util.List;
 
 import myUtils.ListUtils;
 import myUtils.LogManager;
-import propp.NodeSequenceManager;
-import propp.SystemState;
+import plotGeneration.NodeSequenceManager;
+import propp.Configuration;
 import state.State;
 
 /**
@@ -26,7 +26,7 @@ public class GraphExplorationException extends RuntimeException{
 	      
     public GraphExplorationException(String message, String[] injections, State state, List<Node> sequence) {
     	super(message);
-    	if (SystemState.getInstance().loggingMode) {
+    	if (Configuration.getInstance().loggingMode) {
     		LogManager.addEntry("GRAPH_EXPLORATION_EXCEPTION:");
     		LogManager.addEntry(message);
     		LogManager.addEntry("state: "+ state.toString());

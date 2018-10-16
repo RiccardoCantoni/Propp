@@ -18,6 +18,7 @@ import javax.json.JsonObjectBuilder;
 import javax.json.JsonWriter;
 
 import myUtils.JsonManager;
+import propp.Configuration;
 import propp.chains.ChainAnalyzer;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
@@ -127,7 +128,7 @@ public class FrequencyDB {
     private static List<String> getAllLabels(){
     	List<String> labels = new LinkedList<>();
     	ChainAnalyzer ca;
-    	JsonManager jdm = new JsonManager("function_data.json");
+    	JsonManager jdm = new JsonManager(Configuration.getInstance().functions_data_location);
     	JsonArray chains = jdm.loadArray("functions");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
     		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));

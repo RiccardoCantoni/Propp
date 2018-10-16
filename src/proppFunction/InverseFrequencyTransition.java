@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import myUtils.SharedRandom;
 import plotGeneration.FrequencyDB;
-import propp.SystemState;
+import propp.Configuration;
 
 public class InverseFrequencyTransition implements MarkovTransition{
 	
@@ -22,7 +22,7 @@ public class InverseFrequencyTransition implements MarkovTransition{
 		float global;
 		for (int i=0; i<validSuccessors.size(); i++) {
 			local = 1f/(FrequencyDB.getInstance().getLocalFrequency(validSuccessors.get(i)));
-			if (SystemState.getInstance().globalFrequencyActive) {
+			if (Configuration.getInstance().globalFrequencyActive) {
 				global = 1f/(FrequencyDB.getInstance().getGlobalFrequency(validSuccessors.get(i)));
 			}else {
 				global = 1;

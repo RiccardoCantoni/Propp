@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import propp.NodeSequenceManager;
+import plotGeneration.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import state.Predicate;

@@ -14,8 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import myUtils.ListUtils;
+import plotGeneration.NodeSequenceManager;
 import plotGeneration.WalkerSingle;
-import propp.NodeSequenceManager;
 import proppFunction.FunctionChain;
 import proppFunction.Node;
 import proppFunction.NodeType;
