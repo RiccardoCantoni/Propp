@@ -34,7 +34,7 @@ public class TextGenerationState {
 	
 	private State filterState(State s) {
 		State s2 = new State();
-		String[] toKeep = new String[] {"HERO","VILLAIN","FRIEND","DISPATCHER", "LOCATION"};
+		String[] toKeep = new String[] {"HERO","VILLAIN","FRIEND","DISPATCHER"};
 		Predicate[] predsToKeep;
 		for (String tk : toKeep) {
 			predsToKeep = s.getSet().findAll(new Predicate(tk,"_","_")).toArray(new Predicate[0]);

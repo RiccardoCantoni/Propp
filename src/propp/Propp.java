@@ -47,7 +47,7 @@ public class Propp {
         TD.loadFromCSV("dictionary.csv");
         TextGenerator textgen = new TextGenerator();
         List<Node> ls = walk();
-    	Text text = textgen.generateText(ls);
+        Text text = textgen.generateText(ls);
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
         text.prettyPrint();

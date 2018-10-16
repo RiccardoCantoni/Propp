@@ -13,6 +13,10 @@ public class ReconDeliveryChain implements ChainGenerator {
 		FunctionChain C = new FunctionChain("ReconDelivery");
 		Node n;
 		
+		
+		n = new Node("no_recon", NodeType.EVENT);
+		C.addNode(n);
+		C.setInitial(n);
 		n = new Node("casual_encounter", NodeType.EVENT);
 		C.addNode(n);
 		C.setInitial(n);

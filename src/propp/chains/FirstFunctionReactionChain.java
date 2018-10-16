@@ -22,11 +22,16 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         Node n;
         String ta = "test_ack";
         String intro = "donor_intro";
+        String loc = "hero_reach_location";
         n = new Node(ta, NodeType.PI);
         C.addNode(n);
-        n = new Node(intro, NodeType.EVENT);
+        n = new Node(loc, NodeType.EVENT);
         C.addNode(n);
         C.setInitial(n);
+        n = new Node(intro, NodeType.EVENT);
+        C.addNode(n);
+        C.addEdge(loc,intro);
+        
         n = new Node("test_outcome_success", NodeType.ACTION);
         C.addNode(n);
         C.addEdge("test_ack","test_outcome_success");

@@ -4,105 +4,44 @@ WARNING: duplicate label approach
 WARNING: duplicate label item_seizure
 WARNING: duplicate label approach
 dictionary unloaded to dictionary.csv
-SEED: 218911274386298002
+SEED: -1583478728540137610
 ==========
-the farmer and the black knight
+Ivan and the witch
 
-the black knight goes up to the farmer 
-the black knight attempts to obtain information about the farmer 
-the farmer is secretly observed 
-the farmer unwillingly reveals information, upon which the black knight hatches a plan 
-the old woman is imprisoned by the black knight 
-the black knight goes in hiding at the forest 
+the witch overhears Ivan 
+Ivan unwillingly reveals information, upon which the witch hatches a plan 
+the witch demands the old man to be imprisoned 
+the demand is accepted by a servant 
+the old man is imprisoned by the witch 
+the witch runs away to the city 
 vengeance is required 
-the farmer realizes what happened 
-the farmer decides to embark in the quest 
+the prince asks Ivan for help 
+Ivan receives the request 
+Ivan decides to help 
+The prince thanks Ivan
+the prince sends Ivan on the mission 
+Ivan prepares 
 the quest begins 
-the farmer departs 
-pippo suddenly attacks the farmer 
-a fight ensues 
-the farmer begins the test 
-the farmer has passed the test 
-pippo will now help the farmer
-the farmer finds the flying shoes 
-the farmer wants the flying shoes 
-the farmer aquires the flying shoes 
-pippo magically brings the farmer to the forest 
-the farmer finally gets to the forest 
-the farmer fights the black knight 
-the farmer is alone facing the black knight 
-the black knight is victorious 
-the farmer is forced to run away 
-the farmer resumes his travelling 
-the farmer discovers a way to the forest 
-the farmer follows the path to the forest 
-the farmer finally gets to the forest 
-the farmer and the black knight engage in a contest 
-the farmer has nothing to fight with 
-the farmer is defeated 
-the farmer barely escapes with his life 
-the farmer resumes his travelling 
-the farmer travels to the forest 
-the farmer finally gets to the forest 
-the farmer and the black knight engage in a contest 
-the farmer defeats the black knight 
-the farmer receives a bodily mark 
-the black knight is defeated 
-the black knight is killed 
-the farmer returns 
-the farmer is returning 
-the false hero overhears the farmer talking about his success 
-the false hero learns of what the farmer has done 
-the false hero presents his claims to the village elder 
-the village elder acknoweledges the claims presented by the false hero 
-the false hero is rewarded 
-the farmer presents his claims to the village elder 
-the village elder listen to the farmer presenting his claims 
-the claims are denied 
-the farmer lacks any proof of his identity 
-the farmer needs the magical bow to prove his claims 
-the farmer returns 
-the farmer has arrived 
-the farmer embraks in the quest 
-the magical sword is needed 
-the old woman shall be freed 
-pippo is held in captivity. He sees the farmer approaching 
-pippo desires freedom 
-pippo asks the farmer for freedom 
-the farmer begins the test 
-the farmer has passed the test 
-the farmer understands he has passed the test 
-pippo gives the magical bow to the farmer 
-the farmer aquires the magical bow 
-the farmer presents his claims to the village elder 
-the village elder listen to the farmer presenting his claims 
-the claims are not accepted 
-the farmer cannot proof his claims 
-the farmer needs the magical bow to prove his claims 
-the farmer returns 
-the farmer has arrived 
-the farmer embraks in the quest 
-the magical bow is needed 
-vengeance is required 
-the unicorn attacks the farmer 
-the unicorn and the farmer fight each other 
-the farmer begins the test 
-the farmer has passed the test 
-the farmer understands he has passed the test 
-the unicorn gives the magical sword to the farmer 
-the farmer aquires the magical sword 
-the farmer presents his claims to the village elder 
-the village elder listen to the farmer presenting his claims 
-the claims are denied 
-the farmer confronts the false hero 
-the farmer is recognised by the mark he is carrying 
-the identity of the farmer is confirmed 
-the false hero is exposed 
-the reward to the false hero is withdrawn 
-the false hero is punished 
-the false hero is thrown in prison 
-the farmer becomes king 
-
+Ivan departs 
+the hermit is at the city 
+the hermit is held in captivity. He sees Ivan approaching 
+the hermit desires freedom 
+the hermit asks Ivan for freedom 
+Ivan begins the test 
+Ivan has passed the test 
+the hermit decides to help Ivan 
+the hermit gives the magical bow to Ivan 
+Ivan aquires the magical bow 
+the hermit magically brings Ivan to the city 
+Ivan finally gets to the city 
+the witch and Ivan fight 
+Ivan is victorious 
+Ivan obtains the magical bow 
+the witch is defeated 
+the witch is dead 
+Ivan is back 
+Ivan has returned 
+Ivan marries 
 
 WARNING: duplicate label item_seizure
 WARNING: duplicate label approach
@@ -110,83 +49,252 @@ WARNING: duplicate label approach
 WARNING: duplicate label item_seizure
 WARNING: duplicate label approach
 dictionary unloaded to dictionary.csv
-SEED: 5878965488596338435
+SEED: -5872260937268220056
 ==========
-Luke Skywalker and the orc
+Ivan and the evil king
 
-the orc casually encounters Luke Skywalker 
-the orc attempts to obtain information about Luke Skywalker 
-Luke Skywalker is spied upon 
-some information is revealed, upon which the orc hatches a plan 
-the orc seizes the flying shoes 
-the orc runs away to the forest 
-the flying shoes is needed 
-the village elder asks Luke Skywalker for help 
-Luke Skywalker receives the request 
-Luke Skywalker responds to the call for help 
-@help_response_ack 
-the village elder sends Luke Skywalker on the mission 
-Luke Skywalker receives the request 
+the evil king hears Ivan from afar 
+Ivan unwillingly reveals information, upon which the evil king hatches a plan 
+the evil king starts a war 
+the war rages on 
+the evil king runs away to the castle 
+vengeance is required 
+Ivan was present 
+Ivan decides to embark in the quest 
 the quest begins 
-Luke Skywalker departs 
-Luke Skywalker sees the old lady 
-Luke Skywalker wants to catch the old lady 
-Luke Skywalker catches the old lady 
-the old lady begs Luke Skywalker 
-Luke Skywalker begins the test 
-Luke Skywalker has failed the test 
-Luke Skywalker regrets failing the test 
-Luke Skywalker resumes his travelling 
-pippo tests Luke Skywalker with questions 
-Luke Skywalker begins the test 
-Luke Skywalker has failed the test 
-Luke Skywalker regrets failing the test 
-Luke Skywalker resumes his travelling 
-Luke Skywalker is tested by the old lady 
-Luke Skywalker begins the test 
-Luke Skywalker has passed the test 
-Donor will now help Luke Skywalker 
-the old lady gives the flying shoes to Luke Skywalker 
-Luke Skywalker aquires the flying shoes 
-Luke Skywalker searches a way to reach the forest 
-Luke Skywalker cannot find a way to the forest 
-Luke Skywalker resumes his travelling 
-the golden bird shows the magical bow 
-the golden bird sees Luke Skywalker 
-the golden bird offers Luke Skywalker an exchange 
-Luke Skywalker begins the test 
-Luke Skywalker has failed the test 
-Luke Skywalker regrets failing the test 
-Luke Skywalker resumes his travelling 
-the pixie is held in captivity. He sees Luke Skywalker approaching 
-the pixie desires freedom 
-the pixie asks Luke Skywalker for freedom 
-Luke Skywalker begins the test 
-Luke Skywalker has failed the test 
-Luke Skywalker understands he has failed the test 
-Luke Skywalker resumes his travelling 
-the unicorn attacks Luke Skywalker 
+Ivan departs 
+Ivan is passing by the castle 
+the pixie is at the castle 
+Ivan sees the pixie 
+Ivan wants to catch the pixie 
+the pixie is caught 
+the pixie begs Ivan 
+Ivan begins the test 
+Ivan has failed the test 
+Ivan regrets failing the test 
+Ivan resumes his travelling 
+Ivan arrives at the forest 
+the hermit is at the forest 
+the hermit shows the magical sword 
+the hermit sees Ivan 
+the hermit offers Ivan an exchange 
+Ivan begins the test 
+Ivan has failed the test 
+Ivan regrets failing the test 
+Ivan resumes his travelling 
+Ivan arrives at the city 
+the unicorn is at the city 
+the unicorn interrogates Ivan 
+Ivan begins the test 
+Ivan has passed the test 
+the unicorn will now help Ivan 
+Ivan finds the magical sword 
+Ivan desires the magical sword 
+Ivan aquires the magical sword 
+Ivan finds a path to the city 
+Ivan follows the path to the city 
+Ivan finally gets to the city 
+Ivan fights the evil king 
+Ivan defeats the evil king 
+Ivan obtains the magical sword 
+the evil king is defeated 
+the evil king is killed 
+Ivan is back 
+Ivan is returning 
+Ivan and the false hero casually meet 
+the false hero attempts to know more about who Ivan is 
+while Ivan is returning, the false hero observes him 
+the false hero learns of what Ivan has done 
+the false hero presents his claims to the village elder 
+the village elder acknoweledges the claims presented by the false hero 
+the false hero is rewarded 
+Ivan presents his claims to the village elder 
+the village elder listen to Ivan presenting his claims 
+the claims are denied 
+Ivan cannot proof his claims 
+Ivan needs something to prove his claims with 
+Ivan is back 
+Ivan has returned 
+Ivan embraks in the quest 
+the magical sword is needed 
+the magical bow is needed 
+Ivan is passing by the forest 
+the old lady is at the forest 
+the old lady is in need 
+Ivan begins the test 
+Ivan has passed the test 
+the old lady decides to help Ivan 
+the old lady gives the magical bow to Ivan 
+Ivan aquires the magical bow 
+Ivan presents his claims to the village elder 
+the village elder listen to Ivan presenting his claims 
+the claims are denied 
+Ivan confronts the false hero 
+Ivan is recognised from his the magical bow 
+the identity of Ivan is confirmed 
+the false hero is exposed 
+the reward to the false hero is withdrawn 
+the false hero is punished 
+the false hero is exiled 
+Ivan is rewarded with land 
+
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+18 chains updated successfully
+WARNING: duplicate label item_seizure
+WARNING: duplicate label approach
+dictionary unloaded to dictionary.csv
+SEED: -3739650452544672492
+==========
+Boris and the orc
+
+Boris lives at the enchanted lake 
+the orc demands the little girl to be imprisoned 
+the demand is accepted by a servant 
+the little girl is imprisoned by the orc 
+the orc goes in hiding at the enchanted lake 
+the little girl shall be freed 
+the king announces the misfortune to Boris 
+Boris receives the announcement 
+the quest begins 
+Boris departs 
+Boris arrives at the enchanted lake 
+at the enchanted lake lives pippo 
+pippo is displaying the magical bow 
+pippo sees Boris 
+pippo offers a trade 
+Boris begins the test 
+Boris has passed the test 
+Boris will now be helped by pippo 
+pippo gives the magical bow to Boris 
+Boris aquires the magical bow 
+Boris searches a way to reach the enchanted lake 
+Boris cannot find a way to the enchanted lake 
+Boris resumes his travelling 
+Boris is passing by the mountain 
+at the mountain lives the old lady 
+the old lady suddenly attacks Boris 
 a fight ensues 
-Luke Skywalker begins the test 
-Luke Skywalker has passed the test 
-Donor will now help Luke Skywalker 
-Luke Skywalker finds the magical bow 
-Luke Skywalker desires the magical bow 
-Luke Skywalker seizes the magical bow 
-Luke Skywalker aquires the magical bow 
-Luke Skywalker is magically transported to the forest 
-Luke Skywalker arrives to the forest 
-Luke Skywalker and the orc engage in a contest 
+Boris begins the test 
+Boris has failed the test 
+Boris understands he has failed the test 
+Boris resumes his travelling 
+Boris is passing by the mountain 
+at the mountain lives the hermit 
+the hermit asks for help 
+Boris begins the test 
+Boris has failed the test 
+Boris understands he has failed the test 
+Boris resumes his travelling 
+Boris arrives at the mountain 
+at the mountain lives the hermit 
+Boris sees the hermit 
+Boris wants to catch the hermit 
+the hermit is caught 
+the hermit begs Boris 
+Boris begins the test 
+Boris has passed the test 
+the hermit decides to help Boris 
+Boris finds the magical bow 
+Boris desires the magical bow 
+Boris aquires the magical bow 
+Boris searches a way to reach the mountain 
+Boris cannot find a way to the mountain 
+Boris resumes his travelling 
+Boris is passing by the city 
+the pixie is at the city 
+Boris is tested by the pixie 
+Boris begins the test 
+Boris has failed the test 
+Boris regrets failing the test 
+Boris resumes his travelling 
+Boris arrives at the mountain 
+the pixie is at the mountain 
+the pixie tests Boris with questions 
+Boris begins the test 
+Boris has failed the test 
+Boris understands he has failed the test 
+Boris resumes his travelling 
+Boris is passing by the castle 
+at the castle lives the hermit 
+the hermit is in need 
+Boris begins the test 
+Boris has failed the test 
+Boris understands he has failed the test 
+Boris resumes his travelling 
+Boris arrives at the forest 
+the unicorn is at the forest 
+the unicorn is in need 
+Boris begins the test 
+Boris has passed the test 
+Boris will now be helped by the unicorn 
+the unicorn gives the magical sword to Boris 
+Boris aquires the magical sword 
+Boris goes to the forest 
+Boris finally gets to the forest 
+the orc and Boris fight 
+Boris is alone facing the orc 
 the orc is victorious 
-Luke Skywalker barely escapes with his life 
-Luke Skywalker resumes his travelling 
-Luke Skywalker discovers a way to the forest 
-Luke Skywalker follows the path to the forest 
-Luke Skywalker arrives to the forest 
-Luke Skywalker fights the orc 
-Luke Skywalker defeats the orc 
-Luke Skywalker receives a bodily mark 
-Luke Skywalker seizes the magical bow 
-Luke Skywalker returns 
-Luke Skywalker has arrived 
-Luke Skywalker is rewarded with a bag of gold 
+Boris is forced to run away 
+Boris resumes his travelling 
+Boris finds a path to the enchanted lake 
+Boris follows the path to the enchanted lake 
+Boris arrives to the enchanted lake 
+Boris and the orc engage in a contest 
+Boris is victorious 
+Boris obtains the magical sword 
+the little girl is freed 
+Boris returns 
+Boris is returning 
+Boris and the false hero casually meet 
+the false hero attempts to know more about who Boris is 
+the false hero asks several questions to Boris 
+Boris answers 
+the false hero learns of what Boris has done 
+the false hero presents his claims to the king 
+the king ponders about the claims 
+the king acknoweledges the claims presented by the false hero 
+the false hero is rewarded 
+Boris presents his claims to the king 
+the claims are denied 
+Boris cannot proof his claims 
+Boris needs something to prove his claims with 
+Boris is back 
+Boris has returned 
+Boris embraks in the quest 
+the flying shoes is needed 
+the little girl shall be freed 
+Boris is passing by the enchanted lake 
+the old man is at the enchanted lake 
+the old man is held in captivity. He sees Boris approaching 
+the old man desires freedom 
+the old man asks Boris for freedom 
+Boris begins the test 
+Boris has failed the test 
+Boris understands he has failed the test 
+Boris resumes his travelling 
+Boris reaches the mountain 
+the pixie is at the mountain 
+Boris is tested by the pixie 
+Boris begins the test 
+Boris has passed the test 
+Boris will now be helped by the pixie 
+the pixie gives the magical sword to Boris 
+Boris aquires the magical sword 
+Boris presents his claims to the king 
+the king listen to Boris presenting his claims 
+the claims are denied 
+Boris confronts the false hero 
+Boris is recognised from his the magical sword 
+the identity of Boris is confirmed 
+the false hero is exposed 
+the reward to the false hero is withdrawn 
+the false hero is punished 
+the false hero is executed 
+Boris is rewarded with land 
+
+GRAPH_EXPLORATION_EXCEPTION:
+injections failed at chain ReconDelivery
+state: state: injection(intended_encounter,_),
+sequence: list: [no_recon; $entry_point]
+injections: list: [intended_encounter]

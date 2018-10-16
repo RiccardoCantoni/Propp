@@ -32,11 +32,9 @@ public class AcyclicMarkovExplorer {
     State state;
     NodeTree tree;
     MarkovTransition transition; 
-    FrequencyDB fdb;
     boolean globalFrequency;
 
     public AcyclicMarkovExplorer() {
-    	this.fdb = FrequencyDB.getInstance();
     	this.globalFrequency = SystemState.getInstance().globalFrequencyActive;
     }
     
@@ -51,11 +49,11 @@ public class AcyclicMarkovExplorer {
         	reversePath = exploreChain();
 	        if (NodeSequenceManager.containsInjections(reversePath, injections)) {
 	        	for (Node n : reversePath) {
-	            	fdb.updateLocalFrequency(n);
+	            	FrequencyDB.getInstance().updateLocalFrequency(n);
 	            }
 	        	if (globalFrequency) {
 	        		for (Node n : reversePath) {
-		            	fdb.updateGlobalFrequency(n);
+	        			FrequencyDB.getInstance().updateGlobalFrequency(n);
 		            }
 	        	}
 	        	Collections.reverse(reversePath);
@@ -145,13 +143,7 @@ public class AcyclicMarkovExplorer {
     
     private void updateLocalFrequency(List<Node> nodes) {
     	for (Node n:nodes) {
-    		fdb.updateLocalFrequency(n);
-    	}
-    }
-    
-    private void updateGlobalFrequency(List<Node> nodes) {
-    	for (Node n:nodes) {
-    		fdb.updateGlobalFrequency(n);
+    		FrequencyDB.getInstance().updateLocalFrequency(n);
     	}
     }
     
