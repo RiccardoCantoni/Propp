@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
+import TextGeneration.ActivityMapping;
 import TextGeneration.Text;
 import TextGeneration.TextDictionary;
 import TextGeneration.TextGenerator;
@@ -39,44 +40,46 @@ public class Propp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	FrequencyDB fdb = FrequencyDB.getInstance();
-    	fdb.loadGlobalFrequencies();
-    	ChainUpdater.updateAllChains();   	 
-    	TextDictionary TD = new TextDictionary();
-    	TD.updateDictionary("dictionary.csv");    	
-        SharedRandom.getInstance().setRandom();
-        TD.loadFromCSV("dictionary.csv");
-        TextGenerator textgen = new TextGenerator();
-        List<Node> ls = walk();
-        Text text = textgen.generateText(ls);
+    	initSystem();   	
+    	String[] activities = ActivityMapping.getInstance().getLabels(new String[] {"EXERGAME2"});
+        List<Node> plot = generatePlot(activities);
+        Text text = generateText(plot);
+       
         System.out.println("SEED: "+SharedRandom.getInstance().getSeed());
         System.out.println("==========");
         text.prettyPrint();
-        JsonManager jm= new JsonManager("out.json");
-        jm.writeOutput(text.body);
-        fdb.saveGlobalFrequencies();
+        JsonManager jm = new JsonManager("out.json");
+        jm.saveOutput(text.body);
+        FrequencyDB.getInstance().saveGlobalFrequencies();
     }
     
-    public static List<Node> walk() {
-        PlotArgument arg = new PlotArgument(KnownSequence.MAIN_SEQUENCE.getSequence(), new State(), new String[0]);
+    public static void initSystem() {
+    	//init consistem random number provider
+    	SharedRandom.getInstance().setRandom();
+    	//update propp functions
+    	ChainUpdater.updateAllChains(); 
+    	//init node frequency database
+    	FrequencyDB.getInstance().loadGlobalFrequencies();
+    	//update text dictionary
+    	TextDictionary.getInstance().updateDictionary(Configuration.getInstance().text_dictionary_location);
+    }
+    
+    public static List<Node> generatePlot(String[] activities) {
+        PlotArgument arg = new PlotArgument(KnownSequence.MAIN_SEQUENCE.getSequence(), new State(), activities);
         MultiPlotGenerator multigen = new MultiPlotGenerator(arg, 0);
         List<Node> plot = multigen.generate();
         return plot;
     }
     
-    public static List<Node> plotContaining(String s){
-    	List<Node> ls = new LinkedList<Node>();
-    	while(true) {
-    		ls = walk();
-    		if (NodeSequenceManager.getLabelSequence(ls).contains(s)) return ls;
-    	}
+    public static Text generateText(List<Node> plotlist) {
+    	TextGenerator textgen = new TextGenerator();
+        return textgen.generateText(plotlist);
     }
-    
-    public static void analyzeState(List<String> chains, List<String>in, List<String> out) {
+     
+    public static void analizeState(List<String> chains, List<String>in, List<String> out) {
     	JsonManager jdm = new JsonManager("data.json");
     	JsonArray a = jdm.loadArray("chains");
     	ChainAnalyzer ca;
-    	FunctionChain fc;
     	String chainName;
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
     		chainName = o.getString("name");	

@@ -34,7 +34,7 @@ public class GuidanceChain implements ChainGenerator{
         n.toAdd.addPredicate(new Predicate("guidance_outcome","positive"));
         C.addNode(n);
         
-        n = new Node("way_discovered", NodeType.PI);
+        n = new Node("way_discovered", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.setInitial(n);
         n = new Node("way_followed", NodeType.ACTION);

@@ -25,7 +25,6 @@ public class SpecialElement implements TextElement{
 			return null;
 		}
 		return null;
-		//return "&"+str;
 	}
 	
 }

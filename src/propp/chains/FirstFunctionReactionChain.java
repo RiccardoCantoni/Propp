@@ -23,7 +23,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         String ta = "test_ack";
         String intro = "donor_intro";
         String loc = "hero_reach_location";
-        n = new Node(ta, NodeType.PI);
+        n = new Node(ta, NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         n = new Node(loc, NodeType.EVENT);
         C.addNode(n);
@@ -38,11 +38,11 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n = new Node("test_outcome_failure", NodeType.ACTION);
         C.addNode(n);
         C.addEdge("test_ack","test_outcome_failure");
-        n = new Node("test_outcome_success_ack", NodeType.PI);
+        n = new Node("test_outcome_success_ack", NodeType.PERCEPTION_INTERNAL);
         n.toAdd.addPredicate(new Predicate("donor_test_outcome","positive"));
         C.addNode(n);
         C.addEdge("test_outcome_success","test_outcome_success_ack");
-        n = new Node("test_outcome_failure_ack", NodeType.PI);
+        n = new Node("test_outcome_failure_ack", NodeType.PERCEPTION_INTERNAL);
         n.toAdd.addPredicate(new Predicate("donor_test_outcome","negative"));
         C.addNode(n);
         C.addEdge("test_outcome_failure","test_outcome_failure_ack");
@@ -93,7 +93,7 @@ public class FirstFunctionReactionChain implements ChainGenerator{
         n.toAdd.addPredicate(new Predicate("donor_test_type","exchange"));
         C.addNode(n);
         C.addEdge(intro,"donor_display");
-        n = new Node("donor_hero_ack", NodeType.PI);
+        n = new Node("donor_hero_ack", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.addEdge("donor_display","donor_hero_ack");
         n = new Node("exchange_offer", NodeType.ACTION);

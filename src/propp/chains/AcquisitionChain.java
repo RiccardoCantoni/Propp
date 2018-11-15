@@ -47,7 +47,7 @@ public class AcquisitionChain implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("item_preparation",t);
-        n = new Node("item_indication_ack", NodeType.PI);
+        n = new Node("item_indication_ack", NodeType.PERCEPTION_INTERNAL);
         n.preconditions = new AtomMatcher(new Predicate("donor_test","success"));
         C.addNode(n);
         C.addEdge(t,"item_indication_ack");     

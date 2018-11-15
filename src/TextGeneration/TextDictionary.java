@@ -21,12 +21,18 @@ public class TextDictionary {
 	private Map <String, String[]> tdict;
 	private String splitchar = ";";
 	
-	public TextDictionary() {
+	private static TextDictionary instance;
+	
+	private TextDictionary() {
 		tdict = new HashMap<String, String[]>();
+		loadFromCSV("dictionary.csv");
 	}
 	
-	public void loadDictionary() {
-		loadFromCSV(Configuration.getInstance().text_dictionary_location);
+	public static TextDictionary getInstance() {
+		if (instance == null) {
+			instance = new TextDictionary();
+		}
+		return instance;
 	}
 	
 	public void unloadToCSV(String filename) {

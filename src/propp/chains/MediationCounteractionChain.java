@@ -31,13 +31,13 @@ public class MediationCounteractionChain implements ChainGenerator{
         n.toAdd.addPredicate(new Predicate("help_request","dispatcher"));
         C.addNode(n);
         C.setInitial(n);
-        n = new Node("help_request_ack", NodeType.PI);
+        n = new Node("help_request_ack", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.addEdge("help_request", "help_request_ack");
         n = new Node("help_response", NodeType.ACTION);
         C.addNode(n);
         C.addEdge("help_request_ack", "help_response");
-        n = new Node("help_response_ack", NodeType.PI);
+        n = new Node("help_response_ack", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.addEdge("help_response", "help_response_ack");
         n = new Node("dispatch", NodeType.ACTION);
@@ -46,7 +46,7 @@ public class MediationCounteractionChain implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         C.addEdge("help_response_ack", "dispatch");
-        n = new Node("dispatch_ack", NodeType.PI);
+        n = new Node("dispatch_ack", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.addEdge("dispatch", "dispatch_ack");
         C.addEdge("dispatch_ack",bc);
@@ -60,7 +60,7 @@ public class MediationCounteractionChain implements ChainGenerator{
         n = new Node("misfortune_announcement", NodeType.ACTION);
         C.addNode(n);
         C.setInitial(n);
-        n = new Node("misfortune_announcement_ack", NodeType.PI);
+        n = new Node("misfortune_announcement_ack", NodeType.PERCEPTION_INTERNAL);
         C.addNode(n);
         C.addEdge("misfortune_announcement","misfortune_announcement_ack");
         C.addEdge("misfortune_announcement_ack",bc);

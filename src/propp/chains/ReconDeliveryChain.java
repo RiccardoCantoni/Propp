@@ -34,7 +34,7 @@ public class ReconDeliveryChain implements ChainGenerator {
 		n= new Node("inquiry", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("approach", "inquiry");
-		n= new Node("approach_ack", NodeType.PI);
+		n= new Node("approach_ack", NodeType.PERCEPTION_INTERNAL);
 		C.addNode(n);
 		C.addEdge("approach", "approach_ack");
 		n= new Node("conversation", NodeType.ACTION);

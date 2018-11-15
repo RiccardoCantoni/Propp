@@ -20,11 +20,11 @@ import proppFunction.NodeType;
 
 public class TextGenerator {
 	
-	Map<String,String> labelActivityMap;
+	ActivityMapping activityMapping;
 	
 	public Text generateText(List<Node> nodeList){
 		DebugUtils.debugPrint("=== text generation initiated ===");
-		loadActivityMap();
+		activityMapping = ActivityMapping.getInstance();
 		TextGenerationState tgs = new TextGenerationState();
 		OutputItem[] body = process(nodeList, tgs);
 		String title = new TitleGenerator().generateTitle(tgs.getCurrentState());
@@ -42,7 +42,7 @@ public class TextGenerator {
 				for (TextElement te : tes) {
 					line+=te.yield(state)+" ";
 				}
-			lines.add(new OutputItem(n.label,line,getActivity(n.label)));
+			lines.add(new OutputItem(n.label,n.type,line,activityMapping.getActivity(n.label)));
 			DebugUtils.debugPrint(line);
 			}
 		}
@@ -74,25 +74,5 @@ public class TextGenerator {
 		
 		return telist.toArray(new TextElement[telist.size()]);
 	}
-	
-	String getActivity(String label){
-		String a = labelActivityMap.get(label);
-		if (a==null) return "";
-		System.out.println(a+"==========");
-		return a;
-	}
-	
-	void loadActivityMap() {
-		List<String> labels = JsonManager.getAllLabels(false);
-		labelActivityMap = new HashMap<>();
-		JsonManager jm = new JsonManager(Configuration.getInstance().activity_mapping_location);
-		JsonArray mapping = jm.loadArray("mapping");
-		for (JsonObject o : mapping.getValuesAs(JsonObject.class)) {
-			if (!labels.contains(o.getString("label")))
-				throw new NoSuchElementException("exergame mapping: label not found");
-			labelActivityMap.put(o.getString("label"), o.getString("activity"));
-    	}
-	}
-
 	
 }

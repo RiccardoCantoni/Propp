@@ -34,11 +34,11 @@ public class RecognitionChain implements ChainGenerator{
 		n = new Node("hero_confronts_falsehero", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("claims_denied","hero_confronts_falsehero");
-		n = new Node("hero_recognised_by_item", NodeType.PI);
+		n = new Node("hero_recognised_by_item", NodeType.PERCEPTION_INTERNAL);
 		n.preconditions = new AtomMatcher(new Predicate("branding","item","_"));
 		C.addNode(n);
 		C.addEdge("hero_confronts_falsehero","hero_recognised_by_item");
-		n = new Node("hero_recognised_by_mark", NodeType.PI);
+		n = new Node("hero_recognised_by_mark", NodeType.PERCEPTION_INTERNAL);
 		n.preconditions = new AtomMatcher(new Predicate("branding","mark","_"));
 		C.addNode(n);
 		C.addEdge("hero_confronts_falsehero","hero_recognised_by_mark");

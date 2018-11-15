@@ -138,7 +138,7 @@ dispatch_ack;HERO prepares
 struggle_outcome_negative;HERO is defeated;VILLAIN is victorious
 initiative;HERO decides to embark in the quest
 aid_helper_unavailable;HERO cannot defeat VILLAIN
-recon_outcome_failure_imposture;FALSEHERO, not having learned anything of importance, leaves;FALSEHERO leaves
+recon_outcome_failure_imposture;FALSEHERO , not having learned anything of importance, leaves;FALSEHERO leaves
 war;the war rages on
 donor_display;DONOR is displaying ITEM;DONOR is showing ITEM for trade
 help_request_ack;HERO receives the request

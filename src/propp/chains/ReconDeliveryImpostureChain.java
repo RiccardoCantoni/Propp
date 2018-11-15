@@ -30,7 +30,7 @@ public class ReconDeliveryImpostureChain implements ChainGenerator{
 		n= new Node("falsehero_inquiry", NodeType.ACTION);
 		C.addNode(n);
 		C.addEdge("falsehero_approach", "falsehero_inquiry");
-		n= new Node("falsehero_approach_ack", NodeType.PI);
+		n= new Node("falsehero_approach_ack", NodeType.PERCEPTION_INTERNAL);
 		C.addNode(n);
 		C.addEdge("falsehero_approach", "falsehero_approach_ack");
 		n= new Node("conversation_imposture", NodeType.ACTION);

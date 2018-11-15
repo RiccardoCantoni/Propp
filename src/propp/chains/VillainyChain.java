@@ -40,7 +40,7 @@ public class VillainyChain implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         n = C.addEdge("demand_imprisonment","ack_demand_imprisonment");
-        n.type = NodeType.PI;
+        n.type = NodeType.PERCEPTION_INTERNAL;
         n = C.addEdge("ack_demand_imprisonment", "imprisonment");
         n.type = NodeType.ACTION;
         n = new Node("murder", NodeType.ACTION);
@@ -51,7 +51,7 @@ public class VillainyChain implements ChainGenerator{
         C.addNode(n);
         C.setInitial(n);
         n = C.addEdge("demand_murder","ack_demand_murder");
-        n.type = NodeType.PI;
+        n.type = NodeType.PERCEPTION_INTERNAL;
         n = C.addEdge("ack_demand_murder","murder");
         n.type = NodeType.ACTION;
         n = new Node("war_declaration", NodeType.ACTION);

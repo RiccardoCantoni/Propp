@@ -15,7 +15,7 @@ public enum NodeType implements Serializable{
     GOAL,
     ACTION,
     PERCEPTION,
-    PI,
+    PERCEPTION_INTERNAL,
     INTERNAL,
     OUTCOME,
     EVENT,

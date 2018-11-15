@@ -42,7 +42,7 @@ public class JsonManager {
 		return arr;
 	}
 	
-	public void writeOutput(OutputItem[] body) {
+	public void saveOutput(OutputItem[] body) {
 		if (!Configuration.getInstance().outputEnabled)
 			return;
 		JsonArrayBuilder jab = Json.createArrayBuilder();
