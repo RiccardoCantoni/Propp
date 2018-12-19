@@ -85,7 +85,7 @@ public class Propp {
     		chainName = o.getString("name");	
         	ca = new ChainAnalyzer(FunctionChain.deserializeFrom(chainName));
         	chains.add(chainName);
-        	System.out.println("chain: "+chainName);
+        	System.out.println("chain: "+ chainName);
         	List<String> tmp = ca.getRequiredPredicates().stream().map(p -> p.toString()).collect(Collectors.toList());
         	in.addAll(tmp);
         	ListUtils.printList(tmp, false);

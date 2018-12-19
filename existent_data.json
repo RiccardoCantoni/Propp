@@ -6,41 +6,58 @@
     "the farmer",
     "the knight",
     "the fisherman",
-    "Luke Skywalker"
+    "the prince",
+    "prince boris",
+    "prince ivan"
   ],
   "VILLAIN": [
   	"the evil king",
   	"the black knight",
   	"the witch",
-  	"the orc"
+  	"the orc",
+  	"the crone",
+  	"Father Frost",
+  	"the grey wolf",
+  	"the warlord"
   ],
   "DONOR": [
   	"the golden bird",
   	"the unicorn",
   	"the hermit",
-  	"pippo",
   	"the pixie",
   	"the old lady",
-  	"the old man"
+  	"the old man",
+  	"the lady of the forest",
+  	"the talking tree"
   ],
   "DISPATCHER": [
   	"the village elder",
   	"the king",
-  	"the prince"
+  	"the prince",
   ],
   "FRIEND": [
   	"the princess",
   	"the little girl",
   	"the old man",
-  	"the old woman"
+  	"the old woman",
+  	"the little boy"
   ],
   "FALSEHERO": [
-  	"the false hero"
+  	"the servant",
+  	"the merchant",
+  	"the farmer",
+  	"the smith",
+  	"the thief"
   ],
   "ITEM": [
   	"the magical sword",
   	"the magical bow",
-  	"the flying shoes"
+  	"the flying shoes",
+  	"the magical carpet",
+  	"the talking lamp",
+  	"the talking hat",
+  	"the magical lamp",
+  	"the magical book"
   ],
   "LOCATION": [
   	"the castle",
