@@ -89,7 +89,7 @@ public class FunctionChain implements Serializable{
     
     public void serializeAs(String filename){
         try {
-            FileOutputStream fileOut = new FileOutputStream("markovChains/"+filename+".mc");
+            FileOutputStream fileOut = new FileOutputStream("ProppFunctions/"+filename+".mc");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this);
             out.close();
@@ -103,7 +103,7 @@ public class FunctionChain implements Serializable{
     public static FunctionChain deserializeFrom(String filename){
         FunctionChain c = null;
         try {
-            FileInputStream fileIn = new FileInputStream("markovChains/"+filename+".mc");
+            FileInputStream fileIn = new FileInputStream("ProppFunctions/"+filename+".mc");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             c = (FunctionChain) in.readObject();
             in.close();
