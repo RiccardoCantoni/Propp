@@ -1,16 +1,16 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
 import state.Predicate;
 
-public class LiquidationChain implements ChainGenerator{
+public class LiquidationChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("Liquidation");
+		ProppFunction C = new ProppFunction("Liquidation");
 		Node n;
 		
 		n = new Node("item_seizure", NodeType.ACTION);

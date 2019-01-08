@@ -16,7 +16,7 @@ import org.junit.Test;
 import myUtils.ListUtils;
 import plotGeneration.NodeSequenceManager;
 import plotGeneration.WalkerSingle;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import proppFunction.PickFirstTransition;
@@ -29,12 +29,12 @@ import state.State;
  */
 public class WalkerSingleTest {
     
-    FunctionChain C;
+    ProppFunction C;
     WalkerSingle walker;
     
     @Before
     public void setUp() {
-         C = FunctionChain.deserializeFrom("test_small");
+         C = ProppFunction.deserializeFrom("test_small");
     }
 
     /**

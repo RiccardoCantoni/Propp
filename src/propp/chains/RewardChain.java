@@ -1,17 +1,17 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
 import state.OrMatcher;
 import state.PredicateMatcher;
 
-public class RewardChain implements ChainGenerator{
+public class RewardChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("Reward");
+		ProppFunction C = new ProppFunction("Reward");
 		Node n;
 		
 		PredicateMatcher captivity = new OrMatcher(new AtomMatcher("villainy", "abduction","_"), new AtomMatcher("villainy","imprisonment","_"));

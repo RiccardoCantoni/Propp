@@ -13,7 +13,7 @@ import java.util.List;
 import myUtils.ListUtils;
 import myUtils.LogManager;
 import propp.Configuration;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.GraphExplorationException;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
@@ -27,7 +27,7 @@ import state.State;
  */
 public class AcyclicMarkovExplorer {
     
-    FunctionChain graph;
+    ProppFunction graph;
     State state;
     NodeTree tree;
     MarkovTransition transition; 
@@ -37,7 +37,7 @@ public class AcyclicMarkovExplorer {
     	this.globalFrequency = Configuration.getInstance().globalFrequencyActive;
     }
     
-    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition, String[] injections){
+    public List<Node> explorationPath(ProppFunction graph, State initialState, MarkovTransition transition, String[] injections){
         this.graph = graph;
         this.state = initialState;
         injectAll(injections);
@@ -62,7 +62,7 @@ public class AcyclicMarkovExplorer {
         throw new GraphExplorationException("injections failed at chain "+ graph.FunctionName, injections, state, reversePath);      
     }
     
-    public List<Node> explorationPath(FunctionChain graph, State initialState, MarkovTransition transition){
+    public List<Node> explorationPath(ProppFunction graph, State initialState, MarkovTransition transition){
         this.graph = graph;
         this.state = initialState;
         this.transition = transition;

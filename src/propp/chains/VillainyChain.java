@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.Predicate;
@@ -14,10 +14,10 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class VillainyChain implements ChainGenerator{
+public class VillainyChain implements FunctionGenerator{
     
     public void createSave(){ 
-    FunctionChain C = new FunctionChain("Villainy");    
+    ProppFunction C = new ProppFunction("Villainy");    
         Node n;
         
         n = new Node("abduction", NodeType.ACTION);

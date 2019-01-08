@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -15,11 +15,11 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class StruggleChain implements ChainGenerator{
+public class StruggleChain implements FunctionGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain("Struggle");
+        ProppFunction C = new ProppFunction("Struggle");
         Node n;
         n=new Node("fight", NodeType.ACTION);
         C.addNode(n);

@@ -10,7 +10,7 @@ import java.util.List;
 
 import propp.Configuration;
 import propp.chains.ChainAnalyzer;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
 import state.State;
@@ -23,12 +23,12 @@ public class LinearPlotGenerator{
 	
 	PlotArgument arg;
     
-    FunctionChain currentChain;
+    ProppFunction currentChain;
     MarkovTransition transition;
     
     PlotGenerationState generationState;
     State state;
-    FunctionChain[] chainSequence;
+    ProppFunction[] chainSequence;
     int chainIndex;
     Node n;
     List<Node> plot;

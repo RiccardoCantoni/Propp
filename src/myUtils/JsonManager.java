@@ -18,7 +18,7 @@ import javax.json.JsonWriter;
 import TextGeneration.OutputItem;
 import propp.Configuration;
 import propp.chains.ChainAnalyzer;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 
 public class JsonManager {
 	
@@ -65,7 +65,7 @@ public class JsonManager {
     	JsonManager jdm = new JsonManager(Configuration.getInstance().functions_data_location);
     	JsonArray chains = jdm.loadArray("functions");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
-    		ca = new ChainAnalyzer(FunctionChain.deserializeFrom(o.getString("name")));
+    		ca = new ChainAnalyzer(ProppFunction.deserializeFrom(o.getString("name")));
     		for (String label : ca.getLabels()) {
     			if (checkDuplicates && labels.contains(label)) {
     				System.out.println("WARNING: duplicate label "+label);

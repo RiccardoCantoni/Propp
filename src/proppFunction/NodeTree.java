@@ -24,7 +24,7 @@ public class NodeTree {
         lt.addLeaf(leaf.label, parent.label);
     }
     
-    public List<Node> pathToRoot(Node leaf, FunctionChain g){
+    public List<Node> pathToRoot(Node leaf, ProppFunction g){
         List<Node> path = new LinkedList<>();
         List<String> labelPath = lt.pathToRoot(leaf.label);
         for (String s : labelPath){

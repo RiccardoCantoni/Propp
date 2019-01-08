@@ -14,14 +14,15 @@ import propp.Configuration;
 
 public class ActivityMapping {
 	
-	Map<String,String> labelActivity;
-	Map<String,String> activityLabel;
+	public Map<String,String> labelActivity;
+	public Map<String,String> activityLabel;
 	
 	private static ActivityMapping instance;
 	
 	private ActivityMapping() {
 		this.labelActivity = new HashMap<String, String>();
 		this.activityLabel = new HashMap<String, String>();
+		loadActivityMap();
 	}
 	
 	public static ActivityMapping getInstance() {
@@ -55,10 +56,14 @@ public class ActivityMapping {
 		List<String> labels = JsonManager.getAllLabels(false);
 		JsonManager jm = new JsonManager(Configuration.getInstance().activity_mapping_location);
 		JsonArray mapping = jm.loadArray("mapping");
+		String l,a;
 		for (JsonObject o : mapping.getValuesAs(JsonObject.class)) {
 			if (!labels.contains(o.getString("label")))
 				throw new NoSuchElementException("exergame mapping: label not found");
-			labelActivity.put(o.getString("label"), o.getString("activity"));
+			l = o.getString("label");
+			a = o.getString("activity");
+			labelActivity.put(l,a);
+			activityLabel.put(a,l);
     	}
 	}
 

@@ -1,16 +1,16 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.ConstantMatcher;
 import state.Predicate;
 
-public class ReconDeliveryChain implements ChainGenerator {
+public class ReconDeliveryChain implements FunctionGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("ReconDelivery");
+		ProppFunction C = new ProppFunction("ReconDelivery");
 		Node n;
 		
 		

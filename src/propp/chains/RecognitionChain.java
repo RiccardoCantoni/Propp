@@ -1,17 +1,17 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
 import state.Predicate;
 
-public class RecognitionChain implements ChainGenerator{
+public class RecognitionChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
 		
-		FunctionChain C = new FunctionChain("Recognition");
+		ProppFunction C = new ProppFunction("Recognition");
 		Node n;
 		
 		n = new Node("hero_presents_claims", NodeType.ACTION);

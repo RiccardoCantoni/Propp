@@ -20,7 +20,7 @@ import plotGeneration.PlotArgument;
 import plotGeneration.LinearPlotGenerator;
 import plotGeneration.NodeSequenceManager;
 import propp.Configuration;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
 import proppFunction.NodeType;

@@ -9,7 +9,7 @@ package propp.chains;
  *
  * @author Riccardo
  */
-public interface ChainGenerator {
+public interface FunctionGenerator {
     
     public void createSave();
     

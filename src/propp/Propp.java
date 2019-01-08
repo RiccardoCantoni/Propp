@@ -26,7 +26,7 @@ import plotGeneration.NodeSequenceManager;
 import plotGeneration.PlotArgument;
 import propp.chains.ChainAnalyzer;
 import propp.chains.ChainUpdater;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import state.State;
 
@@ -83,7 +83,7 @@ public class Propp {
     	String chainName;
     	for (JsonObject o : a.getValuesAs(JsonObject.class)) {
     		chainName = o.getString("name");	
-        	ca = new ChainAnalyzer(FunctionChain.deserializeFrom(chainName));
+        	ca = new ChainAnalyzer(ProppFunction.deserializeFrom(chainName));
         	chains.add(chainName);
         	System.out.println("chain: "+ chainName);
         	List<String> tmp = ca.getRequiredPredicates().stream().map(p -> p.toString()).collect(Collectors.toList());

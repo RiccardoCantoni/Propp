@@ -1,15 +1,15 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 
-public class FalseClaimsFalseRewardChain implements ChainGenerator {
+public class FalseClaimsFalseRewardChain implements FunctionGenerator {
 
 	@Override
 	public void createSave() {
 		
-		FunctionChain C = new FunctionChain("FalseClaimsFalseReward");
+		ProppFunction C = new ProppFunction("FalseClaimsFalseReward");
 		Node n;
 		
 		n = new Node("false_claims", NodeType.ACTION);

@@ -15,7 +15,7 @@ import javax.json.JsonObject;
 
 import myUtils.JsonManager;
 import propp.Configuration;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import state.AtomMatcher;
 import state.Predicate;
 import state.PredicateMatcher;
@@ -42,11 +42,11 @@ public class ChainUpdater {
     
     private static void updateChain(String chainName) {
     	chainName = "propp.chains."+chainName+"Chain";
-    	ChainGenerator fc = null;
+    	FunctionGenerator fc = null;
     	try {
     		Class c = Class.forName(chainName);
     		Constructor constructor = c.getConstructor();
-    		fc = (ChainGenerator)constructor.newInstance();
+    		fc = (FunctionGenerator)constructor.newInstance();
     	}catch(Exception e) {
     		System.out.println("reflexion error");
     		e.printStackTrace();

@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -16,11 +16,11 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class GuidanceChain implements ChainGenerator{
+public class GuidanceChain implements FunctionGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain("Guidance");
+        ProppFunction C = new ProppFunction("Guidance");
         Node n;
         Predicate atg = new Predicate("acquisition_type","guidance");
         Predicate ath = new Predicate("acquisition_type","helper");

@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -16,12 +16,12 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class AcquisitionChain implements ChainGenerator{
+public class AcquisitionChain implements FunctionGenerator{
 
     @Override
     public void createSave() {
         
-        FunctionChain C = new FunctionChain("Acquisition");
+        ProppFunction C = new ProppFunction("Acquisition");
         Node n;
         String ai = "item_acquisition";
         String ah = "helper_acquisition";

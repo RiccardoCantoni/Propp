@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.Predicate;
@@ -14,11 +14,11 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class FirstFunctionReactionChain implements ChainGenerator{
+public class FirstFunctionReactionChain implements FunctionGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain C = new FunctionChain("FirstFunctionReaction");
+        ProppFunction C = new ProppFunction("FirstFunctionReaction");
         Node n;
         String ta = "test_ack";
         String intro = "donor_intro";

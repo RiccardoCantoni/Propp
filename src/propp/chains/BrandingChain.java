@@ -1,17 +1,17 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
 import state.Predicate;
 
-public class BrandingChain implements ChainGenerator{
+public class BrandingChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
 		// TODO Auto-generated method stub
-		FunctionChain C = new FunctionChain("Branding");
+		ProppFunction C = new ProppFunction("Branding");
 		Node n;
 			
 		n=new Node("branding_mark", NodeType.EVENT);

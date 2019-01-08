@@ -6,20 +6,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import plotGeneration.NodeSequenceManager;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import state.Predicate;
 
 public class ChainAnalyzer {
 	
-	FunctionChain chain;
+	ProppFunction chain;
 	
-	public ChainAnalyzer(FunctionChain c) {
+	public ChainAnalyzer(ProppFunction c) {
 		this.chain = c;
 	}
 	
 	public ChainAnalyzer(String chainFile) {
-		this.chain = FunctionChain.deserializeFrom(chainFile);
+		this.chain = ProppFunction.deserializeFrom(chainFile);
 	}
 	
 	public List<Predicate> getAddedPredicates() {

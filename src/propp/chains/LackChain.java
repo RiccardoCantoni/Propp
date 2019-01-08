@@ -1,17 +1,17 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
 import state.OrMatcher;
 import state.Predicate;
 
-public class LackChain implements ChainGenerator {
+public class LackChain implements FunctionGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C= new FunctionChain("Lack");
+		ProppFunction C= new ProppFunction("Lack");
 		Node n;
         
         n = new Node("lack_helper", NodeType.INTERNAL);

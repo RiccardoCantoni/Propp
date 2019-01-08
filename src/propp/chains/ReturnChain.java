@@ -1,6 +1,6 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -8,11 +8,11 @@ import state.ConstantMatcher;
 import state.NotMatcher;
 import state.Predicate;
 
-public class ReturnChain implements ChainGenerator {
+public class ReturnChain implements FunctionGenerator {
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("Return");
+		ProppFunction C = new ProppFunction("Return");
 		Node n;
 		
 		n = new Node("hero_return", NodeType.ACTION);

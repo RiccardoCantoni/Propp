@@ -15,7 +15,7 @@ import org.junit.Test;
 import myUtils.ListUtils;
 import plotGeneration.AcyclicMarkovExplorer;
 import plotGeneration.NodeSequenceManager;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import proppFunction.PickFirstTransition;
@@ -34,7 +34,7 @@ public class AcyclicMarkovExplorerTest {
      */
     @Test
     public void testSinglePath() {
-        FunctionChain G = FunctionChain.deserializeFrom("test_small");
+        ProppFunction G = ProppFunction.deserializeFrom("test_small");
         AcyclicMarkovExplorer exp = new AcyclicMarkovExplorer();
         List<Node> path = exp.explorationPath(G, new State(), new PickFirstTransition());
         List<Node> path2 = Arrays.asList(new Node[]{
@@ -48,7 +48,7 @@ public class AcyclicMarkovExplorerTest {
     
     @Test
     public void testMultiplePath() {
-        FunctionChain G = new FunctionChain("test");
+        ProppFunction G = new ProppFunction("test");
         Node n = new Node("a", NodeType.NONE);
         G.addNode(n);
         G.setInitial(n);
@@ -69,7 +69,7 @@ public class AcyclicMarkovExplorerTest {
     
     @Test
     public void testInjections() {
-    	FunctionChain C = new FunctionChain("test");
+    	ProppFunction C = new ProppFunction("test");
     	AtomMatcher neverMatch = new AtomMatcher(new Predicate("this", "doesnt", "match"));
     	Node n = new Node("a", NodeType.NONE);
     	C.addNode(n);

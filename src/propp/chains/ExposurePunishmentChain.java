@@ -1,14 +1,14 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 
-public class ExposurePunishmentChain implements ChainGenerator{
+public class ExposurePunishmentChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("ExposurePunishment");
+		ProppFunction C = new ProppFunction("ExposurePunishment");
 		Node n;
 		
 		n = new Node("falsehero_exposed", NodeType.EVENT);

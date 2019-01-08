@@ -5,7 +5,7 @@
  */
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -15,11 +15,11 @@ import state.Predicate;
  *
  * @author Riccardo
  */
-public class TestChainSmall implements ChainGenerator{
+public class TestChainSmall implements FunctionGenerator{
 
     @Override
     public void createSave() {
-        FunctionChain G = new FunctionChain("test");
+        ProppFunction G = new ProppFunction("test_small");
         Node n;
         n = new Node("a", NodeType.NONE);
         G.addNode(n);
@@ -44,7 +44,7 @@ public class TestChainSmall implements ChainGenerator{
         n = new Node("g", NodeType.NONE);
         G.addNode(n);
         G.addEdge("d","g");
-        G.serializeAs("test_small");
+        G.serialize();
     }
     
 }

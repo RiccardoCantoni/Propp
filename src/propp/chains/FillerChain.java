@@ -1,17 +1,17 @@
 package propp.chains;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.ConstantMatcher;
 import state.Predicate;
 import state.PredicateMatcher;
 
-public class FillerChain implements ChainGenerator{
+public class FillerChain implements FunctionGenerator{
 
 	@Override
 	public void createSave() {
-		FunctionChain C = new FunctionChain("Filler");
+		ProppFunction C = new ProppFunction("Filler");
 		Node n;
 		
 		PredicateMatcher neverMatch = new ConstantMatcher(false);

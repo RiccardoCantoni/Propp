@@ -8,14 +8,14 @@ import javax.json.JsonObject;
 
 import myUtils.JsonManager;
 import propp.Configuration;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.MarkovTransition;
 import state.State;
 
 public class PlotArgument {
 	
 	public final String[] chainNames;
-	public final FunctionChain[] chainSequence;
+	public final ProppFunction[] chainSequence;
 	public final State initialState;
 	public final String[] injections;
 	
@@ -26,42 +26,42 @@ public class PlotArgument {
 		this.injections = injections;
 	}
 	
-	public PlotArgument(FunctionChain[] chainSequence, State initialState, String[] injections) {
+	public PlotArgument(ProppFunction[] chainSequence, State initialState, String[] injections) {
 		this.chainSequence = chainSequence;	
 		this.chainNames = getNames();
 		this.initialState = initialState;
 		this.injections = injections;
 	}	
 	
-	public FunctionChain[] loadChains() {
-		List<FunctionChain> out = new LinkedList<>();
-		FunctionChain[] allChains = loadAllChains();
+	public ProppFunction[] loadChains() {
+		List<ProppFunction> out = new LinkedList<>();
+		ProppFunction[] allChains = loadAllChains();
 		for (String s : chainNames) {
-			for (FunctionChain c : allChains) {
+			for (ProppFunction c : allChains) {
 				if (c.FunctionName.equals(s)) {
 					out.add(c);
 				}
 			}
 		}
-		return out.toArray(new FunctionChain[chainNames.length]);
+		return out.toArray(new ProppFunction[chainNames.length]);
 	}
 
 	private String[] getNames() {
 		List<String> out = new LinkedList<>();
-		for (FunctionChain c : chainSequence) {
+		for (ProppFunction c : chainSequence) {
 			out.add(c.FunctionName);
 		}
 		return out.toArray(new String[chainSequence.length]);
 	}
 	
-	private static FunctionChain[] loadAllChains(){
-    	List<FunctionChain> seq = new LinkedList<>();
+	private static ProppFunction[] loadAllChains(){
+    	List<ProppFunction> seq = new LinkedList<>();
     	JsonManager jdm = new JsonManager(Configuration.getInstance().functions_data_location);
     	JsonArray chains = jdm.loadArray("functions");
     	for (JsonObject o : chains.getValuesAs(JsonObject.class)) {
-    		seq.add(FunctionChain.deserializeFrom(o.getString("name")));
+    		seq.add(ProppFunction.deserializeFrom(o.getString("name")));
     	}
-    	return seq.toArray(new FunctionChain[seq.size()]);
+    	return seq.toArray(new ProppFunction[seq.size()]);
     }
 	
 }

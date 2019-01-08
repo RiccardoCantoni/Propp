@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.MarkovTransition;
 import proppFunction.Node;
 import state.State;
@@ -21,7 +21,7 @@ import state.State;
  */
 public class WalkerSingle implements Iterator<Node>{
     
-    FunctionChain chain;
+    ProppFunction chain;
     MarkovTransition transition;
     
     public Node currentNode;
@@ -31,7 +31,7 @@ public class WalkerSingle implements Iterator<Node>{
     int pathIndex;
     List<String> injections;
     
-    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState, String[] injections){
+    public WalkerSingle(ProppFunction chain, MarkovTransition transition, State initialState, String[] injections){
         this.chain = chain;
         this.transition = transition;
         this.state = initialState;
@@ -40,7 +40,7 @@ public class WalkerSingle implements Iterator<Node>{
         pathIndex = 0;
     }
     
-    public WalkerSingle(FunctionChain chain, MarkovTransition transition, State initialState){
+    public WalkerSingle(ProppFunction chain, MarkovTransition transition, State initialState){
         this.chain = chain;
         this.transition = transition;
         this.state = initialState;

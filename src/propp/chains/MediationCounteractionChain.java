@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package propp.chains;
-import proppFunction.FunctionChain;
+import proppFunction.ProppFunction;
 import proppFunction.Node;
 import proppFunction.NodeType;
 import state.AtomMatcher;
@@ -14,10 +14,10 @@ import state.Predicate;
 /**
  * @author Riccardo
  */
-public class MediationCounteractionChain implements ChainGenerator{
+public class MediationCounteractionChain implements FunctionGenerator{
 
     public void createSave() {
-        FunctionChain C = new FunctionChain("MediationCounteraction");
+        ProppFunction C = new ProppFunction("MediationCounteraction");
         Node n; 
         String bc = "begin_counteraction";
         String dp = "departure";

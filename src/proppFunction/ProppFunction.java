@@ -18,13 +18,13 @@ import java.util.NoSuchElementException;
  *
  * @author Riccardo
  */
-public class FunctionChain implements Serializable{
+public class ProppFunction implements Serializable{
     
     public List<Node> nodes;
     public Node entryPoint;
     public String FunctionName;
     
-    public FunctionChain(String name){
+    public ProppFunction(String name){
         nodes = new LinkedList<>();
         this.entryPoint = new Node("$entry_point", NodeType.NONE);
         this.FunctionName = name;
@@ -87,7 +87,7 @@ public class FunctionChain implements Serializable{
     	serializeAs(this.FunctionName);
     }
     
-    public void serializeAs(String filename){
+    private void serializeAs(String filename){
         try {
             FileOutputStream fileOut = new FileOutputStream("ProppFunctions/"+filename+".mc");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -100,12 +100,12 @@ public class FunctionChain implements Serializable{
         } 
     }
     
-    public static FunctionChain deserializeFrom(String filename){
-        FunctionChain c = null;
+    public static ProppFunction deserializeFrom(String filename){
+        ProppFunction c = null;
         try {
             FileInputStream fileIn = new FileInputStream("ProppFunctions/"+filename+".mc");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            c = (FunctionChain) in.readObject();
+            c = (ProppFunction) in.readObject();
             in.close();
             fileIn.close();
         } catch (Exception exc) {
